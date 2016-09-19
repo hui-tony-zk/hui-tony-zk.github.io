@@ -1,0 +1,7 @@
+name: "my-website"
+output_dir: "."
+navbar:
+  title: "Tony Hui"
+  left:
+    - text: "About"
+      href: about.html
