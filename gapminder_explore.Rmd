@@ -12,8 +12,12 @@ Following [homework prompts here](https://stat545-ubc.github.io/hw04_write-funct
 
 Since the output will be in the homework subfolder, this will make knitting easier and place the plots in the right place later
 
-```{r}
-suppressPackageStartupMessages(require(knitr))
+```{r, include=FALSE}
+library(MASS)
+library(ggplot2)
+require(tidyr)
+require(gplots)
+library(dplyr)
 opts_chunk$set(warning=FALSE, messages=FALSE, cache=TRUE)
 ```
 
@@ -30,7 +34,6 @@ gapminder <- read.delim(file = "http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/e
 Inspired from my peer review [from here](https://github.com/STAT545-UBC/adam_baimel/issues/6#issuecomment-144514497), I will calculate correlation for each country. To quantify variability, I will extract the confidence interval of the slope.
 
 ```{r}
-suppressPackageStartupMessages(require(dplyr))
 gapminder_regression <- gapminder %>% 
   group_by(continent, country) %>%
   do(model = lm(lifeExp ~ year, data = .)) %>%
@@ -44,7 +47,6 @@ kable(gapminder_regression %>% select(-model) %>% head(), format = "markdown")
 ```
 
 ```{r lm_cor_plot, echo=FALSE, fig.width=5, fig.height=15}
-suppressPackageStartupMessages(require(ggplot2))
 ggplot(gapminder_regression, aes(x=reorder(country, slope), y=slope, ymin=ylo, ymax=yhi, color = continent)) + 
 #   facet_wrap(~ continent, scales = "free")+
   geom_pointrange()+
@@ -54,22 +56,7 @@ ggplot(gapminder_regression, aes(x=reorder(country, slope), y=slope, ymin=ylo, y
 
 It seems like everybody is relatively simiar - what happens if we use a robust linear model?
 
-```{r, error=TRUE}
-suppressPackageStartupMessages(require(robustbase))
-gapminder_regression_robust <- gapminder %>% 
-  group_by(continent, country) %>%
-  do(model = lmrob(formula = lifeExp ~ year, data = .)) %>%
-  mutate(
-    slope = coef(model)[2],
-    ylo = confint(model)[2], # confidence interval of the slope
-    yhi = confint(model)[4]
-  )
-```
-
-Looks like some errors were generated - let's try ``MASS::rlm`` as suggested by Dean [here](https://github.com/STAT545-UBC/Discussion/issues/153). I'm using `method == "MM"` as described [here](https://github.com/STAT545-UBC/tony_hui/tree/master/random_class_stuff/stats_crash_course#robust-technique)
-
 ```{r}
-suppressPackageStartupMessages(require(MASS))
 gapminder_regression_robust <- gapminder %>% 
   group_by(continent, country) %>%
   do(model = rlm(formula = lifeExp ~ year, data = ., method = "MM")) %>%
@@ -79,8 +66,6 @@ gapminder_regression_robust <- gapminder %>%
     yhi = confint(model)[4]
   )
 ```
-
-That worked - perhaps there is better error handling for `rlm` vs `lmrob`. Too lazy to dive into this.
 
 Hmm... no confidence interval estimates for robust linear models... Very weird. Unfortunately, I don't understand enough statistics to figure out why. Anyways, does robust slopes differ from non-robust slopes?
 
@@ -137,7 +122,6 @@ kable(compare_models(gapminder %>% filter(country == "Zimbabwe")), format = "mar
 Works, great. Time to run this.
 
 ```{r lm_rlm_select_country, fig.width=10, fig.height=10}
-require(tidyr)
 gapminder_regression_interest <- gapminder %>% 
   group_by(continent, country) %>%
   do(compare_models(x = .)) %>% 
@@ -225,8 +209,6 @@ clustered_countries <- data.frame(country = names(cutree(tree, k = 5)), cluster 
 Let's see the values (picked colors from [here](http://colorbrewer2.org/))
 
 ```{r clusters, fig.height=20, fig.width=8}
-require(gplots)
-
 nbreaks=41
 colors=colorRampPalette(c("#67001f", "#f7f7f7", "#053061"), bias = 1)(nbreaks)
 

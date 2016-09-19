@@ -1,7 +1,9 @@
 .Rproj.user
+.Rproj
 .Rhistory
 .RData
 .Ruserdata
 gapminder_explore_cache/
 econdata_explore_cache/
 publications_cache/
+README.html

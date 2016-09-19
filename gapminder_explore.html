@@ -186,7 +186,25 @@ $(document).ready(function () {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="publications.html">Sanger publications</a>
+    </li>
+    <li>
+      <a href="gapminder_explore.html">Gapminder data overview</a>
+    </li>
+    <li>
+      <a href="econdata_explore.html">World Economic Indicators</a>
+    </li>
+  </ul>
+</li>
+<li>
   <a href="about.html">About</a>
 </li>
       </ul>
@@ -219,8 +237,6 @@ $(document).ready(function () {
 <div id="first-time-setup" class="section level2">
 <h2>First-time setup</h2>
 <p>Since the output will be in the homework subfolder, this will make knitting easier and place the plots in the right place later</p>
-<pre class="r"><code>suppressPackageStartupMessages(require(knitr))
-opts_chunk$set(warning=FALSE, messages=FALSE, cache=TRUE)</code></pre>
 <p>Since gapminder data is conveniently located online, don’t need to download anything.</p>
 <pre class="r"><code>gapminder &lt;- read.delim(file = &quot;http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt&quot;)</code></pre>
 </div>
@@ -229,8 +245,7 @@ opts_chunk$set(warning=FALSE, messages=FALSE, cache=TRUE)</code></pre>
 <div id="plotting-the-slope-of-each-country-and-its-intercept" class="section level3">
 <h3>Plotting the slope of each country and it’s intercept</h3>
 <p>Inspired from my peer review <a href="https://github.com/STAT545-UBC/adam_baimel/issues/6#issuecomment-144514497">from here</a>, I will calculate correlation for each country. To quantify variability, I will extract the confidence interval of the slope.</p>
-<pre class="r"><code>suppressPackageStartupMessages(require(dplyr))
-gapminder_regression &lt;- gapminder %&gt;% 
+<pre class="r"><code>gapminder_regression &lt;- gapminder %&gt;% 
   group_by(continent, country) %&gt;%
   do(model = lm(lifeExp ~ year, data = .)) %&gt;%
   mutate(
@@ -297,19 +312,7 @@ kable(gapminder_regression %&gt;% select(-model) %&gt;% head(), format = &quot;m
 </table>
 <p><img src="gapminder_explore_files/figure-html/lm_cor_plot-1.png" width="480" /></p>
 <p>It seems like everybody is relatively simiar - what happens if we use a robust linear model?</p>
-<pre class="r"><code>suppressPackageStartupMessages(require(robustbase))
-gapminder_regression_robust &lt;- gapminder %&gt;% 
-  group_by(continent, country) %&gt;%
-  do(model = lmrob(formula = lifeExp ~ year, data = .)) %&gt;%
-  mutate(
-    slope = coef(model)[2],
-    ylo = confint(model)[2], # confidence interval of the slope
-    yhi = confint(model)[4]
-  )</code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): could not find function &quot;lmrob&quot;</code></pre>
-<p>Looks like some errors were generated - let’s try <code>MASS::rlm</code> as suggested by Dean <a href="https://github.com/STAT545-UBC/Discussion/issues/153">here</a>. I’m using <code>method == &quot;MM&quot;</code> as described <a href="https://github.com/STAT545-UBC/tony_hui/tree/master/random_class_stuff/stats_crash_course#robust-technique">here</a></p>
-<pre class="r"><code>suppressPackageStartupMessages(require(MASS))
-gapminder_regression_robust &lt;- gapminder %&gt;% 
+<pre class="r"><code>gapminder_regression_robust &lt;- gapminder %&gt;% 
   group_by(continent, country) %&gt;%
   do(model = rlm(formula = lifeExp ~ year, data = ., method = &quot;MM&quot;)) %&gt;%
   mutate(
@@ -317,7 +320,6 @@ gapminder_regression_robust &lt;- gapminder %&gt;%
     ylo = confint(model)[2], # confidence interval of the slope
     yhi = confint(model)[4]
   )</code></pre>
-<p>That worked - perhaps there is better error handling for <code>rlm</code> vs <code>lmrob</code>. Too lazy to dive into this.</p>
 <p>Hmm… no confidence interval estimates for robust linear models… Very weird. Unfortunately, I don’t understand enough statistics to figure out why. Anyways, does robust slopes differ from non-robust slopes?</p>
 <p><img src="gapminder_explore_files/figure-html/lm_cor_diff-1.png" width="480" /></p>
 <p>Looks like some countries have a large difference in their slopes when using robust and non-robust methods. Let’s see which ones?</p>
@@ -422,8 +424,6 @@ kable(compare_models(gapminder %&gt;% filter(country == &quot;Zimbabwe&quot;)), 
 </tbody>
 </table>
 <p>Works, great. Time to run this.</p>
-<pre class="r"><code>require(tidyr)</code></pre>
-<pre><code>## Loading required package: tidyr</code></pre>
 <pre class="r"><code>gapminder_regression_interest &lt;- gapminder %&gt;% 
   group_by(continent, country) %&gt;%
   do(compare_models(x = .)) %&gt;% 
@@ -612,13 +612,6 @@ rect.hclust(tree, k = 5)</code></pre>
 <p><img src="gapminder_explore_files/figure-html/cluster_tree-1.png" width="1440" /></p>
 <pre class="r"><code>clustered_countries &lt;- data.frame(country = names(cutree(tree, k = 5)), cluster = cutree(tree, k = 5))</code></pre>
 <p>Let’s see the values (picked colors from <a href="http://colorbrewer2.org/">here</a>)</p>
-<pre class="r"><code>require(gplots)</code></pre>
-<pre><code>## Loading required package: gplots</code></pre>
-<pre><code>## 
-## Attaching package: &#39;gplots&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     lowess</code></pre>
 <pre class="r"><code>nbreaks=41
 colors=colorRampPalette(c(&quot;#67001f&quot;, &quot;#f7f7f7&quot;, &quot;#053061&quot;), bias = 1)(nbreaks)
 

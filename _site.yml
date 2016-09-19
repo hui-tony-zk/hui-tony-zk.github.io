@@ -3,5 +3,13 @@ output_dir: "."
 navbar:
   title: "Tony Hui"
   left:
+    - text: "Projects"
+      menu:
+        - text: "Sanger publications"
+          href: publications.html
+        - text: "Gapminder data overview"
+          href: gapminder_explore.html
+        - text: "World Economic Indicators"
+          href: econdata_explore.html
     - text: "About"
       href: about.html
