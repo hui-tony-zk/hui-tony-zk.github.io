@@ -1,0 +1,30 @@
+.page-header-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    
+    text-align: center;
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+    background-repeat: repeat;
+    color: #FFF;
+}
+
+.page-header-text {
+    padding-top: 125px;
+    padding-bottom: 125px;
+    background-color: rgba(0,0,0,0.5);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.small {
+    max-width: 100px;
+    margin: 15px auto;
+    border-width: 4px;
+    border-color: inherit;
+    border-radius: 3px;
+}

@@ -1,5 +1,7 @@
----
-title: "Tony Hui"
----
-
-Hello, Website!
+<div class="page-header-bg" style="background-image: url('http://makedatasense.ca/wp-content/uploads/2015/09/7372643550_05abb17129_o-e1442134995664.jpg');">
+<div class="page-header-text panel-widget-style">
+<h1>Tony Hui</h1>
+<hr class="small"/>
+<h3>Molecular and Computational Biologist / Occasional Data Scientist</h3>
+</div>
+</div>

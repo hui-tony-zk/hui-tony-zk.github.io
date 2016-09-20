@@ -9,13 +9,18 @@ navbar:
           href: publications.html
         - text: "Gapminder data overview"
           href: gapminder_explore.html
+        - text: "Classroom activity (new tab)"
+          href: https://github.com/hui-tony-zk/LAVA-hackathon/blob/master/README.md
         - text: "World Economic Indicators"
           href: econdata_explore.html
     - text: "Projects"
       menu:
-        - text: "Datasense, Founder and President"
+        - text: "Datasense new tab"
           href: http://makedatasense.ca/?utm_source=github&utm_medium=github_readme&utm_campaign=passive
         - text: "Impact Replays"
           href: impact_replays.html
     - text: "About"
       href: about.html
+output:
+  html_document:
+    css: styles.css
