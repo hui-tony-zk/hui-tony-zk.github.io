@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "Tony Hui"
   left:
-    - text: "Projects"
+    - text: "Analysis"
       menu:
         - text: "Sanger publications"
           href: publications.html
@@ -11,5 +11,11 @@ navbar:
           href: gapminder_explore.html
         - text: "World Economic Indicators"
           href: econdata_explore.html
+    - text: "Projects"
+      menu:
+        - text: "Datasense, Founder and President"
+          href: http://makedatasense.ca/?utm_source=github&utm_medium=github_readme&utm_campaign=passive
+        - text: "Impact Replays"
+          href: impact_replays.html
     - text: "About"
       href: about.html

@@ -188,7 +188,7 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Projects
+    Analysis
      
     <span class="caret"></span>
   </a>
@@ -201,6 +201,21 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="econdata_explore.html">World Economic Indicators</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="http://makedatasense.ca/?utm_source=github&amp;utm_medium=github_readme&amp;utm_campaign=passive">Datasense, Founder and President</a>
+    </li>
+    <li>
+      <a href="impact_replays.html">Impact Replays</a>
     </li>
   </ul>
 </li>
@@ -233,18 +248,14 @@ $(document).ready(function () {
 </div>
 
 
-<p>Following <a href="https://stat545-ubc.github.io/hw04_write-function-split-apply-combine.html">homework prompts here</a></p>
-<div id="first-time-setup" class="section level2">
-<h2>First-time setup</h2>
-<p>Since the output will be in the homework subfolder, this will make knitting easier and place the plots in the right place later</p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>This report is the results of a quick exploration of the <a href="https://github.com/jennybc/gapminder">Gapminder dataset</a>, prepared as a part of <a href="http://stat545.com/">STAT545</a> at UBC.</p>
 <p>Since gapminder data is conveniently located online, don’t need to download anything.</p>
 <pre class="r"><code>gapminder &lt;- read.delim(file = &quot;http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt&quot;)</code></pre>
-</div>
-<div id="writing-a-function-to-compute-something-interesting" class="section level2">
-<h2>Writing a function to compute something interesting</h2>
 <div id="plotting-the-slope-of-each-country-and-its-intercept" class="section level3">
 <h3>Plotting the slope of each country and it’s intercept</h3>
-<p>Inspired from my peer review <a href="https://github.com/STAT545-UBC/adam_baimel/issues/6#issuecomment-144514497">from here</a>, I will calculate correlation for each country. To quantify variability, I will extract the confidence interval of the slope.</p>
+<p>I will calculate correlation of life expectancy vs year for each country. To quantify variability, I will extract the confidence interval of the slope.</p>
 <pre class="r"><code>gapminder_regression &lt;- gapminder %&gt;% 
   group_by(continent, country) %&gt;%
   do(model = lm(lifeExp ~ year, data = .)) %&gt;%
@@ -311,7 +322,7 @@ kable(gapminder_regression %&gt;% select(-model) %&gt;% head(), format = &quot;m
 </tbody>
 </table>
 <p><img src="gapminder_explore_files/figure-html/lm_cor_plot-1.png" width="480" /></p>
-<p>It seems like everybody is relatively simiar - what happens if we use a robust linear model?</p>
+<p>It seems like everybody is relatively similar - what happens if we use a robust linear model?</p>
 <pre class="r"><code>gapminder_regression_robust &lt;- gapminder %&gt;% 
   group_by(continent, country) %&gt;%
   do(model = rlm(formula = lifeExp ~ year, data = ., method = &quot;MM&quot;)) %&gt;%
@@ -320,7 +331,7 @@ kable(gapminder_regression %&gt;% select(-model) %&gt;% head(), format = &quot;m
     ylo = confint(model)[2], # confidence interval of the slope
     yhi = confint(model)[4]
   )</code></pre>
-<p>Hmm… no confidence interval estimates for robust linear models… Very weird. Unfortunately, I don’t understand enough statistics to figure out why. Anyways, does robust slopes differ from non-robust slopes?</p>
+<p>Does robust slopes differ from non-robust slopes?</p>
 <p><img src="gapminder_explore_files/figure-html/lm_cor_diff-1.png" width="480" /></p>
 <p>Looks like some countries have a large difference in their slopes when using robust and non-robust methods. Let’s see which ones?</p>
 <pre class="r"><code>slope_diff &lt;- normal_vs_robust %&gt;%
@@ -372,8 +383,8 @@ kable(slope_diff %&gt;% head(), format = &quot;markdown&quot;)</code></pre>
 <pre class="r"><code>cutoff = 0.1
 
 slope_diff %&gt;%
-  ggplot(aes(slope_diff)) + geom_bar(binwidth=0.02) + geom_vline(xintercept = cutoff) + facet_wrap(~continent)</code></pre>
-<p><img src="gapminder_explore_files/figure-html/lm_rlm_diff_plot-1.png" width="672" /></p>
+  ggplot(aes(slope_diff)) + geom_bar(binwidth=0.02) + geom_vline(xintercept = cutoff) + facet_wrap(~continent, nrow=1)</code></pre>
+<p><img src="gapminder_explore_files/figure-html/lm_rlm_diff_plot-1.png" width="576" /></p>
 <p>I will set a cutoff at 0.06 difference in slope. Presumably, countries beyond this difference means there is a lot of variability such that a robust method fits better (means there are outlier datapoints in years). Also, looks like Africa and Asia has these “outlier” countries - other continents don’t. Africa also dominates in the count of countries.</p>
 <p>Let’s see which countries these are:</p>
 <pre class="r"><code>(countries_of_interest &lt;- filter(slope_diff, slope_diff &gt; cutoff)$country %&gt;% as.character())</code></pre>
@@ -495,9 +506,8 @@ kable(gapminder_regression_interest %&gt;% head(), format=&quot;markdown&quot;)<
 <p>For some reason a legend isn’t showing. Red = “normal”, blue = “robust”.</p>
 <p>Well, it seems like countries with outliers tend to suffer massive loss of LifeExp then bounce back - presumably war or natural disaster. Robust modelling results in a line that says “this is the life expectancy assuming nothing terrible happened” - which is pretty cool. I might come back to this and think of more interpretations.</p>
 </div>
-</div>
-<div id="clustering-to-see-if-we-can-identify-classes-of-countries" class="section level2">
-<h2>Clustering to see if we can identify classes of countries</h2>
+<div id="clustering-to-see-if-we-can-identify-classes-of-countries" class="section level3">
+<h3>Clustering to see if we can identify classes of countries</h3>
 <p>Now, let’s do some clustering to see if we can tease out what a developing country is.</p>
 <p>First, I need to normalize all the “dimensions” in the data to the average so that distance calculations won’t be skewed. For now, let’s just work with 2007 data (I need to think of a way to incorporate all year data down the road).</p>
 <pre class="r"><code>gapminder_averages &lt;- gapminder %&gt;%
@@ -633,7 +643,7 @@ heatmap.2(gapminder_zmatrix,
   tbl_df() %&gt;%
   ggplot(aes(x = factor(cluster), y = value)) + geom_boxplot() + facet_wrap(~ measure, scales=&quot;free&quot;)</code></pre>
 <pre><code>## Joining, by = &quot;country&quot;</code></pre>
-<p><img src="gapminder_explore_files/figure-html/clusters_boxplots-1.png" width="672" /></p>
+<p><img src="gapminder_explore_files/figure-html/clusters_boxplots-1.png" width="384" /></p>
 <p>Looking at this, I conclude cluster 3 consists of first world countries. Who is part of this cluster?</p>
 <pre class="r"><code>subset(clustered_countries, cluster == 3)$country</code></pre>
 <pre><code>##  [1] Australia           Austria             Bahrain            
@@ -652,8 +662,6 @@ heatmap.2(gapminder_zmatrix,
 ## 142 Levels: Afghanistan Albania Algeria Angola Argentina ... Zimbabwe</code></pre>
 <p>Yep, looks legit. It seems that using the three simple metrics <code>population</code>, <code>gdp per capita</code>, and <code>life expentancy</code>, one can classify countries into “first world”, “third world” and etc.</p>
 </div>
-<div id="end" class="section level2">
-<h2>END</h2>
 </div>
 
 

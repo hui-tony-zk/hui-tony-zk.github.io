@@ -50,8 +50,8 @@ merge.master_faculty <- merge.master[grep(paste(faculty_names$V1, collapse='|'),
 ```
 
 ```{r, echo=FALSE}
-# save(merge.master_faculty, file ="publications_cache/merge.master_faculty.RData")
-load("publications_cache/merge.master_faculty.RData")
+# save(merge.master_faculty, file ="merge.master_faculty.RData")
+load("merge.master_faculty.RData")
 head(merge.master_faculty)
 ```
 
@@ -183,7 +183,7 @@ Looks like Dr. Parkhill (Pathogen genomics) has been publishing a lot recently! 
 
 Let's look at the ratio of big3 publications versus total publications might tell me which lab primarily publishes big. Let's plot the total number of publications and the number of "big3" publications together, and sort by the ratio. To remove noise, let's remove anybody with less than 10 total publications since 2010.
 
-```{r, echo=FALSE, fig.width=12, dpi=72}
+```{r, echo=FALSE, fig.width=12, fig.height=4, dpi=72}
 all_together_ratio <- unique(merge(
   data.frame(name=merge_cumsum_all_rank$name, total_publications=merge_cumsum_all_rank$total),
   data.frame(name=merge.cumsum_rank$name, big3_publications=merge.cumsum_rank$total),
@@ -213,7 +213,7 @@ ggplot(data = all_ratio, aes(x=name, y=count, fill=Journal))+
 
 Looks like Dr. Wright (Cell surface signalling laboratory) leads the pack with Dr. Anderson (Genomics of inflammation and immunity) following close behind. However, it appears that the ratios are almost a uniform distribution, so this metric is probably not too impactful unless the rankings are far apart (3-4 places). Let's look at their "publication curves":
 
-```{r, echo=FALSE, fig.width=12, dpi=72}
+```{r, echo=FALSE, fig.width=12, fig.height=8, dpi=72}
 ratios_outliers <- merge(
   data.frame(name=merge_cumsum_all_rank$name, year=merge_cumsum_all_rank$year, total_publications=merge_cumsum_all_rank$cumsum),
   data.frame(name=merge.cumsum_rank$name, year=merge.cumsum_rank$year, big3_publications=merge.cumsum_rank$cumsum),
