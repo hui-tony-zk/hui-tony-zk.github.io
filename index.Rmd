@@ -2,6 +2,65 @@
 <div class="page-header-text panel-widget-style">
 <h1>Tony Hui</h1>
 <hr class="small"/>
-<h3>Molecular and Computational Biologist / Occasional Data Scientist</h3>
+<h3>Molecular and Computational Biologist / Sometimes Data Scientist</h3>
 </div>
 </div>
+
+<h1 class="text-center"> Projects </h1>
+<hr class="small"/>
+
+<div class="row">
+
+<div class="col-sm-3 col-xs-6 no-padding">
+<div class="hovereffect">
+<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<div class="overlay">
+<h2>Effect 12</h2>
+<p> 
+<a href="#">LINK HERE</a>
+</p> 
+</div>
+</div>
+</div>
+
+<div class="col-sm-3 col-xs-6 no-padding">
+<div class="hovereffect">
+<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<div class="overlay">
+<h2>Effect 12</h2>
+<p> 
+<a href="#">LINK HERE</a>
+</p> 
+</div>
+</div>
+</div>
+
+<div class="col-sm-3 col-xs-6 no-padding">
+<div class="hovereffect">
+<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<div class="overlay">
+<h2>Effect 12</h2>
+<p> 
+<a href="#">LINK HERE</a>
+</p> 
+</div>
+</div>
+</div>
+
+<div class="col-sm-3 col-xs-6 no-padding">
+<div class="hovereffect">
+<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<div class="overlay">
+<h2>Effect 12</h2>
+<p> 
+<a href="#">LINK HERE</a>
+</p> 
+</div>
+</div>
+</div>
+
+</div>
+
+
+<h1 class="text-center"> Projects </h1>
+<hr class="small"/>

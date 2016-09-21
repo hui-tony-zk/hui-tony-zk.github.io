@@ -7,7 +7,7 @@ navbar:
       menu:
         - text: "Sanger publications"
           href: publications.html
-        - text: "Gapminder data overview"
+        - text: "Gapminder"
           href: gapminder_explore.html
         - text: "Classroom activity (new tab)"
           href: https://github.com/hui-tony-zk/LAVA-hackathon/blob/master/README.md

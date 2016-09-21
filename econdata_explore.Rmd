@@ -23,7 +23,7 @@ opts_chunk$set(warning=FALSE, messages=FALSE, cache=TRUE, fig.width = 4, fig.hei
 
 **Load data**
 
-```{r load_data, cache=TRUE, cache.lazy=FALSE}
+```{r load_data, cache=TRUE, cache.lazy=TRUE}
 all_data <- fread("gunzip -c WDI_Data.csv.gz", header = T, check.names = TRUE, data.table = FALSE) %>% 
   setnames(gsub(" ", "", colnames(.)) %>% tolower()) %>% tbl_df()
 
