@@ -4,6 +4,12 @@
 
 I am a Masters student in the Genome Sciences and Technology graduate program at UBC. My work involves single-cell epigenetics applied to mammalian cancers. My Bachelors was also at UBC, but focused on Microbiology and Immunology; my aim with this masters is to transition into a data science role from a wet lab scientist role.
 
-I am very passionate about Data Science. To that end, I founded [DataSense](http://makedatasense.ca/?utm_source=github&utm_medium=github_readme&utm_campaign=passive), which aims to educate and inspire the next generation of data scientists
-
-<a href = "http://makedatasense.ca/?utm_source=github&utm_medium=github_readme&utm_campaign=passive" target="_blank"><img src="http://makedatasense.ca/wp-content/uploads/2015/09/DataSenseLogo-e1441776508179.png" alt="datasense_logo" class="img-responsive center-block" /></a>
+<hr class="small"/>
+<div class="row">
+<div class="text-center">
+<a href = "https://www.linkedin.com/in/huitonyzk" target="_blank"><i class="fa fa-linkedin-square fa-2x text-info" aria-hidden="true"> </i></a>
+<a href = "https://www.facebook.com/hui.tony" target="_blank"><i class="fa fa-facebook-square fa-2x text-info" aria-hidden="true"> </i></a>
+<a href = "https://twitter.com/hui_tony_zk" target="_blank"><i class="fa fa-twitter-square fa-2x text-info" aria-hidden="true"> </i></a>
+<a href = "https://github.com/hui-tony-zk" target="_blank"><i class="fa fa-github-square fa-2x text-info" aria-hidden="true"> </i></a>
+</div>
+</div>

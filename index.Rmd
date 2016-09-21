@@ -6,18 +6,17 @@
 </div>
 </div>
 
-<h1 class="text-center"> Projects </h1>
+<h3 class="text-center">Analysis</h3>
 <hr class="small"/>
 
 <div class="row">
 
 <div class="col-sm-3 col-xs-6 no-padding">
 <div class="hovereffect">
-<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<img class="img-responsive" src="econdata_explore_files/figure-html/unnamed-chunk-9-1.png" alt="econ_pic" height="250">
 <div class="overlay">
-<h2>Effect 12</h2>
 <p> 
-<a href="#">LINK HERE</a>
+<a href="econdata_explore.html"><h2>World Economic Indicators</h2></a>
 </p> 
 </div>
 </div>
@@ -25,11 +24,10 @@
 
 <div class="col-sm-3 col-xs-6 no-padding">
 <div class="hovereffect">
-<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<img class="img-responsive" src="https://raw.githubusercontent.com/hui-tony-zk/LAVA-hackathon/master/Analysis_report_files/figure-html/unnamed-chunk-12-1.png" alt="">
 <div class="overlay">
-<h2>Effect 12</h2>
 <p> 
-<a href="#">LINK HERE</a>
+<a href="https://github.com/hui-tony-zk/LAVA-hackathon/blob/master/README.md" target="_blank"><h2>Classroom activity  <i>(new tab)</h2></i>
 </p> 
 </div>
 </div>
@@ -37,11 +35,10 @@
 
 <div class="col-sm-3 col-xs-6 no-padding">
 <div class="hovereffect">
-<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<img class="img-responsive" src="gapminder_explore_files/figure-html/lm_rlm_select_country-1.png" alt="">
 <div class="overlay">
-<h2>Effect 12</h2>
-<p> 
-<a href="#">LINK HERE</a>
+<p>
+<a href="gapminder_explore.html"><h2>Gapminder</h2></a>
 </p> 
 </div>
 </div>
@@ -49,11 +46,10 @@
 
 <div class="col-sm-3 col-xs-6 no-padding">
 <div class="hovereffect">
-<img class="img-responsive" src="http://placehold.it/350x250" alt="">
+<img class="img-responsive" src="publications_files/figure-html/unnamed-chunk-9-1.png" alt="">
 <div class="overlay">
-<h2>Effect 12</h2>
 <p> 
-<a href="#">LINK HERE</a>
+<a href="publications.html"><h2>Sanger publications</h2></a>
 </p> 
 </div>
 </div>
@@ -62,5 +58,35 @@
 </div>
 
 
-<h1 class="text-center"> Projects </h1>
+
+<h3 class="text-center">Projects</h3>
 <hr class="small"/>
+
+<div class="row">
+
+<div class="col-sm-3 col-xs-0 no-padding">
+</div>
+
+<div class="col-sm-3 col-xs-6 no-padding">
+<div class="hovereffect">
+<img class="img-responsive center-block" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/12196354_10156324691960294_6731434793264381952_n.jpg?oh=718389344bae4e3fb3d2418809e2013d&oe=587BFC92" alt="datasense">
+<div class="overlay">
+<p>
+<a href="http://makedatasense.ca/?utm_source=github&utm_medium=github_readme&utm_campaign=passive" target="_blank"><h2>DataSense <i>(new tab)</i></h2></a>
+</p> 
+</div>
+</div>
+</div>
+
+<div class="col-sm-3 col-xs-6 no-padding">
+<div class="hovereffect">
+<img class="img-responsive" src="impactreplays.png" alt="">
+<div class="overlay">
+<p> 
+<a href="impact_replays.html"><h2>Impact Replays</h2></a>
+</p> 
+</div>
+</div>
+</div>
+
+</div>

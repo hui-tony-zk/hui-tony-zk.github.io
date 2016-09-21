@@ -24,7 +24,7 @@ opts_chunk$set(warning=FALSE, messages=FALSE, cache=TRUE, fig.width = 4, fig.hei
 **Load data**
 
 ```{r load_data, cache=TRUE, cache.lazy=TRUE}
-all_data <- fread("gunzip -c WDI_Data.csv.gz", header = T, check.names = TRUE, data.table = FALSE) %>% 
+all_data <- fread("WDI_Data.csv", header = T, check.names = TRUE, data.table = FALSE) %>%
   setnames(gsub(" ", "", colnames(.)) %>% tolower()) %>% tbl_df()
 
 all_data_long <- all_data %>%

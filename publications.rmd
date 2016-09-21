@@ -109,7 +109,7 @@ ggplot(data = merge_cumsum_subset, aes(x=year, y=count, group=name))+
 
 Interestingly, it looks like 2010 was a great year for the Sanger Institute, but it was followed by a "slump" year in 2011. It also looks like Dr. Stratton and Dr. Campbell (both Cancer Genome Project) have been publishing a lot recently.
 
-```{r total, echo=F}
+```{r total, echo=F, eval=FALSE}
 setwd(dir = "data/")
 file_names_all <- dir(path = ".", pattern = "all_publications_201[0-9].txt")
 files_all <- lapply(X = file_names_all, FUN = read.table)
@@ -168,7 +168,7 @@ The clear leader here is Dr. Parkhill (Pathogen Genomics) at #1. Dr. Dougan (Mic
 
 Once again, let's look at the number of publications per year. 
 
-```{r, echo=FALSE, fig.width=12, dpi=72}
+```{r, echo=FALSE, fig.width=7, dpi=72}
 ggplot(data = merge_cumsum_subset_all, aes(x=year, y=count, group=name))+
   geom_line(aes(color=name), size=2)+
   #geom_bar(aes(fill=name) stat="identity", position="dodge")+
