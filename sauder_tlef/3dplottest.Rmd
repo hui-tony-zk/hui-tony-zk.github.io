@@ -1,0 +1,17 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(plotly)
+```
+
+```{r}
+x <- iris %>% dist %>% cmdscale(k = 3) %>% as.data.frame()
+plot_ly(x, x = ~V1, y = ~V2, z = ~V3, color = ~iris$Species) %>%
+  add_markers(text = ~paste("Species: ", iris$Species))
+```
+
