@@ -124,13 +124,20 @@ $(document).ready(function () {
 </div>
 
 
-<p>This midterm uses the okcupid profiles dataset: an anonomyzed dump of ~50,000 okcupid profiles (<a href="https://github.com/rudeboybert/JSE_OkCupid" class="uri">https://github.com/rudeboybert/JSE_OkCupid</a>). Tony has further processed this down to ~6000 records to reduce information overload.</p>
+<p>This midterm uses <a href="https://www.okcupid.com/">OkCupid</a> (“the best free dating site on Earth”) profiles: an anonomyzed dump of ~50,000 dating profiles (<a href="https://github.com/rudeboybert/JSE_OkCupid" class="uri">https://github.com/rudeboybert/JSE_OkCupid</a>). Tony has further processed this down to ~6000 records to reduce information overload.</p>
 <p><em>The dataset is here: <code>http://huitony.com/pol201/profiles.csv</code> </em></p>
-<p>Some things to note: - Random noise was added to income (it was previously categorical) - Incomes above 100k were set as 100k since the crazy earners make everything look bad</p>
+<p>Some things to note:</p>
+<ul>
+<li>Random noise was added to income (it was previously categorical)</li>
+<li>Incomes above 100k were set as 100k since the crazy earners make everything look bad</li>
+<li>M.D., Law, Masters, and PhD programs are considered “post-graduate”</li>
+<li>Many other nuances that makes this dataset more appropriate for an intro to data science class</li>
+</ul>
+<pre class="r"><code>y &lt;- read.csv(&quot;http://huitony.com/pol201/profiles.csv&quot;)</code></pre>
 <div id="exploring-the-human-body" class="section level2">
 <h2>Exploring the human body</h2>
 <ul>
-<li><p><strong>Make a plot showing how many men and woman (<code>sex</code> column) there are in this dataset. Is there bias with respect to sex?</strong></p></li>
+<li><p><strong>Make a plot showing how many men and woman (<code>sex</code> column) there are in this dataset. Is there bias with respect to sex? Would this dataset be representative of the entire population? How about of people who use online dating services?</strong></p></li>
 <li><p><strong>Make a conditional proportions table of <code>sex</code> and <code>body_type</code>. Be sure to add the margins to the table, that is, the totals.</strong></p></li>
 <li><p><strong>Make a stacked barplot of the conditional proportions that shows the relationship between <code>sex</code> and <code>body_type</code></strong></p></li>
 <li><p><strong>Which <code>body_type</code> has the biggest difference in proportions between male and female?</strong></p></li>
@@ -146,7 +153,7 @@ $(document).ready(function () {
 <li><p><strong>Which profession makes the most money? Make a chart between <code>job</code> and <code>income</code> as proof</strong></p></li>
 <li><p><strong>The “gender wage gap” - do guys make more money than girls? Make a chart showing <code>sex</code> versus <code>income</code> as proof</strong></p></li>
 <li><p><strong>The “gender wage gap” - which jobs are affected most? Make a chart showing <code>sex</code> versus <code>income</code>, and color by <code>sex</code> as proof</strong></p></li>
-<li><p><strong>Do girls make more money working in computer/hardware/software or in law/legal services?</strong></p></li>
+<li><p><strong>Do girls make more money working in <em>computer/hardware/software</em> or in <em>law/legal services</em>?</strong></p></li>
 <li><p><strong>Racism in the workplace - is there a relationship between <code>ethnicity</code> and <code>income</code>?</strong></p></li>
 <li><p><strong>University is for jobs - is there a relationship between <code>education</code> and <code>income</code>?</strong></p></li>
 <li><p><strong>What is the correlation coefficient between <code>age</code> and <code>income</code>? Is this expected?</strong></p></li>
