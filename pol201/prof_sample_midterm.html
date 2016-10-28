@@ -424,13 +424,8 @@ ggplot(data = vote_PR, aes(x = Turnout)) + geom_histogram()</code></pre>
 <h3>A)</h3>
 <div id="what-is-the-height-that-most-closely-corresponds-to-a-percentile-rank-of-70-6-points" class="section level4">
 <h4>What is the height that most closely corresponds to a percentile rank of 70%? (6 points)</h4>
-<p>70% percentile means higher than 70% of the data. So the <code>pnorm(some z-score)</code> should be roughly 0.7</p>
-<p>Idk what that z-score should be, so I randomly guess <code>0.5</code></p>
-<pre class="r"><code>pnorm(0.5)</code></pre>
-<pre><code>## [1] 0.6914625</code></pre>
-<p>Okay great, it’s close to 0.7. This means the number should be <code>0.5</code> or <code>half</code> of the standard deviation above the mean</p>
-<pre class="r"><code>1.75+0.5*0.18</code></pre>
-<pre><code>## [1] 1.84</code></pre>
+<pre class="r"><code>qnorm(0.7, mean = 1.75, sd= 0.18)</code></pre>
+<pre><code>## [1] 1.844392</code></pre>
 </div>
 </div>
 <div id="b-3" class="section level3">
