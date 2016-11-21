@@ -308,14 +308,14 @@ h4 {
 <pre class="r"><code># 1.96 = (365-350)/(35/sqrt(n))
 # 1.96 = (365-350)*sqrt(n)/(35)
 # sqrt(n) = 1.96*35/(365-350)
-n = (1.96*35/(365-350))^2
-n = 24
+n = (2.07*35/(365-350))^2
+n = ceiling(n)
 
 # testing
 t_score = (365-350)/(35/sqrt(n))
 (p_val = 2 * pt(−t_score, df=n-1))</code></pre>
 <pre><code>## [1] 0.04693959</code></pre>
-<p>Need a sample size of 24</p>
+<p>Need a sample size of 24 (round up)</p>
 </div>
 </div>
 </div>
@@ -326,6 +326,10 @@ t_score = (365-350)/(35/sqrt(n))
 <h3>a.</h3>
 <div id="specify-null-and-alternative-hypotheses-for-how-gender-might-relate-to-party-affiliation.-describe-why-you-think-this-is-the-case.-that-is-explain-why-you-put-forward-these-specific-hypotheses." class="section level4">
 <h4>Specify null and alternative hypotheses for how gender might relate to party affiliation. Describe why you think this is the case. That is, explain why you put forward these specific hypotheses.</h4>
+<ul>
+<li>Null: Gender does not play a role in party affiliation</li>
+<li>Alternate: Gender does play a role in party affiliation</li>
+</ul>
 </div>
 </div>
 <div id="b.-1" class="section level3">
@@ -363,41 +367,83 @@ addmargins(table(POL201$gender, POL201$party))</code></pre>
 <h2>3.</h2>
 <pre><code>Using the POL201 data set, look at Question #24 for each version of the survey (height vs. gender). These can be found on Canvas under the supporting documents folder for the POL 201 data set. 
 Notice that students were first told that a computer had generated a random number. For the gender version, students were told that number was 65. For the height version, the students were told that number was 10. In a seemingly unrelated question, the students were then asked in part B to estimate the percentage of countries in the world that were in Africa</code></pre>
-<p>Uhh…</p>
 <div id="a.-2" class="section level3">
 <h3>a.</h3>
 <div id="develop-null-and-alternative-hypotheses-for-the-expected-relationship-between-the-reported-random-number-generated-and-guess-at-the-percentage-of-countries-in-africa-that-are-in-the-world.-explain-why-you-offer-these-specific-hypotheses." class="section level4">
 <h4>Develop null and alternative hypotheses for the expected relationship between the reported random number generated and guess at the percentage of countries in Africa that are in the world. Explain why you offer these specific hypotheses.</h4>
+<ul>
+<li>Null: There is no relationship between the reported random number and the guessed percentage</li>
+<li>Alternate: There is a relationship between the reported random number and the guessed percentage</li>
+</ul>
 </div>
 </div>
 <div id="b.-2" class="section level3">
 <h3>b.</h3>
 <div id="create-a-side-by-side-boxplot-for-the-estimate-of-the-percentage-of-countries-in-the-world-that-were-in-africa-by-the-random-number-prompt-the-variable-name-is-survey-and-it-is-the-first-one-in-the-entire-data-set." class="section level4">
 <h4>Create a side-by-side boxplot for the estimate of the percentage of countries in the world that were in Africa by the random number prompt (the variable name is survey and it is the first one in the entire data set).</h4>
+<pre class="r"><code>ggplot(POL201, aes(survey, africa.per)) +
+  geom_boxplot()</code></pre>
+<p><img src="data:image/png;base64,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" width="384" /></p>
 </div>
 </div>
 <div id="c.-2" class="section level3">
 <h3>c.</h3>
 <div id="interpret-the-results.-that-is-what-does-the-side-by-side-boxplot-show-for-each-variable-what-do-the-results-suggest-about-the-relationship-between-number-prompting-and-the-reported-estimates-and-possibly-about-human-cognition-more-generally" class="section level4">
 <h4>Interpret the results. That is what does the side-by-side boxplot show for each variable? What do the results suggest about the relationship between number prompting and the reported estimates? And, possibly about human cognition more generally?</h4>
+<p>People are influenced by the “random number”, such that people who saw the higher number were “primed” to think around that range.</p>
 </div>
 </div>
 <div id="d." class="section level3">
 <h3>d.</h3>
 <div id="test-this-relationship-with-the-appropriate-test-statistic.-interpret-the-results." class="section level4">
 <h4>Test this relationship with the appropriate test statistic. Interpret the results.</h4>
+<pre class="r"><code>t.test(africa.per ~ survey, POL201)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  africa.per by survey
+## t = 5.6623, df = 56.54, p-value = 5.214e-07
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  11.82796 24.77461
+## sample estimates:
+## mean in group gender mean in group height 
+##             32.75000             14.44872</code></pre>
+<p>P value is &lt; 0.05, which means there is a statistically significant difference between the guesses of african countries across the two randomly generated numbers</p>
 </div>
 </div>
 <div id="e." class="section level3">
 <h3>e.</h3>
 <div id="how-are-side-by-side-boxplots-and-t-tests-related-to-one-another-what-are-the-advantages-of-each-for-understanding-the-relationship-between-two-variables" class="section level4">
 <h4>How are side-by-side boxplots and t-tests related to one another? What are the advantages of each for understanding the relationship between two variables?</h4>
+<p>side-by-side boxplots are a good way of visualizing the spread of the data. If the boxplots show drastically different distributions (difference in the 25th and 75th quartiles), then the t-test will likely show a statistical significance.</p>
 </div>
 </div>
 <div id="f." class="section level3">
 <h3>f.</h3>
 <div id="finally-run-a-bivariate-linear-regression-of-percentage-of-states-in-africa-dependent-variable-on-survey-version-independent-variable.-looking-at-the-output-of-the-linear-regression-compare-it-with-the-results-from-the-t-test.-what-are-the-similarities" class="section level4">
 <h4>Finally, run a bivariate linear regression of percentage of states in Africa (dependent variable) on survey version (independent variable). Looking at the output of the linear regression, compare it with the results from the t-test. What are the similarities?</h4>
+<pre class="r"><code>summary(lm(africa.per ~ survey, POL201))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = africa.per ~ survey, data = POL201)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -30.750  -7.750  -0.449   7.250  46.250 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    32.750      2.284  14.341  &lt; 2e-16 ***
+## surveyheight  -18.301      3.209  -5.703  2.2e-07 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 14.08 on 75 degrees of freedom
+##   (3 observations deleted due to missingness)
+## Multiple R-squared:  0.3025, Adjusted R-squared:  0.2932 
+## F-statistic: 32.53 on 1 and 75 DF,  p-value: 2.203e-07</code></pre>
+<p>The pvalue for the survey variable is similar to the pvalue from the t-test</p>
 </div>
 </div>
 </div>
@@ -408,6 +454,11 @@ Notice that students were first told that a computer had generated a random numb
 <h3>a.</h3>
 <div id="specify-null-and-alternative-hypotheses-for-how-level-of-freedom-might-relate-to-happiness.-be-sure-to-explain-why-you-put-forward-your-specific-hypotheses." class="section level4">
 <h4>Specify null and alternative hypotheses for how level of freedom might relate to happiness. Be sure to explain why you put forward your specific hypotheses.</h4>
+<ul>
+<li>Null: The happiness level of countries with different freedom levels are equal</li>
+<li>Alternate: The happiness level of countries with different freedom levels are not equal</li>
+</ul>
+<p>Want to understand how a country’s freedom level influences happiness, if at all</p>
 </div>
 </div>
 <div id="b.-3" class="section level3">
@@ -425,6 +476,7 @@ ggplot(Countries, aes(fh, happy)) +
 <h3>c.</h3>
 <div id="interpret-the-results.-that-is-what-does-the-side-by-side-boxplot-show-for-each-variable" class="section level4">
 <h4>Interpret the results. That is what does the side-by-side boxplot show for each variable?</h4>
+<p>The results show that free countries are generally more happy than partly free and not free countries. The happiness level between partly and not free countries are roughly the same</p>
 </div>
 </div>
 <div id="d.-1" class="section level3">
