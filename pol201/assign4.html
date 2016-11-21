@@ -299,22 +299,16 @@ h4 {
 <h3>c.</h3>
 <div id="find-the-minimum-number-of-patients-the-researcher-would-need-for-her-study-in-order-to-be-able-to-reject-the-null-hypothesis-at-the-.05-level-if-the-average-count-increase-and-standard-deviation-stayed-the-same." class="section level4">
 <h4>Find the minimum number of patients the researcher would need for her study in order to be able to reject the null hypothesis at the .05 level, if the average count increase and standard deviation stayed the same.</h4>
-<p>Not sure how your prof does this, but this is how I do it</p>
-<ul>
-<li>95% confidence = <code>1.96</code> z-score (or in this case t-score)</li>
-<li>We know the formula for t-score, so just do algebra to find <code>n</code></li>
-<li>… but turns out this doesn’t work, so I plugged in random numbers until it worked</li>
-</ul>
 <pre class="r"><code># 1.96 = (365-350)/(35/sqrt(n))
 # 1.96 = (365-350)*sqrt(n)/(35)
 # sqrt(n) = 1.96*35/(365-350)
 n = (2.07*35/(365-350))^2
 n = ceiling(n)
-
-# testing
-t_score = (365-350)/(35/sqrt(n))
-(p_val = 2 * pt(−t_score, df=n-1))</code></pre>
-<pre><code>## [1] 0.04693959</code></pre>
+n</code></pre>
+<pre><code>## [1] 24</code></pre>
+<pre class="r"><code># testing
+# t_score = (365-350)/(35/sqrt(n))
+# (p_val = 2 * pt(−t_score, df=n-1))</code></pre>
 <p>Need a sample size of 24 (round up)</p>
 </div>
 </div>
