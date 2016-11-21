@@ -499,7 +499,56 @@ ggplot(Countries, aes(fh, happy)) +
 <h3>a.</h3>
 <div id="calculate-the-mean-median-standard-deviation-and-range-for-the-level-of-protest-in-a-country-for-just-those-countries-that-are-in-sub-saharan-africa." class="section level4">
 <h4>Calculate the mean, median, standard deviation, and range for the level of protest in a country for just those countries that are in Sub-Saharan Africa.</h4>
-<p>Idk what countries are in africa, but use <code>subset()</code></p>
+<pre class="r"><code>africans &lt;- readLines(con = textConnection(&quot;Angola
+Benin
+Botswana
+Burundi
+Cameroon
+Cape Verde
+Central African Republic
+Chad
+Comoros
+Congo
+Congo, Democratic Republic
+Equatorial Guinea
+Eritrea
+Ethiopia
+Gabon
+Gambia
+Ghana
+Guinea
+Kenya
+Lesotho
+Liberia
+Madagascar
+Malawi
+Mali
+Mauritania
+Mauritius
+Mozambique
+Namibia
+Niger
+Nigeria
+Rwanda
+Sao Tome and Principe
+Senegal
+Seychelles
+Sierra Leone
+Somalia
+South Africa
+Sudan
+Swaziland
+Togo
+Uganda
+Zambia&quot;))
+
+african_countries &lt;- subset(Countries, country %in% africans)
+
+summary(african_countries$protest)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##  0.4838  0.5120  0.5402  0.5529  0.5875  0.6348      39</code></pre>
+<pre class="r"><code>sd(african_countries$protest, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 0.07627865</code></pre>
 </div>
 </div>
 <div id="b.-4" class="section level3">
