@@ -1,0 +1,94 @@
+---
+title: "THC and CBD mechanisms of action"
+author: "Tony Hui"
+date: "April 30, 2017"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+references:
+- id: wikipedia
+  author:
+  - family: Wikipedia
+  DOI: https://en.wikipedia.org/wiki/Cannabis_(drug)#Mechanism_of_action
+- id: 25660201
+  title: Antidepressant-like effects of the cannabinoid receptor ligands
+  author:
+  - family: Kruk-Slomka
+  - family: Michalak
+  - family: Biala
+  DOI: 10.1016/j.bbr.2015.01.051
+  publisher: Behav Brain Res
+  issued:
+    year: 2015
+- id: 28190698
+  title: Therapeutic effects of cannabinoids in animal models of seizures, epilepsy, epileptogenesis, and epilepsy-related neuroprotection.
+  author:
+  - family: Rosenberg
+  - family: Patra
+  - family: Whalley
+  DOI: 10.1016/j.yebeh.2016.11.006
+  publisher: Epilepsy Behav
+  issued:
+    year: 2017
+- id: 20570522
+  title: Intracellular trafficking of anandamide - new concepts for signaling.
+  author:
+  - family: Maccarrone
+  - family: Dainese
+  - family: Oddi
+  DOI: 10.1016/j.tibs.2010.05.008
+  publisher: Trends Biochem Sci
+  issued:
+    year: 2010 
+- id: 27023732
+  title: Beyond the CB1 Receptor - Is Cannabidiol the Answer for Disorders of Motivation?
+  author:
+  - family: Zlebnik
+  - family: Cheer
+  DOI: 10.1146/annurev-neuro-070815-014038
+  publisher: Annu Rev Neurosci
+  issued:
+    year: 2016
+- id: 18679164
+  title: Neuroprotective effects of the nonpsychoactive cannabinoid cannabidiol in hypoxic-ischemic newborn piglets
+  author:
+  - family: Alvarez et al
+  DOI: 10.1203/PDR.0b013e318186e5dd
+  publisher: Pediatr Res
+  issued:
+    year: 2008
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Definitions
+
+- Agonist = something that **activates** a receptor
+- Antagonist = something that **represses** a receptor
+- THC = Tetrahydrocannabinol
+- CBD = Cannabidiol
+
+## Summary
+
+### Components
+
+Marijuana contains over 400 compounds, but the two most well studied are THC and CBD [@wikipedia]. THC binds and acts as an agonist for the endocannabinoid receptors CB1R and CB2R [@wikipedia], while CBD binds weakly to CBR1 and 2 and instead acts through various targets such as GPR55, VDAC1, and ENT1 [@28190698, @27023732]. The CB1 receptor is found primarily in the brain as well as in some peripheral tissues, while CB2 receptor is found in both brain and immune cells [@wikipedia].
+
+### Anti-depressive effects
+
+Synthetic CB receptor agonists (CB1 and CB2) cause antidepressant-like effects in mice (as measured by immobility time) [@25660201]. This is likely due THC-mediated increase in dopamine levels by inhibition of dopamine inhibitors [@27023732]. Furthermore, the CB1 receptor antagonist rimonabant, while causing massive appetite inhibition and underwent clincal trial for obesity, caused severe depression and suicidal thoughts and subsequently was removed from market. Altogther, these evidence support a model where activation of CB1R by THC induces happiness and combats depression.
+
+In addition, anxiety and stress are mitigated by CBD [@27023732] in humans and mice by stimulating hippocampal neurogenesis like conventional anti-depressants.
+
+### Anti-epileptic effects
+
+In general, Cannabis exerted anti-convulsant effects in both acute animal models of seizures and chronic models of epileptogenesis [@28190698]. However, the literature is largely inconsistent with regards to the use of epilepsy models. Despite this, 80% of studies show an anti-convulsive effect in both acute and chronic models of epilepsy using CB receptor agonists or CBD, while CB receptor antagonists are generally pro-convulsive [@28190698].
+
+![](epilepsy.PNG)
+
+Mechanistically, activation of CB1R by THC but not CB2R is responsible for the reduction in seizures, which may be a contributor to the mixed results in the literature [@28190698]. On the other hand, the mechanism of CBD-conferred seizure protection is not known, but it has been discovered that CBD treatment significantly reduced neuronal loss due to hypoxic ischemic brain injury (caused by seizures) [@28190698, @18679164].
+
+## References
