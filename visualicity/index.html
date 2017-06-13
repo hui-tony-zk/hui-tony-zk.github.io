@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.bootstrap3.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+    <!-- Custom theme -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="header_background">
+        <div class="container">
+            <h1 id="logo">Visualicity</h1>
+        </div>
+    </div>
+    <div class="container">
+        <!-- dropdown -->
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="card">
+                    <h3>Feature Selector</h3>
+                    <div class="dropdown">
+                        <input id="dropdown" placeholder="Select a metric to visualize"></input>
+                    </div>
+                    <h3>Additional data</h3>
+                    <div id="metadata">
+                        <h5 class="text-center"><em>Selected region: 0183.93</em></h5>
+                        <ul>
+                            <li>Population = 100</li>
+                            <li>Crimes = 200</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-8" id="mapcontainer">
+                <div class="card">
+                    <h4 id="current_vis"></h4>
+                    <hr>
+                    <div>
+                        <div id="map_sidebar">
+                            <div id="compass">
+                                <img src="https://i0.wp.com/gisgeography.com/wp-content/uploads/2014/05/NorthArrow.png" width="60" />
+                            </div>
+                            <div id="legend">
+                                <p>Legend</p>
+                                <svg height="270" width="80">
+                                    <rect fill="rgb(165,0,38)" width="24" height="24" y="0"></rect>
+                                    <text x="28" y="20" fill="rgb(165,0,38)">Highest</text>
+                                    <rect fill="rgb(215,48,39)" width="24" height="24" y="24"></rect>
+                                    <rect fill="rgb(244,109,67)" width="24" height="24" y="48"></rect>
+                                    <rect fill="rgb(253,174,97)" width="24" height="24" y="72"></rect>
+                                    <rect fill="rgb(254,224,144)" width="24" height="24" y="96"></rect>
+                                    <rect fill="rgb(255,255,191)" width="24" height="24" y="120"></rect>
+                                    <rect fill="rgb(224,243,248)" width="24" height="24" y="144"></rect>
+                                    <rect fill="rgb(171,217,233)" width="24" height="24" y="168"></rect>
+                                    <rect fill="rgb(116,173,209)" width="24" height="24" y="192"></rect>
+                                    <rect fill="rgb(69,117,180)" width="24" height="24" y="216"></rect>
+                                    <rect fill="rgb(49,54,149)" width="24" height="24" y="240"></rect>
+                                    <text x="28" y="260" fill="rgb(49,54,149)">Lowest</text>
+                                </svg>
+                            </div>
+                            <div id="clear" style="clear:both;"></div>
+                        </div>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JS scripts -->
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://d3js.org/topojson.v3.min.js"></script>
+    <!-- Custom JS scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/d3plot.js"></script>
+</body>

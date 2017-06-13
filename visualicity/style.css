@@ -1,0 +1,86 @@
+body {
+    font-family: 'Overpass', sans-serif;
+    background: #e2e1e0;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+path {
+    stroke-width: 1px;
+    stroke: #000000;
+    cursor: pointer;
+}
+
+div#tooltip {
+    position: fixed;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    padding: 4px 8px;
+    display: block;
+}
+
+svg text {
+    pointer-events: none;
+}
+
+#current_vis > b {
+    text-decoration: underline
+}
+
+.card {
+    background: #fff;
+    border-radius: 4px;
+    height: 100%;
+    padding: 1em;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#compass {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+#logo {
+    font-size: 50px;
+}
+
+#header_background {
+    background: #518500;
+    color: white;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#legend {
+    position: absolute;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+#map_sidebar {
+    position: absolute;
+    width: 100px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#map {
+    box-shadow: rgba(1, 1, 0, 0.2) 0px 0 20px 2px inset;
+    border-radius: 20px;
+    border: 1px solid #b7b7b7;
+    overflow:hidden;
+}
