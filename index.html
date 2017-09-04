@@ -1,352 +1,128 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
-
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
-
-
-
-
-<title></title>
-
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-
-<style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="site_libs/highlight/default.css"
-      type="text/css" />
-<script src="site_libs/highlight/highlight.js"></script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
-}
-</script>
-
-
-
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
-
-<link rel="stylesheet" href="styles.css" type="text/css" />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Facebook Open Graph meta -->
+    <meta property="og:title" content="Tony Hui">
+    <meta property="og:description" content="Data Scientist and accidental web developer">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="http://huitony.com">
+    <meta http-equiv="Cache-control" content="public">
+    <meta http-equiv="Cache-control" content="max-age=60" />
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Muli" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Data -->
+    <title>Tony Hui | Data Science and Visualization</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-</style>
-
-
-<style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-</style>
-
-<script>
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark it active
-  menuAnchor.parent().addClass('active');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
-});
-</script>
-
-
-<div class="container-fluid main-container">
-
-<!-- tabsets -->
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
-
-<!-- code folding -->
-
-
-
-
-
-<script src="https://use.fontawesome.com/96f5b66138.js"></script>
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Tony Hui</a>
+    <div class="container-fluid">
+        <div class="row" id="page">
+            <!-- left side -->
+            <div class="initial" id="left_side">
+                <div class="image_dim">
+                    <div id="intro_box">
+                        <span class="title">Tony Hui</span>
+                        <p>
+                            <span class="head1">
+                            Data Scientist,<br>
+                            Computational Biologist,</br>
+                            </span>
+                            <span class="head2">
+                            and accidental web developer
+                            </span>
+                            </span>
+                        </p>
+                        <br>
+                        <div id="contact_buttons">
+                            <span id="navtitle">Tony Hui</span>
+                            <a href="https://www.linkedin.com/in/huitonyzk/" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+                            <a href="mailto:hui.tony.zk@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- right side -->
+            <div class="" id="right_side" style="overflow-y: hidden;">
+                <div class="container-fluid initial" id="right_side_content">
+                    <!-- Blurb -->
+                    <div class="heading h4">Hi</div>
+                    <div class="row" id="blurb">
+                        <p>I'm Tony and I'm a
+                            <s>microbiologist</s> <b>data scientist</b>.</p>
+                        <p>Well, I was a microbiologist in a previous life. Didn't learn anything particularily useful other than that antibiotic soap is bad and immune cells are good.</p>
+                        <p>So I did something about it and entered a Masters program in computational biology studying Epigenetics. Very esoteric, right? Anyway, turns out analyzing gigabytes of epigenetic data is a highly transferrable skill. And so I've transferred them. Now my interests lie in solving data science problems in different domains. I'm particularly good at exploratory data analysis and unsupervised learning problems, mainly because most datasets in biology are unlabeled. And unexplored.</p>
+                        <p>Along the way, I learned how to do basic web development. I can create simple websites for simple applications or to visualize data. Turns out this is a very useful skill to have when communicating with non-experts.</p>
+                        <p>But most importantly, I'm a scientist. I am objective, methodological, and calculating in experiments, including "data experiments". In my opinion, <b>"science"</b> part of data science is woefully underemphasized.</p>
+                    </div>
+                    <hr>
+                    <!-- Skills -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 h4 heading">Skills</div>
+                        <div class="col-md-9 col-sm-12">
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Education -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 h4 heading">Education</div>
+                        <div class="col-md-9 col-sm-12">
+                            <!-- details_MSC -->
+                            <div class="row">
+                                <div class="float_img"><img src="img/ubclogo.png" width="50"></div>
+                                <div class="float_text">
+                                    <span class="h4">MSc, Genome Sciences and Technology</span>
+                                    <br>
+                                    <span class="subtitle">University of British Columbia</span>
+                                    <br>
+                                    <span class="date">09/2015 - 12/2017 (2 years)</span>
+                                    <p>GPA: 92%
+                                        <br>
+                                        <br>
+                                </div>
+                            </div>
+                            <!-- details_BSc -->
+                            <div class="row">
+                                <div class="float_img"><img src="img/ubclogo.png" width="50"></div>
+                                <div class="float_text">
+                                    <span class="h4">BSc Hons, Microbiology and Immunology</span>
+                                    <br>
+                                    <span class="subtitle">University of British Columbia</span>
+                                    <br>
+                                    <span class="date">09/2010 - 04/2014 (4 years)</span>
+                                    <p>GPA: 85%
+                                        <br>
+                                        <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Experience -->
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 h4 heading">Experience</div>
+                        <div class="col-md-9 col-sm-12" id="experience_list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        
-        <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analysis<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="econdata_explore.html">World Economic Indicators</a></li>
-          <li><a href="https://github.com/hui-tony-zk/LAVA-hackathon/blob/master/README.md" target="_blank">Classroom activity  <i>(new tab)</i></a></li>
-          <li><a href="gapminder_explore.html">Gapminder</a></li>
-          <li><a href="publications.html">Sanger publications</a></li>
-        </ul>
-      </li>
-        
-        <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="http://makedatasense.ca/?utm_source=github&utm_medium=github_readme&utm_campaign=passive" target="_blank">DataSense <i>(new tab)</i></a></li>
-          <li><a href="impact_replays.html">Impact Replays</a></li>
-        </ul>
-      </li>
-      
-        <li><a href="about.html">About</a></li>
-        
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
-
-<div class="fluid-row" id="header">
-
-
-
-
-</div>
-
-
-<div class="page-header-bg" style="background-image: url('http://makedatasense.ca/wp-content/uploads/2015/09/7372643550_05abb17129_o-e1442134995664.jpg');">
-<div class="page-header-text panel-widget-style">
-<h1>
-Tony Hui
-</h1>
-<hr class="small"/>
-<h3>
-Molecular and Computational Biologist / Sometimes Data Scientist
-</h3>
-</div>
-</div>
-<h3 class="text-center">
-Analysis
-</h3>
-<hr class="small"/>
-<div class="row">
-<div class="col-sm-3 col-xs-6 no-padding">
-<div class="hovereffect">
-<img class="img-responsive" src="econdata_explore_files/figure-html/unnamed-chunk-9-1.png" alt="econ_pic" height="250">
-<div class="overlay">
-<p>
-<a href="econdata_explore.html">
-<h2>
-World Economic Indicators
-</h2>
-</a>
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-3 col-xs-6 no-padding">
-<div class="hovereffect">
-<img class="img-responsive" src="https://raw.githubusercontent.com/hui-tony-zk/LAVA-hackathon/master/Analysis_report_files/figure-html/unnamed-chunk-12-1.png" alt="">
-<div class="overlay">
-<p>
-<a href="https://github.com/hui-tony-zk/LAVA-hackathon/blob/master/README.md" target="_blank">
-<h2>
-Classroom activity <i>(new tab)
-</h2>
-</i>
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-3 col-xs-6 no-padding">
-<div class="hovereffect">
-<img class="img-responsive" src="gapminder_explore_files/figure-html/lm_rlm_select_country-1.png" alt="">
-<div class="overlay">
-<p>
-<a href="gapminder_explore.html">
-<h2>
-Gapminder
-</h2>
-</a>
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-3 col-xs-6 no-padding">
-<div class="hovereffect">
-<img class="img-responsive" src="publications_files/figure-html/unnamed-chunk-9-1.png" alt="">
-<div class="overlay">
-<p>
-<a href="publications.html">
-<h2>
-Sanger publications
-</h2>
-</a>
-</p>
-</div>
-</div>
-</div>
-</div>
-<h3 class="text-center">
-Projects
-</h3>
-<hr class="small"/>
-<div class="row">
-<div class="col-sm-3 col-xs-0 no-padding">
-
-</div>
-<div class="col-sm-3 col-xs-6 no-padding">
-<div class="hovereffect">
-<img class="img-responsive center-block" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/12196354_10156324691960294_6731434793264381952_n.jpg?oh=718389344bae4e3fb3d2418809e2013d&oe=587BFC92" alt="datasense">
-<div class="overlay">
-<p>
-<a href="http://makedatasense.ca/?utm_source=github&utm_medium=github_readme&utm_campaign=passive" target="_blank">
-<h2>
-DataSense <i>(new tab)</i>
-</h2>
-</a>
-</p>
-</div>
-</div>
-</div>
-<div class="col-sm-3 col-xs-6 no-padding">
-<div class="hovereffect">
-<img class="img-responsive" src="impactreplays.png" alt="">
-<div class="overlay">
-<p>
-<a href="impact_replays.html">
-<h2>
-Impact Replays
-</h2>
-</a>
-</p>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-$(document).ready(function () {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-});
-
-
-</script>
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
 </body>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Addons -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.88/jsrender.min.js"></script>
+<!-- Custom JS -->
+<script src="functions.js"></script>
+
 </html>

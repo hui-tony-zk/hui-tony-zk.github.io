@@ -1,0 +1,163 @@
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
+h1 {
+    font-family: 'Muli', sans-serif;
+}
+
+#left_side {
+    background-color: grey;
+    background-image: url('img/selfphoto.jpeg');
+    background-size: cover;
+    color: white;
+}
+
+#left_side.initial {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+#right_side {
+    height: 100%;
+}
+
+#right_side_content {
+    max-width: 600px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    padding-left: 40px;
+}
+
+#right_side_content.initial {
+    margin-top: 600px;
+    opacity: 0;
+}
+
+.image_dim {
+    background-color: rgba(0, 0, 0, 1);
+    background-image: linear-gradient(to right, rgba(54, 209, 220, 0.5) 0%, rgba(91, 134, 229, 0.6) 100%);
+    height: 100%;
+}
+
+.image_dim.load {
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+#intro_box {
+    text-align: center;
+    max-width: 50%;
+    position: relative;
+    top: 50%;
+    margin: auto;
+    padding: 100px 0px;
+    opacity: 0;
+}
+
+span.title {
+    font-weight: 700;
+    font-size: 48px;
+}
+
+p {
+    font-weight: 200;
+}
+
+span.head1 {
+    font-size: 24px;
+}
+
+span.head2 {
+    font-size: 12px;
+    color: rgba(220, 220, 220, 0.7);
+    font-style: italic;
+}
+
+span.subtitle {
+    font-size: 14px;
+}
+
+span.date {
+    font-style: italic;
+    font-size: 12px;
+    color: grey
+}
+
+#contact_buttons {
+    opacity: 0;
+}
+
+#contact_buttons i {
+    margin: 0px 15px;
+}
+
+.heading {
+    font-style: italic;
+    margin-top: 0px;
+    color: rgba( 98, 9, 180, 1);
+    margin-left: -20px;
+}
+
+.float_img {
+    float: left;
+    width: 20%;
+}
+
+.float_text {
+    float: left;
+    width: 80%;
+}
+
+.affix {
+    color: white;
+    top: 0;
+    left: 0;
+    background: rgba(91, 134, 229, 0.9);
+    width: 100%;
+    z-index: 1;
+    padding: 10px;
+    text-align: right;
+    float: right;
+}
+
+#navtitle {
+    display: none;
+    float: left;
+    font-size: 20px;
+}
+
+.affix>#navtitle {
+    display: block;
+}
+
+#contact_buttons a {
+    color: white;
+    transition: 0.2s;
+}
+
+#contact_buttons a:hover {
+    color: pink;
+}
+
+
+/* small displays */
+
+@media (min-width: 768px) {
+    #right_side {
+        overflow-y: scroll;
+        width: 50%;
+        float: right;
+    }
+    #left_side {
+        height: 100%;
+        width: 50%;
+        float: left;
+    }
+    #page {
+        height: 100vh
+    }
+    #intro_box {
+        top: 30%;
+    }
+}

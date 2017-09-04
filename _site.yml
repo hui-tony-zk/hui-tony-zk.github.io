@@ -1,5 +1,0 @@
-name: "Tony's Website"
-output_dir: "."
-output:
-  html_document:
-    css: styles.css
