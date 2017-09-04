@@ -14,7 +14,7 @@ $(document).ready(function() {
                                     <span class="date">{{:date}}</span>\
                                     <br>\
                                 {{if details}} \
-                                    <p><a href="#" data-toggle="collapse" data-parent="#experience_list" data-target="#{{:id}}">Show/hide details</a></p>\
+                                    <p><a href="#!" data-toggle="collapse" data-parent="#experience_list" data-target="#{{:id}}">Show/hide details</a></p>\
                                 </div>\
                                 </div>\
                                     <div id="{{:id}}" class="accordion-body collapse"> \
