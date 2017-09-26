@@ -1,39 +1,50 @@
-$(document).ready(function() {
-    // Make experience_template
-    var experience_template = $.templates('\
+// Make experience_template
+var experience_template = $.templates('\
                             <div class="row">\
                                 <div class="float_img"><img src="{{:image}}" width="50"></div>\
                                 <div class="float_text">\
                                     <span class="h4">{{:title}}</span>\
                                     <br>\
-									{{if company}} \
+                                    {{if company}} \
                                     <span class="subtitle">{{:company}}</span>\
                                     <br>\
-									{{else}}\
-									{{/if}} \
+                                    {{else}}\
+                                    {{/if}} \
                                     <span class="date">{{:date}}</span>\
                                     <br>\
                                 {{if details}} \
-                                    <p><a href="#!" data-toggle="collapse" data-parent="#experience_list" data-target="#{{:id}}">Show/hide details</a></p>\
+                                    <p><a href="#!" onclick="return false;" data-toggle="collapse" data-parent="#experience_list" data-target="#{{:id}}">Show/hide details</a></p>\
                                 </div>\
                                 </div>\
                                     <div id="{{:id}}" class="accordion-body collapse"> \
-                                    	<p class="well">{{:details}}</p> \
+                                        {{:details}} \
                                     </div> \
-									{{else}}\
-									<p></p> \
+                                    {{else}}\
+                                    <p></p> \
                                 </div>\
                                 </div>\
-									{{/if}} \
-									<br>\
+                                    {{/if}} \
+                                    <br>\
                             '); // Get compiled template
 
-    // Render Experiences
-    function experience_entry(data) {
-        $("#experience_list").append(experience_template.render(data)); // Insert HTML string into DOM
-    };
+// Render Experiences
+function experience_entry(data) {
+    var x = data.details.replace(/- /g, "<li>").replace(/<br>/g, "</li>")
+    data.details = "<ul class='panel panel-default'>".concat(x).concat("</li></ul>")
+    $("#experience_list").append(experience_template.render(data)); // Insert HTML string into DOM
+};
+
+//Template for skills
+
+var skills_template = $.templates('<img class="float_skills" data-toggle="popover" data-content="{{:details}}" data-title="<span class=\'popoverheading\'>{{:title}}</span>" data-trigger="hover" data-placement="top" src="{{:image}}" data-html="true" data-container="body">');
+
+function skills_entry(data) {
+    $('#skills_list').append(skills_template.render(data));
+}
+
+$(document).ready(function() {
     experience_entry({
-    	id: "id_recruitmate",
+        id: "id_recruitmate",
         image: "http://getrecruitmate.com/img/animatedlogo.gif",
         title: "Co-Founder and CTO",
         company: "Recruitmate",
@@ -44,7 +55,7 @@ $(document).ready(function() {
 - Created an API service in Flask (python) to serve search results. Deployed using ElasticBeanstalk (AWS)"
     });
     experience_entry({
-    	id: "id_dssg",
+        id: "id_dssg",
         image: "img/ubclogo.png",
         title: "Data Science for Social good Fellow",
         company: "University of British Columbia",
@@ -56,16 +67,16 @@ $(document).ready(function() {
 - Defined \"clusters\" of neighbourhoods with high degrees of similarity using hierarchical clustering while taking account redundant variables with principal components analysis."
     });
     experience_entry({
-    	id: "id_tutor",
+        id: "id_tutor",
         image: "img/laptopicon.png",
         title: "Tutor",
         date: "01/2016 - 07/2017 (1 year 7 months)",
         details: "Tutored university-level students: in 2 intermediate genetics, 3 in introductory statistics, and 2 in computational biology"
     });
     experience_entry({
-    	id: "id_ctlt",
+        id: "id_ctlt",
         image: "img/ctltlogo.png",
-        title: "Graduate Research Assistant",
+        title: "Data Analyst",
         company: "UBC Centre for Teaching, Learning and Technology",
         date: "09/2016 - 03/2017 (7 months)",
         details: "(Part time on select afternoons and weekends. Reported to the Director of UBC’s research and evaluation of teaching and learning) <br>\
@@ -77,7 +88,7 @@ $(document).ready(function() {
     });
 
     experience_entry({
-    	id: "id_datasense",
+        id: "id_datasense",
         image: "img/datasense.png",
         title: "Founder and President",
         company: "<a href='http://makedatasense.ca' target='_blank'>DataSense</a>",
@@ -88,7 +99,7 @@ $(document).ready(function() {
     });
 
     experience_entry({
-    	id: "id_rapture",
+        id: "id_rapture",
         image: "img/rapture.png",
         title: "Data Analyst",
         company: "Rapture Events",
@@ -102,7 +113,7 @@ $(document).ready(function() {
     });
 
     experience_entry({
-    	id: "id_oxford",
+        id: "id_oxford",
         image: "img/oxford.png",
         title: "Summer Research Student",
         company: "<a href='http://www.imm.ox.ac.uk/home' target='_blank'>Weatherall Institute of Molecular Medicine - University of Oxford</a>",
@@ -115,7 +126,7 @@ $(document).ready(function() {
     });
 
     experience_entry({
-    	id: "id_thompson",
+        id: "id_thompson",
         image: "img/ubclogo.png",
         title: "Undergraduate Research Assistant",
         company: "Life Sciences Institute - University Of British Columbia",
@@ -124,13 +135,30 @@ $(document).ready(function() {
 - Created recombinant DNA containing various Mycobacterium drug resistance genes using molecular cloning techniques such as PCR, digestion, ligation and transformation"
     });
 
+    // Skills
+    skills_entry({
+        image: "img/Rlogo.png",
+        title: "3 years experience",
+        details: "Modern R programming for data cleaning and visualization in <b>tidyverse</b>, including <b>dplyr and ggplot</b>"
+    });
+    skills_entry({
+        image: "img/pythonlogo.png",
+        title: "1 year experience",
+        details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science) and <b>flask</b> (for web development and RESTful APIs)"
+    });
+    skills_entry({
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/50px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
+        title: "1 year experience",
+        details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
+    })
     // Initial animations
     $('#left_side').removeClass('initial', 1000, function() {
         $('.image_dim').addClass('load', 3000)
         $('#right_side').removeAttr("style")
-        $('#intro_box').fadeTo(500, 1, function() {
+        $('#intro_box').addClass('load', 800, 'easeInCubic', function() {
+            $('[data-toggle="popover"]').popover();
+            $('#contact_buttons').fadeTo(1000, 1)
             $('#right_side_content').removeClass('initial', 1000, 'easeOutCubic', function() {
-                $('#contact_buttons').fadeTo(1000, 1)
                 // Make contact nav bar stay put
                 $("#contact_buttons").affix({
                     offset: {

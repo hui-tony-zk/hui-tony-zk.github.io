@@ -1,0 +1,895 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"in",
+				"initial"
+			],
+			[
+				"overf",
+				"overflow"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"im",
+				"image"
+			],
+			[
+				"trans",
+				"transform"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"gen",
+				"generate_category_entry"
+			],
+			[
+				"gene",
+				"generate_category"
+			],
+			[
+				"categ",
+				"categories"
+			],
+			[
+				"cat",
+				"cat_id"
+			],
+			[
+				"tran",
+				"transform-origin"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"fot",
+				"font-stretch"
+			],
+			[
+				"ii",
+				"italic"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"ta",
+				"table-cell"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"draw",
+				"draw_heat_business"
+			],
+			[
+				"heat",
+				"heatmapselect"
+			],
+			[
+				"css",
+				"css"
+			],
+			[
+				"com",
+				"communitylines"
+			],
+			[
+				"rb",
+				"rgba()"
+			],
+			[
+				"col",
+				"color_scale"
+			],
+			[
+				"var",
+				"_varmeta"
+			],
+			[
+				"map",
+				"mapplot"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"btn",
+				"btn-info"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"te",
+				"text-center"
+			],
+			[
+				"nex",
+				"next_perc_day"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"metalist",
+				"metalist_apply"
+			],
+			[
+				"meta",
+				"meta"
+			],
+			[
+				"co",
+				"container"
+			],
+			[
+				"overflow",
+				"text-overflow"
+			],
+			[
+				"font-st",
+				"font-style"
+			],
+			[
+				"drop",
+				"dropdown_options"
+			],
+			[
+				"upda",
+				"updateData"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"selec",
+				"selected_dataset"
+			],
+			[
+				"list-",
+				"list-style-type"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"i",
+				"initial"
+			],
+			[
+				"thank",
+				"thanks_modal"
+			],
+			[
+				"tha",
+				"thanks_modal"
+			],
+			[
+				"data",
+				"dataType"
+			],
+			[
+				"e",
+				"em\tTag"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"remove",
+				"removejob"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"r",
+				"transparent"
+			],
+			[
+				"job",
+				"jobtitle"
+			],
+			[
+				"sear",
+				"search-results"
+			],
+			[
+				"backr",
+				"background"
+			],
+			[
+				"locat",
+				"location_query"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"tex",
+				"text-center"
+			],
+			[
+				"col-l",
+				"col-lg-offset-2"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"enc",
+				"encodeURIComponent"
+			],
+			[
+				"get",
+				"getrecruitmate"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"img",
+				"img-responsive"
+			],
+			[
+				"background",
+				"background-attachment"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"inline",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 7494,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 2542,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "functions.js",
+			"settings":
+			{
+				"buffer_size": 9164,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control:",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Tony/Google Drive/Side projects/personalsite"
+	],
+	"file_history":
+	[
+		"/C/Users/Tony/Desktop/R projects/hui-tony-zk.github.io/index.html",
+		"/C/Users/Tony/Desktop/R projects/hui-tony-zk.github.io/_site.yml",
+		"/C/Users/Tony/Desktop/R projects/hui-tony-zk.github.io/params.json",
+		"/C/Users/Tony/Desktop/personalsite/Rafael Derolez.html",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/website/index.html",
+		"/C/Users/Tony/Google Drive/Tutoring/winnie's htmls/assign2/index.html",
+		"/C/Users/Tony/Desktop/personalsite/huitony.com",
+		"/C/Users/Tony/Desktop/personalsite/index.html",
+		"/C/Users/Tony/Desktop/personalsite/Rafael Derolez_files/TweenMax.min.js.download",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/flask_gsheets.py",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/flask_server/flask_gsheets.py",
+		"/C/Users/Tony/AppData/Local/Temp/fz3temp-2/web.config",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/flask_server/runtime.txt",
+		"/C/Users/Tony/flask_server_dssg/requirements.txt",
+		"/C/Users/Tony/Desktop/requirements.txt",
+		"/C/Users/Tony/AppData/Local/Temp/fz3temp-2/runserver.py",
+		"/C/Users/Tony/Desktop/tmp.html",
+		"/C/Users/Tony/Downloads/method-draw-image.svg",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/website/index_white.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/js/d3plot.js",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/style.css",
+		"/C/Users/Tony/Google Drive/Tutoring/winnie's htmls/ex8/index.html",
+		"/C/Users/Tony/Desktop/tmp/(1) Facebook_files/huShsiAalxr.js.download",
+		"/C/Users/Tony/Desktop/tmp/r7l4-asda.stat.ubc.ca_files/d3plot.js.download",
+		"/C/Users/Tony/Desktop/tmp/r7l4-asda.stat.ubc.ca_files/701",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/website/css/creative.css",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/website/bs-config.js",
+		"/C/Users/Tony/Downloads/98-316-XWE2011001-1501_TAB/98-316-XWE2011001-1501-BC.TAB",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/agricultural_land_reserve.topojson",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/agricultural_land_reserve.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/surrey_crime_longlat.tsv",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/surrey_census_tracts_2016 - Copy.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/agricultural_land_reserve_UTM.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/indexV1backup.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/surrey_2016_filtered.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/surrey_2016_filtered2.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/surrey_census_tracts_2016.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/OCP_Landuse-lat_lon.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/leaflet.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/js/d3plot_v1backup.js",
+		"/C/Users/Tony/Google Drive/Tutoring/winnie's htmls/ex7/index.html",
+		"/C/Users/Tony/Google Drive/Tutoring/pydatascience/gender_classification.py",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/SurreyCommunities-lat_lon.json",
+		"/C/Users/Tony/Downloads/SurreyCommunities-lat_lon.topojson",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/SurreyCommunities-lat_lon.topojson",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/surrey_city_boundary-no_Surrey.json",
+		"/C/Users/Tony/Downloads/DSSG 2017-6e47846a34f1.json",
+		"/C/Users/Tony/Downloads/bc_2layers_simplified.json",
+		"/C/Users/Tony/Downloads/agricultural_land_reserve.json",
+		"/C/Users/Tony/AppData/Local/Temp/Temp1_Agricultural_Land_Reserve_JSON.zip/agricultural_land_reserve.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/UrbanCentres-lat_lon.json",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/python code/flask/application.py",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/Recruitmate2.0.py",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/python code/Recruitmate2.5.py",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/python code/debug.log",
+		"/C/Users/Tony/Downloads/summary_GSC-0984_24-05-2017 (1)",
+		"/C/Users/Tony/Downloads/summary_GSC-0984_15-06-2017 (1)",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/surrey_census_tracts2016.topojson",
+		"/C/Users/Tony/Downloads/summary_GSC-0984_24-05-2017",
+		"/C/Users/Tony/Desktop/assign2/index.html",
+		"/C/Users/Tony/Desktop/New folder/index.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/gsheet_metadata.csv",
+		"/C/Users/Tony/Desktop/assign6/index.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/js/dropdown.js",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo_Boundaries/surrey_census_tracts_2011.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/surrey_census_tracts.topojson",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/bc_2layers_simplified.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/quickstart.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/quickstart.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/ct.csv",
+		"/C/Users/Tony/Downloads/summary_GSC-0984_15-06-2017",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/visualize_aggregate_data.py",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/calculate_custom_metrics.py",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/index.html",
+		"/C/Users/Tony/Desktop/age.html",
+		"/C/Users/Tony/Downloads/johnwickchapter22017720pblurayx264ytsag-english-110287/John.Wick.Chapter.2.2017-720p.BluRay.x264-SPARKS-YTS.AG.srt",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/website/tryit.js",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/bs-config.js",
+		"/C/Program Files/nodejs/node_modules/npm/lib/ls.js",
+		"/C/Users/Tony/Downloads/99-004-XWE2011001-401_CSV/ct.txt",
+		"/C/Users/Tony/Downloads/99-004-XWE2011001-401_CSV/99-004-XWE2011001-401-NS.csv",
+		"/C/Users/Tony/Downloads/99-004-XWE2011001-401_CSV/surrey.csv",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/vancouver.csv",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/js/dropdown.ks",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/python code/questions/3707841972311562798.csv",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/questions_all.txt",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/activate",
+		"/C/Users/Tony/Desktop/winnie's htmls/style-page.html",
+		"/C/Users/Tony/Desktop/winnie's htmls/style1.css",
+		"/C/Users/Tony/Desktop/winnie's htmls/style2.css",
+		"/C/Users/Tony/Desktop/winnie's htmls/style3.css",
+		"/C/Users/Tony/Desktop/winnie's htmls/colour-page.html",
+		"/C/Users/Tony/Desktop/winnie's htmls/colour-style.css",
+		"/C/Users/Tony/Desktop/winnie's htmls/color-style.css",
+		"/C/Users/Tony/Desktop/winnie's htmls/New Text Document.txt",
+		"/C/Users/Tony/Desktop/winnie's htmls/index.html",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/d3plot.js",
+		"/C/Users/Tony/Google Drive/Robo Recruiter/website/css/style.css",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/shapefile_filter.py",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/census_tracts.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/Geo/surrey_census_tracts.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/Geo.py",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/geo_for_shp.py",
+		"/C/Users/Tony/Downloads/geo_for_shp.py",
+		"/C/Users/Tony/Downloads/gct_000a11g_e/gct_000a11g_e.gml",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/census_shp-Vancouver/census_tracts.topo.json",
+		"/C/Users/Tony/Downloads/gct_000a11g_e/gct_000a11g_e.xsd",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/shpview.html",
+		"/C/Users/Tony/us.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/business_liscence_regions.tsv",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/data/census_tracts.topo.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/js/d3-legend.min.js",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/js/New Text Document.txt",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/resturant_ratings.csv",
+		"/C/Users/Tony/Desktop/R projects/telus-datathon/business_hours.Rmd",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/website/README.txt",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/census_tracts-Surrey.csv",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/code/Census_Classifier-Surrey.py",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/crimes_address_save.tsv",
+		"/C/Users/Tony/Desktop/R projects/telus-datathon/resturant_ratings.csv",
+		"/C/Users/Tony/Desktop/R projects/telus-datathon/place_hours_results_bind.json",
+		"/C/Users/Tony/Google Drive/The Twisty Thingy/data/crimes_address_save-with_town_centres.tsv",
+		"/C/Program Files (x86)/Barracuda/Network Connector/INSTALL-win32.txt",
+		"/C/Users/Tony/Desktop/helping website dummy/style.css",
+		"/C/Users/Tony/Desktop/helping website dummy/index.html",
+		"/C/Users/Tony/Desktop/helping website dummy/photos.html",
+		"/C/Users/Tony/Desktop/helping website dummy/overview.html",
+		"/C/Users/Tony/Desktop/helping website dummy/instructions.html"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\Tony\\Desktop\\wp-job-manager",
+			"C:\\Users\\Tony\\Desktop\\job_manager",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fa-lin",
+			"overflow",
+			"left_side",
+			"accidental",
+			"left_side",
+			"height",
+			"initial",
+			"left_side",
+			"intro_box",
+			"overflow",
+			"left_side",
+			"right_side",
+			"overflow",
+			"right_side",
+			"',",
+			"left_side",
+			"intro_box",
+			"#left_side",
+			"-sm-",
+			"apply now",
+			"money back ",
+			"#008543",
+			"box-shadow",
+			"img/",
+			"rgba",
+			"media",
+			"darkgreen",
+			"font-family",
+			"active:hover",
+			"active",
+			"btn",
+			"category",
+			"replace",
+			"drawheat",
+			"drawheatcrime",
+			"http://r7l4-asda.stat.ubc.ca:5000",
+			"tab-",
+			"domain",
+			"categories",
+			"console.log",
+			"generate_cate",
+			"meta",
+			".get(",
+			"metadata.get",
+			"replace",
+			"unclick",
+			"click(",
+			"updateData",
+			"update",
+			"selectize",
+			"loading",
+			"_entry",
+			"generate",
+			"dropdown",
+			"generate_cate",
+			"generate_category",
+			"forEach",
+			"variable_meta",
+			"overflow",
+			"bootstrap",
+			"theme.",
+			"bootstrap",
+			"<li><a",
+			".click(",
+			"click(",
+			"getValue",
+			"selectize",
+			"foreach",
+			"option",
+			"foreach",
+			"metadata =",
+			"rescalefill",
+			"rescake",
+			"id",
+			"transition",
+			"console.log",
+			"consol",
+			"updateData",
+			"dropdown",
+			"updateData",
+			"updatedata",
+			"rescaleFill",
+			"?",
+			"updateData",
+			"selectize",
+			"metadata",
+			"media",
+			"selected_dataset_name",
+			"rescalefill",
+			"mapplot",
+			"updateData",
+			"current",
+			"85vh",
+			"75vh",
+			"media",
+			"current_vis",
+			"header",
+			"updateData",
+			"update_metadata",
+			"metalist",
+			"#metadata",
+			"metadata",
+			"dropdown",
+			"variable_meta",
+			"dropdown",
+			"updateData",
+			"meta =",
+			"meta",
+			"metadata",
+			"meta =",
+			"meta",
+			"([1-9],)*",
+			"slate",
+			"?",
+			"selected_dataset =",
+			"selected_dataset",
+			"selectize",
+			"font",
+			"header_background",
+			"svg",
+			"518500",
+			"selected_dataset",
+			"(bootloader) ",
+			"toggle",
+			"addto",
+			"heat",
+			"http://127.0.0.1:",
+			"drawheat"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"-md-",
+			"https://spartan-perigee-170218.appspot.com",
+			"http://localhost:8080",
+			"metadata_hashtable",
+			"80vh",
+			"85vh",
+			"",
+			"0f9d58",
+			"",
+			"http://r7l4-asda.stat.ubc.ca:",
+			"drawheatcrime",
+			"/ 1.7",
+			"/ 1.5",
+			"/ 1.3",
+			"/ 1.1",
+			"/ 1.2",
+			"_colorvalues",
+			"geodata",
+			" x=",
+			"metadata",
+			"/",
+			"",
+			"region",
+			"",
+			"ul.navbar",
+			"",
+			"monthly",
+			"h4",
+			"Interview",
+			"px",
+			"-",
+			"",
+			"Search Jobs:",
+			"#bf3b1e",
+			"#output-content",
+			"Worldwide",
+			"\"buttonDestination\": \"cart\"",
+			"assets/",
+			" ",
+			"Google",
+			"",
+			"p",
+			" ",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7494,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2165,
+								2165
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1901.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 261.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "functions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 762.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "huitony.com",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 249.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
