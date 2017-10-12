@@ -13,7 +13,7 @@ var experience_template = $.templates('\
                                     <span class="date">{{:date}}</span>\
                                     <br>\
                                 {{if details}} \
-                                    <p><a href="#!" onclick="return false;" data-toggle="collapse" data-parent="#experience_list" data-target="#{{:id}}">Show/hide details</a></p>\
+                                    <a href="#!" onclick="return false;" data-toggle="collapse" data-parent="#experience_list" data-target="#{{:id}}">Show/hide details</a>\
                                 </div>\
                                 </div>\
                                     <div id="{{:id}}" class="accordion-body collapse"> \
@@ -34,6 +34,12 @@ function experience_entry(data) {
     $("#experience_list").append(experience_template.render(data)); // Insert HTML string into DOM
 };
 
+// Render Projects
+function projects_entry(data) {
+    data.details = "<div class='panel panel-default'>".concat(data.details).concat("</div>")
+    $("#projects_list").append(experience_template.render(data)); // Insert HTML string into DOM
+};
+
 //Template for skills
 
 var skills_template = $.templates('<img class="float_skills" data-toggle="popover" data-content="{{:details}}" data-title="<span class=\'popoverheading\'>{{:title}}</span>" data-trigger="hover" data-placement="top" src="{{:image}}" data-html="true" data-container="body">');
@@ -42,12 +48,126 @@ function skills_entry(data) {
     $('#skills_list').append(skills_template.render(data));
 }
 
+//Template for awards
+
+var awards_template = $.templates('<tr> \
+                                            <td>{{:date}}</td> \
+                                            <td>{{:award}}</td> \
+                                            <td>{{:org}}</td> \
+                                            <td>{{:value}}</td> \
+                                        </tr>')
+
+function awards_entry(data) {
+    $('#awards_list').append(awards_template.render(data));
+}
+
 $(document).ready(function() {
+    awards_entry({
+        date: "05/2017",
+        award: "John Bosdet Travel Award",
+        org: "BCGSC",
+        value: "$1,000"
+    });
+    awards_entry({
+        date: "05/2017",
+        award: "International Travel Award",
+        org: "CEEHRC",
+        value: "$1,000"
+    });
+    awards_entry({
+        date: "11/2016",
+        award: "Datathon Competition – 1st place prize<br>(Team of 3)",
+        org: "TELUS/IEEE",
+        value: "$3,000"
+    });
+    awards_entry({
+        date: "07/2016",
+        award: "Summer Program in Taiwan",
+        org: "CIHR",
+        value: "$5,000<br>+ 50,000 NTD"
+    });
+    awards_entry({
+        date: "11/2015",
+        award: "SportsHack Competition – National 3rd place<br>(Team of 4)",
+        org: "IBM",
+        value: "$1,000"
+    });
+    awards_entry({
+        date: "09/2015",
+        award: "Canada Graduate Scholarships – CGS-M",
+        org: "NSERC",
+        value: "$17,500"
+    });
+    awards_entry({
+        date: "05/2015",
+        award: "GSAT Summer Scholarship",
+        org: "UBC",
+        value: "$3,600"
+    });
+    awards_entry({
+        date: "05/2015",
+        award: "Annual Scientific Meeting Travel award",
+        org: "TFRI",
+        value: "$1,500"
+    });
+    awards_entry({
+        date: "11/2014",
+        award: "Genomics: the Power & the Promise Travel award",
+        org: "Genome Canada",
+        value: "$2,000"
+    });
+    awards_entry({
+        date: "05/2012",
+        award: "Undergraduate Summer Research Award",
+        org: "NSERC",
+        value: "$4,500"
+    });
+    awards_entry({
+        date: "09/2010",
+        award: "BC Government Scholarship",
+        org: "Government of BC",
+        value: "$1,000"
+    });
+    awards_entry({
+        date: "09/2010",
+        award: "President’s Entrance Scholarship",
+        org: "UBC",
+        value: "$2,500"
+    });
+
+
+    projects_entry({
+        id: "id_noteai",
+        image: "img/noteai.png",
+        title: "NoteAI",
+        company: "<a href='http://noteai.huitony.com/' target = '_blank'>noteai.huitony.com</a>",
+        date: "09/2017",
+        details: "A natural language processor that summarizes key sentences from long walls of text (aka tl;dr bot). Built using flask and gensim (python)."
+    });
+
+    projects_entry({
+        id: "id_safersurrey",
+        image: "img/safersurrey.png",
+        title: "SaferSurrey",
+        company: "<a href='http://safersurrey.com/' target = '_blank'>safersurrey.com</a>",
+        date: "11/2016",
+        details: "Using publicly available crime data, we trained a Random Forest (RF) classifier to predict the likelihood of a crime happening given a location, date, and time of day. Our team generated a front-end google maps powered visualization tool hooked up to an API service (flask) that ran the RF model in the cloud (in this case we used Azure). <br><br>We placed 1st out of 20 teams at the 2016 TELUS/IEEE Datathon, netting $3000 in prize money."
+    });
+
+    projects_entry({
+        id: "id_impactreplays",
+        image: "img/impactreplays.png",
+        title: "Impact Replays",
+        company: "<a href='https://daattali.com/shiny/cfl/' target = '_blank'>daattali.com/shiny/cfl</a>",
+        date: "11/2015",
+        details: "In a team of 4, we produced Impact Replays, a football data visualization app built entirely in Shiny (in R). I led the team with the overall vision, while also developing the user interface in photoshop and contributing heavily to the business proposal. <br><br>We placed 3rd out of 60 teams nationally at IBM Sportshack 2015, netting $1000 in prize money."
+    });
+
     experience_entry({
         id: "id_recruitmate",
         image: "http://getrecruitmate.com/img/animatedlogo.gif",
         title: "Co-Founder and CTO",
-        company: "Recruitmate",
+        company: "<a href='http://getrecruitmate.ca' target='_blank'>Recruitmate</a>",
         date: "10/2016 - Present (1 year)",
         details: "(On weekends)<br> \
 - Designed and built a basic front-end interface in HTML/CSS. Added interactivity using javascript (JQuery). <br>\
@@ -57,13 +177,13 @@ $(document).ready(function() {
     experience_entry({
         id: "id_dssg",
         image: "img/ubclogo.png",
-        title: "Data Science for Social good Fellow",
+        title: "Fellow, Data Science for Social Good",
         company: "University of British Columbia",
         date: "05/2017 - 08/2017 (16 weeks)",
         details: "(Full time. Lead a group of 4) <br>\
 - Came up with the overall vision and assigned tasks taking into account each team member's strengths and weaknesses<br>\
 - Extracted, transformed, and loaded publically available datasets (e.g. National Household Surveys) into Google Sheets (as a makeshift database).<br>\
-- Built a visualization tool (http://bit.ly/visualsurrey) in Javascript, HTML/CSS, and automatically updates the front-end visualizations whenever the main Google Sheets \"backend\" is updated via a RESTful API backend built in Flask (python). <br>\
+- Built a visualization tool (<a href='http://bit.ly/visualsurrey' target='_blank'>http://bit.ly/visualsurrey</a>) in Javascript, HTML/CSS, and automatically updates the front-end visualizations whenever the main Google Sheets \"backend\" is updated via a RESTful API backend built in Flask (python). <br>\
 - Defined \"clusters\" of neighbourhoods with high degrees of similarity using hierarchical clustering while taking account redundant variables with principal components analysis."
     });
     experience_entry({
@@ -76,7 +196,7 @@ $(document).ready(function() {
     experience_entry({
         id: "id_ctlt",
         image: "img/ctltlogo.png",
-        title: "Data Analyst",
+        title: "Data Scientist",
         company: "UBC Centre for Teaching, Learning and Technology",
         date: "09/2016 - 03/2017 (7 months)",
         details: "(Part time on select afternoons and weekends. Reported to the Director of UBC’s research and evaluation of teaching and learning) <br>\
@@ -101,7 +221,7 @@ $(document).ready(function() {
     experience_entry({
         id: "id_rapture",
         image: "img/rapture.png",
-        title: "Data Analyst",
+        title: "Data Scientist",
         company: "Rapture Events",
         date: "03/2016 - 08/2016 (6 months)",
         details: "(Part time on select afternoons and weekends. Reported directly to the CEO) <br> \
@@ -142,14 +262,29 @@ $(document).ready(function() {
         details: "Modern R programming for data cleaning and visualization in <b>tidyverse</b>, including <b>dplyr and ggplot</b>"
     });
     skills_entry({
+        image: "img/bash.png",
+        title: "3 years experience",
+        details: "Fluent in <b>bash</b> and <b>GNU tools</b> for data processing. Also used to connect to remote servers (cloud computing)."
+    })
+    skills_entry({
         image: "img/pythonlogo.png",
         title: "1 year experience",
-        details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science) and <b>flask</b> (for web development and RESTful APIs)"
+        details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science), <b>gensim</b> (for natural language processing), and <b>flask</b> (for web development and RESTful APIs)"
     });
     skills_entry({
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/50px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
         title: "1 year experience",
         details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
+    })
+    skills_entry({
+        image: "img/javascript.png",
+        title: "1 year experience",
+        details: "API calls, JSON manipulation, and advanced website interactivity with jQuery."
+    })
+    skills_entry({
+        image: "img/sql.png",
+        title: "1 year experience",
+        details: "Advanced SQL queries for MySQL and Google BigQuery"
     })
     // Initial animations
     $('#left_side').removeClass('initial', 1000, function() {

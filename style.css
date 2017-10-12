@@ -25,14 +25,15 @@ h1 {
 
 .panel-default {
     border-color: #ddd;
-    padding: 20px 10px 20px 40px;
+    padding: 10px 10px 10px 40px;
+    margin: 10px 0px 20px;
 }
 
 #right_side_content {
-    max-width: 600px;
     margin-top: 50px;
     margin-bottom: 200px;
-    padding-left: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 #right_side_content.initial {
@@ -124,7 +125,7 @@ span.date {
 }
 
 #skills_list {
-	margin-left: -25px
+    margin-left: -25px
 }
 
 .heading {
@@ -136,18 +137,17 @@ span.date {
 
 .float_img {
     float: left;
-    width: 20%;
+    width: 80px;
 }
 
 .float_skills {
-	float: left;
-	width: 50px;
-	margin: 0 10px;
+    float: left;
+    width: 50px;
+    margin: 0 10px;
 }
 
 .float_text {
     float: left;
-    width: 80%;
 }
 
 .affix {
@@ -174,6 +174,7 @@ span.date {
     opacity: 1;
 }
 
+
 /* desktop displays */
 
 @media (min-width: 768px) {
@@ -184,6 +185,8 @@ span.date {
     }
     #right_side_content {
         margin-top: 100px;
+        padding-left: 80px;
+        padding-right: 80px;
     }
     #left_side {
         height: 100%;
