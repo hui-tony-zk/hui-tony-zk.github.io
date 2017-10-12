@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323" rel="stylesheet">
+    <style>
+    body {
+        background-color: #fff;
+        font-family: 'Quicksand', sans-serif;
+    }
+    
+    .chart {
+        max-width: 700px;
+        margin: auto;
+    }
+    
+    span {
+        padding-right: 10px;
+    }
+    
+    #background {
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        font: 36px sans-serif;
+        background-color: #444;
+        color: white;
+        height: 100%;
+        border: 3px solid #9e9e9e;
+        margin: 0;
+        font-family: 'Inconsolata', sans-serif;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    
+    #foreground {
+        background-color: steelblue;
+        width: 0%;
+        text-align: right;
+        border: initial;
+        height: 100%;
+        padding: 20px 0px;
+        -webkit-transition: all 2s;
+        -moz-transition: all 2s;
+        -o-transition: all 2s;
+        transition: all 2s;
+        opacity: 0;
+        box-shadow: 0px 0 10px 1px rgba(255, 255, 255, 0.54);
+    }
+    
+    #birth {
+        float: left;
+    }
+    
+    #death {
+        text-align: right;
+        float: right;
+    }
+    
+    .btn.btn-default {
+        margin-bottom: 20px;
+    }
+    
+    .text_block {
+        max-width: 600px;
+        margin: auto;
+    }
+    
+    #popoverhover {
+        color: steelblue;
+        text-decoration: underline;
+        margin-top: 0px;
+    }
+    
+    img {
+        max-height: 300px;
+        max-width: 100%;
+    }
+    
+    .modal-dialog {
+        width: 90% !important;
+    }
+    
+    #render {
+        padding: 20px 20px;
+        margin: auto;
+    }
+    
+    #dead {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text_block" style="margin: 50px auto -20px">
+            <p>Knowing your age in years is boring. And seriously lacking perspective. Relating your age to your <em>statistical</em> time of death makes "age" much more meaningful, and helps you truly appreciate the precious time you have remaining. Are you enjoying your life to the fullest? Entirely inspired by <a href="http://nasdaily.com/" target="_blank">Nas Daily</a>.</p>
+            <p>Use this handy tool to figure out how much of life you've progressed through! Warning, may cause quarter-life, mid-life, and existential crises. You have been warned.</p>
+        </div>
+        <div class="text-center">
+            <div class="row" style="max-width: 400px; margin: auto">
+                <h3>Try it yourself!</h3>
+                <div class="input-group">
+                    <p class="input-group-addon">Birthday</p>
+                    <input type="date" id="bday" class="form-control" value="1992-10-12">
+                </div>
+                <div class="input-group" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="The average life expectancy in western developed countries is roughly 80 years old. Want something more accurate? <p><a href='https://www.myabaris.com/tools/life-expectancy-calculator-how-long-will-i-live' target='_blank'>Calculate your life expectancy!</a> <br><small>(Of course it's an insurance company 🙄)</small></p>">
+                    <p id="popovershow" class="input-group-addon" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Only numbers are allowed!">Life Expenctancy</p>
+                    <input type="input" id="lifespan" class="form-control" placeholder="e.g. 75.5" value="80">
+                </div>
+                <div class="input-group">
+                    <p class="input-group-addon">Name (for sharing!)</p>
+                    <input type="input" id="name" class="form-control" placeholder="e.g. Tony">
+                </div>
+                <button class="btn btn-default btn-primary" type="submit" id="submit">Update bar!</button>
+                <button class="btn btn-default btn-info" type="submit" id="share" data-toggle="modal" data-target="#myModal">Share!</button>
+                <p><a href="https://www.google.ca/search?q=life%2Bexpectancy%2Bin%2Bcanada&oq=life%2Bexpectancy%2Bin%2Bus" target="_blank">Life expectancy in Canada/United States/Japan</a></p>
+                <p><a href="http://lmgtfy.com/?q=life+expectancy+in+my+country" target="_blank">Life expectancy everywhere else</a></p>
+            </div>
+        </div>
+        <div id="render">
+            <h2 id="chartittle" class="text-center">The Progress <b>Bar</b> of Li<b>fe</b>: the <b>Barfe</b></h2>
+            <div class="chart">
+                <div id="background">
+                    <div id="foreground"><span>40%</span></div>
+                </div>
+                <div>
+                    <h4 id="birth">Birth</h4>
+                    <h4 id="death">Death</h4>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center row text_block" id="metacontainer">
+            <h2 id="dead">Well... I'm not really sure what to say</h2>
+            <div class="col-sm-5">
+                <p id="accurate_age" class="text-center"></p>
+                <h5 id="lifeExp"></h5>
+            </div>
+            <div class="col-sm-7">
+                <div class="text_block">
+                    <h4 id="popoverhover" data-html="true" data-toggle="popover" data-placement="top" data-trigger="hover focus" data-content="<p>Instead of celebrating anniversaries of your birth, it probably makes more sense to celebrate days when your percentage increments. 'Yay I'm turning 33%!' Ergo, percent day.</p><p>Plus, there are more percent days than birthdays, so more celebrations!</p><small><em>But since this is based on the Barfe bar, perhaps it should be called a barfeday instead?</em></small>">Percent days instead of Birthdays<small>[?]</small></h4>
+                </div>
+                <p id="prev_bday"></p>
+                <p id="next_perc"></p>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Your image is ready to share!</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h3>Your image is ready to share! Right click the image to save it, and then upload it to Facebook/Instagram/etc!</h3>
+                        <img id="shareimg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-warning" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+        <script>
+        $(function() {
+            $('[data-toggle="popover"]').popover()
+        })
+
+        var pday
+        var lfspn
+        var chartittleback = $('#chartittle').clone();
+        // display current age
+        function calc_age(bday, lifespan, exact = false) {
+            pday = bday
+            lfspn = lifespan
+            var now = moment();
+            var age = moment(now.diff(bday, "hours", true))
+            var age2 = (age / lifespan.asHours())
+            if (age2 > 1) {
+                age2 = 1
+            }
+            var age_display = (age2 * 100).toFixed(1)
+            if (exact) {
+                return age2 * 100
+            } else {
+                return age_display
+            }
+        }
+
+        function update_values(bday, lifespan) {
+            $("#foreground").width(calc_age(bday, lifespan) + "%")
+            $('#foreground').css('opacity', '1');
+            $("span").text(calc_age(bday, lifespan) + "%")
+            $("#accurate_age").html("<em>Well, to be (more) precise, it's actually <b>" + calc_age(bday, lifespan, true) + "%</b></em>. Come back in 10 minutes to see this number change!")
+            $("#lifeExp").html("Based on a birthday on <b>" + bday.format("YYYY-MM-DD") + "</b> and a life expectancy of <b>" + lifespan.asYears() + "</b> years")
+
+            next_perc_day = Math.ceil(calc_age(bday, lifespan, true)) / 100
+
+            function next_bday(perc) {
+                return bday.clone().add(Math.round(lifespan.asDays() * perc, 0), "days").format("YYYY-MM-DD")
+            }
+            days_till_next_bday = -moment().diff(next_bday(next_perc_day), "days")
+            if (calc_age(bday, lifespan) < 100) {
+                $("#prev_bday").html("Days since last percent day: <b>" + moment().diff(next_bday((next_perc_day - 0.01)), "days") + "</b>. 🎉🎉🎉 Happy percent day! 🎉🎉🎉")
+                $("#next_perc").html("Days until <b>" + next_perc_day * 100 + "%</b>: <b>" + days_till_next_bday + "days</b>. Next percent day on <b>" + next_bday(next_perc_day) + "</b>.")
+                $("#dead").hide()
+            } else {
+                $("#accurate_age").html("")
+                    // $("#lifeExp").html("")
+                $("#prev_bday").html("")
+                $("#next_perc").html("")
+                $("#dead").show()
+            }
+        }
+
+        update_values(moment("1992-10-12", "YYYY-MM-DD"), moment.duration(79.5, 'years'))
+
+        $("#submit").click(function() {
+            var inpt_bday = $("#bday").val()
+            var inpt_name = $("#name").val()
+            var inpt_lifespan = parseFloat($("#lifespan").val())
+            if (isFinite(inpt_lifespan)) {
+                update_values(moment(inpt_bday, "YYYY-MM-DD"), moment.duration(parseFloat(inpt_lifespan), 'years'))
+                $('#popovershow').popover('destroy');
+                if (inpt_name) {
+                    $('#chartittle').text("The Progress Bar of " + inpt_name + "'s life!")
+                } else {
+                    $("#chartittle").replaceWith(chartittleback.clone())
+                }
+            } else {
+                if ($('.popover').hasClass('in')) {
+                    // popover is visable
+                } else {
+                    $('#popovershow').popover('show');
+                }
+            }
+        })
+
+        $('input').keypress(function(e) {
+            if (e.which == 13) {
+                $('#submit').click();
+                return false; //<---- Add this line
+            }
+        });
+
+        $("#share").click(function() {
+            $("#submit").click();
+            render_orig = $("#render").clone()
+            html2canvas($("#render").css({
+                "padding": "80px 80px 150px",
+                "width": "1300px"
+            }), {
+                onrendered: function(canvas) {
+                    $("#shareimg").attr("src", canvas.toDataURL());
+                    $("#render").replaceWith(render_orig.clone())
+                }
+            })
+        });
+        </script>
+</body>
