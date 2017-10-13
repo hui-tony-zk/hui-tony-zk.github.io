@@ -272,7 +272,7 @@ $(document).ready(function() {
         details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science), <b>gensim</b> (for natural language processing), and <b>flask</b> (for web development and RESTful APIs)"
     });
     skills_entry({
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/50px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/150px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
         title: "1 year experience",
         details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
     })
