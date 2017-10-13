@@ -30,6 +30,7 @@ h1 {
 }
 
 #right_side_content {
+    max-width: 800px;
     margin-top: 50px;
     margin-bottom: 200px;
     padding-left: 60px;
@@ -143,11 +144,13 @@ span.date {
 .float_skills {
     float: left;
     width: 50px;
-    margin: 0 10px;
+    height: 50px;
+    margin: 10px 10px;
 }
 
 .float_text {
     float: left;
+    width: 60%
 }
 
 .affix {
