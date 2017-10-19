@@ -303,7 +303,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 10316,
+				"buffer_size": 10479,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -321,7 +321,7 @@
 			"file": "functions.js",
 			"settings":
 			{
-				"buffer_size": 15418,
+				"buffer_size": 15430,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -717,7 +717,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -726,15 +726,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10316,
+						"buffer_size": 10479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2575,
-								2575
+								3341,
+								3341
 							]
 						],
 						"settings":
@@ -744,10 +744,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 496.0,
+						"translation.y": 755.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -778,7 +778,7 @@
 						"translation.y": 1786.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -787,15 +787,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15418,
+						"buffer_size": 15430,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14142,
-								14142
+								8011,
+								8011
 							]
 						],
 						"settings":
@@ -805,10 +805,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3834.0,
+						"translation.y": 2511.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -853,7 +853,7 @@
 	"project": "huitony.com",
 	"replace":
 	{
-		"height": 70.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
