@@ -183,7 +183,7 @@ $(document).ready(function() {
         details: "(Full time. Lead a group of 4) <br>\
 - Came up with the overall vision and assigned tasks taking into account each team member's strengths and weaknesses<br>\
 - Extracted, transformed, and loaded publically available datasets (e.g. National Household Surveys) into Google Sheets (as a makeshift database).<br>\
-- Built a visualization tool (<a href='http://bit.ly/visualsurrey' target='_blank'>http://bit.ly/visualsurrey</a>) in Javascript, HTML/CSS, and automatically updates the front-end visualizations whenever the main Google Sheets \"backend\" is updated via a RESTful API backend built in Flask (python). <br>\
+- Built a visualization tool (<a href='http://visualsurrey.huitony.com/' target='_blank'>http://visualsurrey.huitony.com/</a>) in Javascript, HTML/CSS, and automatically updates the front-end visualizations whenever the main Google Sheets \"backend\" is updated via a RESTful API backend built in Flask (python). <br>\
 - Defined \"clusters\" of neighbourhoods with high degrees of similarity using hierarchical clustering while taking account redundant variables with principal components analysis."
     });
     experience_entry({

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"marg",
+				"margin"
+			],
+			[
 				"padding",
 				"padding-left"
 			],
@@ -130,10 +134,6 @@
 			[
 				"btn",
 				"btn-info"
-			],
-			[
-				"marg",
-				"margin-top"
 			],
 			[
 				"max",
@@ -303,27 +303,27 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7494,
+				"buffer_size": 10316,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 2542,
+				"buffer_size": 3122,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "functions.js",
 			"settings":
 			{
-				"buffer_size": 9164,
+				"buffer_size": 15418,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -372,10 +372,11 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Tony/Google Drive/Side projects/personalsite"
+		"/Users/tonyhui/Desktop/hui-tony-zk.github.io"
 	],
 	"file_history":
 	[
+		"/Users/tonyhui/Desktop/hui-tony-zk.github.io/server.bat",
 		"/C/Users/Tony/Desktop/R projects/hui-tony-zk.github.io/index.html",
 		"/C/Users/Tony/Desktop/R projects/hui-tony-zk.github.io/_site.yml",
 		"/C/Users/Tony/Desktop/R projects/hui-tony-zk.github.io/params.json",
@@ -502,12 +503,11 @@
 		"/C/Users/Tony/Desktop/helping website dummy/style.css",
 		"/C/Users/Tony/Desktop/helping website dummy/index.html",
 		"/C/Users/Tony/Desktop/helping website dummy/photos.html",
-		"/C/Users/Tony/Desktop/helping website dummy/overview.html",
-		"/C/Users/Tony/Desktop/helping website dummy/instructions.html"
+		"/C/Users/Tony/Desktop/helping website dummy/overview.html"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -524,6 +524,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"right_side",
+			"img",
+			"lg-10",
+			"lg-2",
+			"md-9",
+			"md-3",
+			"right_side_content",
 			"fa-lin",
 			"overflow",
 			"left_side",
@@ -644,14 +651,7 @@
 			"font",
 			"header_background",
 			"svg",
-			"518500",
-			"selected_dataset",
-			"(bootloader) ",
-			"toggle",
-			"addto",
-			"heat",
-			"http://127.0.0.1:",
-			"drawheat"
+			"518500"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -659,6 +659,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"xl-10",
+			"xl-2",
+			"lg-9",
+			"lg-3",
 			"-md-",
 			"https://spartan-perigee-170218.appspot.com",
 			"http://localhost:8080",
@@ -722,15 +726,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7494,
+						"buffer_size": 10316,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2165,
-								2165
+								2575,
+								2575
 							]
 						],
 						"settings":
@@ -740,10 +744,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1901.0,
+						"translation.y": 496.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -752,15 +756,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2542,
+						"buffer_size": 3122,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2163,
+								2163
 							]
 						],
 						"settings":
@@ -771,10 +775,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 261.0,
+						"translation.y": 1786.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -783,15 +787,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9164,
+						"buffer_size": 15418,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								14142,
+								14142
 							]
 						],
 						"settings":
@@ -801,7 +805,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 762.0,
+						"translation.y": 3834.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -812,7 +816,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -849,7 +853,7 @@
 	"project": "huitony.com",
 	"replace":
 	{
-		"height": 66.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":
