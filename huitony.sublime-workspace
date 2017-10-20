@@ -321,7 +321,7 @@
 			"file": "functions.js",
 			"settings":
 			{
-				"buffer_size": 15430,
+				"buffer_size": 15439,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -507,7 +507,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -717,7 +717,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -744,10 +744,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 755.0,
+						"translation.y": 680.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -787,15 +787,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15430,
+						"buffer_size": 15439,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8011,
-								8011
+								6792,
+								6792
 							]
 						],
 						"settings":
@@ -805,10 +805,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2511.0,
+						"translation.y": 2198.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
