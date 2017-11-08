@@ -167,7 +167,7 @@ $(document).ready(function() {
         id: "id_recruitmate",
         image: "http://getrecruitmate.com/img/animatedlogo.gif",
         title: "Co-Founder and \"Tech Guy\"",
-        company: "<a href='http://getrecruitmate.ca' target='_blank'>Recruitmate</a>",
+        company: "<a href='http://getrecruitmate.com' target='_blank'>Recruitmate</a>",
         date: "10/2016 - Present (1 year)",
         details: "(On weekends)<br> \
 - Designed and built a basic front-end interface in HTML/CSS. Added interactivity using javascript (JQuery). <br>\
