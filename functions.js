@@ -167,6 +167,14 @@ $(document).ready(function() {
         date: "11/2015",
         details: "In a team of 4, we produced Impact Replays, a football data visualization app built entirely in Shiny (in R). I led the team with the overall vision, while also developing the user interface in photoshop and contributing heavily to the business proposal. <br><br>We placed 3rd out of 60 teams nationally at IBM Sportshack 2015, netting $1000 in prize money. <a href='https://daattali.com/shiny/cfl/' target = '_blank'>daattali.com/shiny/cfl</a>"
     });
+      projects_entry({
+        id: "id_CTLThackathon",
+        image: "https://scontent.fyxd1-1.fna.fbcdn.net/v/t1.0-9/14670681_806890842785261_1719261201761290270_n.jpg?_nc_cat=0&oh=f9f0d73278c83d295bf9caa0cbc2ef5b&oe=5C1BF921",
+        title: "Characterization of Classroom Activities",
+        company: "<a href='https://ctlt.ubc.ca/2015/11/10/students-crack-data-at-learning-analytics-hackathon/' target = '_blank'>Learning Analytics Hackathon</a>",
+        date: "10/2015",
+        details: "In a team of 4, we parsed data of classroom activities from > 50 excel sheets, aggregated them, and performed exploratory data analysis and hierarchical clustering. We identified the sequences of classroom activites (e.g. lecture, question, discussion) that correlated with higher knowledge retention (measured from a pre-test and compared to a post-test)."
+    });
   
     experience_entry({
         id: "id_EY",
