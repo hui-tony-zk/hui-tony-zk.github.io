@@ -141,7 +141,7 @@ $(document).ready(function() {
         title: "Safe Way",
         company: "<a href='https://vancouver.ca/streets-transportation/vanquish-collisions-hackathon.aspx' target = '_blank'>Vanquish Collisons Hackathon</a>",
         date: "09/2018",
-        details: "A mobile-first responsive web functioning app that helps children and seniors route around dangerous intersections when walking and an integrated voice assistant that warns them to be extra cautious if they approach one. Built using flask (python) and JS. <br><br>We placed 1st out of 28 teams, netting $3000 in prize money."
+        details: "A mobile-first responsive web functioning app that helps children and seniors route around dangerous intersections when walking and an integrated voice assistant that warns them to be extra cautious if they approach one. Built using flask (python) and JS. <br><br>Our team of 4 placed 1st out of 28 teams, netting $5000 in prize money."
     });
     projects_entry({
         id: "id_noteai",
@@ -157,7 +157,7 @@ $(document).ready(function() {
         title: "SaferSurrey",
         company: "<a href='http://vancouver.ieee.ca/2016/11/10/2016_datathon/' target = '_blank'>TELUS/IEEE Datathon</a>",
         date: "11/2016",
-        details: "Using publicly available crime data, we trained a Random Forest (RF) classifier to predict the likelihood of a crime happening given a location, date, and time of day. Our team generated a front-end google maps powered visualization tool hooked up to an API service (flask) that ran the RF model in the cloud (in this case we used Azure). <br><br>We placed 1st out of 20 teams at the 2016 TELUS/IEEE Datathon, netting $3000 in prize money."
+        details: "Using publicly available crime data, we trained a Random Forest (RF) classifier to predict the likelihood of a crime happening given a location, date, and time of day. Our team generated a front-end google maps powered visualization tool hooked up to an API service (flask) that ran the RF model in the cloud (in this case we used Azure). <br><br>Our team of 3 placed 1st out of 20 teams at the 2016 TELUS/IEEE Datathon, netting $3000 in prize money."
     });
     projects_entry({
         id: "id_impactreplays",
