@@ -135,40 +135,53 @@ $(document).ready(function() {
         value: "$2,500"
     });
 
-
+    projects_entry({
+        id: "id_SafeWay",
+        image: "https://vancouver.ca/images/cov/feature/vanquish-hackathon-landing.jpg",
+        title: "Safe Way",
+        company: "<a href='https://vancouver.ca/streets-transportation/vanquish-collisions-hackathon.aspx' target = '_blank'>Vanquish Collisons Hackathon</a>",
+        date: "09/2018",
+        details: "A mobile-first responsive web functioning app that helps children and seniors route around dangerous intersections when walking and an integrated voice assistant that warns them to be extra cautious if they approach one. Built using flask (python) and JS. <br><br>We placed 1st out of 28 teams, netting $3000 in prize money."
+    });
     projects_entry({
         id: "id_noteai",
         image: "img/noteai.png",
         title: "NoteAI",
-        company: "<a href='http://noteai.huitony.com/' target = '_blank'>noteai.huitony.com</a>",
+        company: "<a href='https://eduhacks.com/' target = '_blank'>Eduhacks</a>",
         date: "09/2017",
         details: "A natural language processor that summarizes key sentences from long walls of text (aka tl;dr bot). Built using flask and gensim (python)."
     });
-
     projects_entry({
         id: "id_safersurrey",
         image: "img/safersurrey.png",
         title: "SaferSurrey",
-        company: "<a href='http://safersurrey.com/' target = '_blank'>safersurrey.com</a>",
+        company: "<a href='http://vancouver.ieee.ca/2016/11/10/2016_datathon/' target = '_blank'>TELUS/IEEE Datathon</a>",
         date: "11/2016",
         details: "Using publicly available crime data, we trained a Random Forest (RF) classifier to predict the likelihood of a crime happening given a location, date, and time of day. Our team generated a front-end google maps powered visualization tool hooked up to an API service (flask) that ran the RF model in the cloud (in this case we used Azure). <br><br>We placed 1st out of 20 teams at the 2016 TELUS/IEEE Datathon, netting $3000 in prize money."
     });
-
     projects_entry({
         id: "id_impactreplays",
         image: "img/impactreplays.png",
         title: "Impact Replays",
-        company: "<a href='https://daattali.com/shiny/cfl/' target = '_blank'>daattali.com/shiny/cfl</a>",
+        company: "<a href='http://sportshackweekend.org/ca/2015/#winners' target = '_blank'>SportsHack 2015</a>",
         date: "11/2015",
-        details: "In a team of 4, we produced Impact Replays, a football data visualization app built entirely in Shiny (in R). I led the team with the overall vision, while also developing the user interface in photoshop and contributing heavily to the business proposal. <br><br>We placed 3rd out of 60 teams nationally at IBM Sportshack 2015, netting $1000 in prize money."
+        details: "In a team of 4, we produced Impact Replays, a football data visualization app built entirely in Shiny (in R). I led the team with the overall vision, while also developing the user interface in photoshop and contributing heavily to the business proposal. <br><br>We placed 3rd out of 60 teams nationally at IBM Sportshack 2015, netting $1000 in prize money. <a href='https://daattali.com/shiny/cfl/' target = '_blank'>daattali.com/shiny/cfl</a>"
     });
-
+  
+    experience_entry({
+        id: "id_EY",
+        image: "https://www.seeklogo.net/wp-content/uploads/2014/06/ernst-young-vector-logo.png",
+        title: "Senior Consultant, Data Science",
+        company: "<a href='https://www.ey.com/en_gl' target='_blank'>Ernst & Young</a>",
+        date: "02/2018 - Present (1 year)",
+        details: "I've been involved in many unique data science engagements where I have solved basic problems ranging from word counts to advanced problems such as image recognition from social media. To solve these problems, I use unsupervised and supervised learning methods within R (tidyverse, 4 years exp) and Python (flask, pandas, some tensorflow, 2 years exp). "
+    });
     experience_entry({
         id: "id_recruitmate",
         image: "http://getrecruitmate.com/img/animatedlogo.gif",
         title: "Co-Founder and \"Tech Guy\"",
         company: "<a href='http://getrecruitmate.com' target='_blank'>Recruitmate</a>",
-        date: "10/2016 - Present (1 year)",
+        date: "10/2016 - 10/2017 (1 year)",
         details: "(On weekends)<br> \
 - Designed and built a basic front-end interface in HTML/CSS. Added interactivity using javascript (JQuery). <br>\
 - Built a backend application pipeline which parses web pages using selenium in python. Currently, this is hosted on an EC2 server (AWS). <br>\
