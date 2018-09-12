@@ -169,7 +169,7 @@ $(document).ready(function() {
     });
       projects_entry({
         id: "id_CTLThackathon",
-        image: "https://scontent.fyxd1-1.fna.fbcdn.net/v/t1.0-9/14670681_806890842785261_1719261201761290270_n.jpg?_nc_cat=0&oh=f9f0d73278c83d295bf9caa0cbc2ef5b&oe=5C1BF921",
+        image: "img/ctltlogo.png",
         title: "Characterization of Classroom Activities",
         company: "<a href='https://ctlt.ubc.ca/2015/11/10/students-crack-data-at-learning-analytics-hackathon/' target = '_blank'>Learning Analytics Hackathon</a>",
         date: "10/2015",
@@ -211,8 +211,8 @@ $(document).ready(function() {
         id: "id_tutor",
         image: "img/laptopicon.png",
         title: "Tutor",
-        date: "01/2016 - 07/2017 (1 year 7 months)",
-        details: "Tutored university-level students: in 2 intermediate genetics, 3 in introductory statistics, and 2 in computational biology"
+        date: "01/2016 - Present (3 years)",
+        details: "Tutored undergraduate students in intermediate genetics (2), introductory statistics (3), computational biology (2), and 2 PhD level students in data science"
     });
     experience_entry({
         id: "id_ctlt",
@@ -240,46 +240,19 @@ $(document).ready(function() {
     });
 
     experience_entry({
-        id: "id_rapture",
-        image: "img/rapture.png",
-        title: "Data Scientist",
-        company: "Rapture Events",
-        date: "03/2016 - 08/2016 (6 months)",
-        details: "(Part time on select afternoons and weekends. Reported directly to the CEO) <br> \
-- Analyzed geographical locations of fans of musicians on soundcloud and facebook with API calls and plotting the results in R. Also turned this into a webapp using R/Shiny to allow other members of the company to use this tool.<br> \
-- Fetched lists of university facebook groups (via API calls) to identify new avenues of marketing Rapture related events.<br> \
-- Analyzed popularity and attendance of nightlife-related facebook events to identify the best weekdays to host events<br> \
-- Set up and managed a basic EC2 instance to host dashboards, run overnight computations, and act as a central storage interface for end-users.<br> \
-- Managed weekly Google Analytics reports of Rapture website traffic"
-    });
-
-    experience_entry({
         id: "id_oxford",
         image: "img/oxford.png",
         title: "Summer Research Student",
         company: "<a href='http://www.imm.ox.ac.uk/home' target='_blank'>Weatherall Institute of Molecular Medicine - University of Oxford</a>",
         date: "May 2013 - August 2013 (4 months)",
-        details: "- Self-directed original research on identifying the receptor for the relatively new chemokine CCL18 with Dr. Ling-Pei Ho and Dr. Simon Davis <br> \
-- Maintained tissue culture of many cell lines and primary cells, including Jurkat T-cells, MDA-MB-231 breast cancer cells, 293T epithelial cells, primary monocytes, and many others <br> \
-- Extracted peripheral blood mononuclear cells (PBMCs) from fresh blood and performed flow cytometry analysis with 6 different labeled antibodies at the same time <br> \
-- Performed protein extraction from chinese hamster ovary (CHO) cell factories, and purified the protein with fast protein liquid chromatography (FPLC) <br> \
+        details: "- Self-directed original research on identifying the receptor for a relatively new immune protein <br> \
 - Published a paper as 4th author in BMC biotechnology"
-    });
-
-    experience_entry({
-        id: "id_thompson",
-        image: "img/ubclogo.png",
-        title: "Undergraduate Research Assistant",
-        company: "Life Sciences Institute - University Of British Columbia",
-        date: "May 2012 - August 2012 (4 months)",
-        details: "- Assisted in original research on molecular mechanisms of drug resistance in tuberculosis with Dr. Charles Thompson <br> \
-- Created recombinant DNA containing various Mycobacterium drug resistance genes using molecular cloning techniques such as PCR, digestion, ligation and transformation"
     });
 
     // Skills
     skills_entry({
         image: "img/Rlogo.png",
-        title: "3 years experience",
+        title: "4 years experience",
         details: "Modern R programming for data cleaning and visualization in <b>tidyverse</b>, including <b>dplyr and ggplot</b>"
     });
     skills_entry({
@@ -289,23 +262,23 @@ $(document).ready(function() {
     })
     skills_entry({
         image: "img/pythonlogo.png",
-        title: "1 year experience",
+        title: "2 years experience",
         details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science), <b>gensim</b> (for natural language processing), and <b>flask</b> (for web development and RESTful APIs)"
     });
     skills_entry({
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/150px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
-        title: "1 year experience",
+        title: "2 years experience",
         details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
     })
     skills_entry({
         image: "img/javascript.png",
-        title: "1 year experience",
+        title: "2 year experience",
         details: "API calls, JSON manipulation, and advanced website interactivity with jQuery."
     })
     skills_entry({
         image: "img/sql.png",
         title: "1 year experience",
-        details: "Advanced SQL queries for MySQL and Google BigQuery"
+        details: "SQL queries for MySQL and Google BigQuery"
     })
     // Initial animations
     $('#left_side').removeClass('initial', 1000, function() {
