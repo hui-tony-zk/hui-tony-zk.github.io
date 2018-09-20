@@ -194,7 +194,7 @@ $(document).ready(function() {
     });
     experience_entry({
         id: "id_recruitmate",
-        image: "http://getrecruitmate.com/img/animatedlogo.gif",
+        image: "img/animatedlogo.gif",
         title: "Co-Founder and \"Tech Guy\"",
         company: "<a href='http://getrecruitmate.com' target='_blank'>Recruitmate</a>",
         date: "10/2016 - 10/2017 (1 year)",
