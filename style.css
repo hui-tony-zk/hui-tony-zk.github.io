@@ -63,7 +63,7 @@ h1 {
 
 #intro_box.load {
     opacity: 1;
-    padding: 100px 0px 60px 0px;
+    padding: 100px 0px 80px 0px;
 }
 
 span.title {
@@ -206,7 +206,8 @@ span.date {
         opacity: 0;
     }
     #intro_box.load {
-        top: 30%;
+        top: 25%;
         opacity: 1;
+        padding-bottom: 0px;
     }
 }
