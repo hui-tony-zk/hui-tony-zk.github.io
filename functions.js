@@ -185,10 +185,13 @@ $(document).ready(function() {
     experience_entry({
         id: "id_EY",
         image: "https://www.seeklogo.net/wp-content/uploads/2014/06/ernst-young-vector-logo.png",
-        title: "Senior Consultant, Data Science",
+        title: "Consultant -> Senior Consultant",
         company: "<a href='https://www.ey.com/en_gl' target='_blank'>Ernst & Young</a>",
         date: "02/2018 - Present (1 year)",
-        details: "I've been involved in many unique data science engagements where I have solved basic problems ranging from word counts to advanced problems such as image recognition from social media. To solve these problems, I use unsupervised and supervised learning methods within R (tidyverse, 4 years exp) and Python (flask, pandas, some tensorflow, 2 years exp). "
+        details: "I've been involved in many engagements ranging from data governance, data analytics, technology implementation, and automation. In the case of Data Analytics, I have solved basic problems ranging from word counts to advanced problems such as image recognition from social media. To solve these problems, I use unsupervised and supervised learning methods within R (tidyverse, 4 years exp) and Python (flask, pandas, minimal tensorflow, 2 years exp), and a variety of industry leading tools and APIs (such as Watson or Azure).<br>\
+<br>\
+In recognition of my excellent performance, I was promoted to Senior Consultant within 5 months of joining EY (typically requires a minimum of 1 year).
+"
     });
     experience_entry({
         id: "id_recruitmate",
