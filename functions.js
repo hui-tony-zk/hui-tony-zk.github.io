@@ -63,6 +63,12 @@ function awards_entry(data) {
 
 $(document).ready(function() {
     awards_entry({
+        date: "09/2018",
+        award: "Vanquish Collisions Hackathon – 1st place prize<br>(Team of 4)",
+        org: "City of Vancouver",
+        value: "$5,000"
+    });
+    awards_entry({
         date: "05/2017",
         award: "John Bosdet Travel Award",
         org: "BCGSC",
