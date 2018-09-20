@@ -204,10 +204,10 @@ span.date {
     #intro_box {
         top: 40%;
         opacity: 0;
+        padding-bottom: 0px;
     }
     #intro_box.load {
         top: 25%;
         opacity: 1;
-        padding-bottom: 0px;
     }
 }
