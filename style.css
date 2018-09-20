@@ -176,13 +176,16 @@ span.date {
     opacity: 1;
 }
 
+#awards_list {
+    font-size: smaller;
+}
 
 /* desktop displays */
 
 @media (min-width: 768px) {
     #right_side {
         overflow-y: scroll;
-        width: 50%;
+        width: 60%;
         float: right;
     }
     #right_side_content {
@@ -192,7 +195,7 @@ span.date {
     }
     #left_side {
         height: 100%;
-        width: 50%;
+        width: 40%;
         float: left;
     }
     #page {
