@@ -143,7 +143,7 @@ $(document).ready(function() {
 
     projects_entry({
         id: "id_SafeWay",
-        image: "https://vancouver.ca/images/cov/feature/vanquish-hackathon-landing.jpg",
+        image: "img/vanquishcollisions-banner-en.jpg",
         title: "Safe Way",
         company: "<a href='https://vancouver.ca/streets-transportation/vanquish-collisions-hackathon.aspx' target = '_blank'>Vanquish Collisons Hackathon</a>",
         date: "09/2018",
