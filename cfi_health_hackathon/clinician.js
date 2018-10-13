@@ -217,22 +217,22 @@ function update_data(id) {
 var num_yes = 0
 
 function update_plot() {
-    if (num_yes >= 4) {
-        var efi_val = 4
-        var ef_color = "orange"
-    } else if (num_yes < 4) {
+    if (num_yes < 3) {
         var efi_val = 3
         var ef_color = "green"
-    } else if (num_yes >= 10) {
+    } else if (num_yes >= 4 && num_yes < 10) {
+        var efi_val = 4
+        var ef_color = "orange"
+    } else if (num_yes >= 10 && num_yes < 15) {
         var efi_val = 5
         var ef_color = "orange"
-    } else if (num_yes >= 15) {
+    } else if (num_yes >= 15 && num_yes < 20) {
         var efi_val = 5
         var ef_color = "orange"
-    } else if (num_yes >= 20) {
+    } else if (num_yes >= 20 && num_yes < 25) {
         var efi_val = 6
         var ef_color = "red"
-    } else if (num_yes >= 28) {
+    } else if (num_yes >= 25) {
         var efi_val = 7
         var ef_color = "red"
     }
