@@ -1,196 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-73646046-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-73646046-1');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Facebook Open Graph meta -->
-    <meta property="og:title" content="Tony Hui">
-    <meta property="og:description" content="Data Scientist and accidental web developer">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="http://huitony.com">
-    <meta http-equiv="Cache-control" content="public">
-    <meta http-equiv="Cache-control" content="max-age=60" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <!-- Custom Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Muli" rel="stylesheet">
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Data -->
-    <title>Tony Hui | Data Science and Visualization</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Clinician's eFI portal</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="clinician.css">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row" id="page">
-            <!-- left side -->
-            <div class="initial" id="left_side">
-                <div class="image_dim">
-                    <div id="intro_box">
-                        <span class="title">Tony Hui</span>
-                        <p>
-                            <span class="head1">
-                            Data Scientist,<br>
-                            Computational Biologist,</br>
-                            </span>
-                            <span class="head2">
-                            and accidental web developer
-                            </span>
-                            </span>
-                        </p>
-                        <br>
-                        <div id="contact_buttons">
-                            <span id="navtitle">Tony Hui</span>
-                            <a href="https://www.linkedin.com/in/huitonyzk/" target="_blank"><i class="fa fa-linkedin-square fa-2x fa-linedin-edit" aria-hidden="true"></i></a>
-                            <a href="mailto:hui.tony.zk@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
-                        </div>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow">
+        <div class="navbar-brand">Patient: <span class="patientname">John Doe</span></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <div class="nav-link">Patient #: <span class="c_age">938402</span></div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">Age: <span class="c_age">68</span></div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">Sex: <span class="c_sex">Male</span></div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">Last Visit: <span class="c_last_visit">October 12, 2018</span></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Body -->
+    <!-- Plots -->
+        <div id="loading">
+            <img src="ripple.svg" height="200"/>
+        </div>
+    <div class="jumbotron jumbotron-fluid mt-5 pt-4 pb-4">
+        <div class="container">
+            <div class="row align-items-middle" id="c_data_display">
+                <div class="col-sm-3">
+                    <div class="c_container_border h-100">
+                        <canvas id="c_eFI_donut"></canvas>
+                        <p class="mr-3 ml-3 text-center" id="i_risk_desc">Patient is well with treated comorbid disease</p>
                     </div>
                 </div>
-            </div>
-            <!-- right side -->
-            <div class="" id="right_side" style="overflow-y: hidden;">
-                <div class="initial" id="right_side_content">
-                    <!-- Blurb -->
-                    <div class="heading h4">Hi</div>
-                    <div class="row" id="blurb">
-                        <p>I'm Tony and I'm a
-                            <s>microbiologist</s> <b>data scientist</b>.</p>
-                        <p>Well, I was a microbiologist in a previous life. Didn't learn anything particularly useful other than that antibiotic soap is bad and immune cells are good.</p>
-                        <p>After graduation, I entered a Masters program in computational biology studying Epigenetics. Very esoteric, right? Anyways, it turns out analyzing gigabytes of data, finding needles of value in haystacks of data, and telling interesting stories with data are highly transferrable skills. Luckily, I've had plenty of oppurtuinties to transfer them. Now my interests lie in solving different data science problems across a variety of domains. I'm particularily good at exploratory data analysis and unsupervised learning problems, mainly because most datasets in biology are unlabeled. And unexplored.</p>
-                        <p>Along the way, I <i>somehow</i> learned how to do basic web development. I can create basic web applications or make simple websites to visualize data. Turns out this is a very useful skill to have when communicating with non-experts. This skill also enabled me to win 4 hackathons (netting $9,000 CAD in prize money)</p>
-                        <p>Please feel free to contact me on <a href="https://www.linkedin.com/in/huitonyzk/" target="_blank">Linked<i class="fa fa-linkedin-square" aria-hidden="true"></i></a> or by email.</p>
-                    </div>
-                    <hr>
-                    <!-- Skills -->
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-3 col-sm-12 h4 heading">Skills</div>
-                        <div class="col-xl-10 col-lg-9 col-sm-12">
-                            <div class="row" id="skills_list">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Hackathons -->
-                    <hr>
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-3 col-sm-12 h4 heading">Hackathons</div>
-                        <div class="col-xl-10 col-lg-9 col-sm-12" id="projects_list">
-                        </div>
-                    </div>
-                    <!-- Experience -->
-                    <hr>
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-3 col-sm-12 h4 heading">Experience</div>
-                        <div class="col-xl-10 col-lg-9 col-sm-12" id="experience_list">
-                        </div>
-                    </div>
-                    <!-- Publications -->
-                    <hr>
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-3 col-sm-12 h4 heading">Publications</div>
-                        <div class="col-xl-10 col-lg-9 col-sm-12">
-                            I am an author or co-author of 8 scientific publications. A full list of my publications can be found on my <a href="https://scholar.google.ca/citations?user=zU74BwcAAAAJ&hl=en" target="_blank">Google Scholar profile</a>
-                                <br><br>
-<img src="img/ncb_cover.png" height="75" style="margin-right: 25px;">
-<img src="img/example1.jpg" height="75" style="margin-right: 25px;">
-<img src="img/bmcbiotech_cover.jpg" height="75" style="margin-right: 25px;">
-                        </div>
-                    </div>
-                    <!-- Education -->
-                    <hr>
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-3 col-sm-12 h4 heading">Education</div>
-                        <div class="col-xl-10 col-lg-9 col-sm-12">
-                            <!-- details_MSC -->
-                            <div class="row">
-                                <div class="float_img"><img src="img/ubclogo.png" width="50"></div>
-                                <div class="float_text">
-                                    <span class="h4">MSc, Genome Sciences and Technology</span>
-                                    <br>
-                                    <span class="subtitle">University of British Columbia</span>
-                                    <br>
-                                    <span class="date">09/2015 - 01/2018 (2 years 4 months)</span>
-                                    <br>
-                                    <span>GPA: 92%</span>
-                                    <br>
-                                    <a href="#!" onclick="return false;" data-toggle="collapse" data-target="#id_masters" class="" aria-expanded="true">Show/hide details</a>
-                                </div>
-                            </div>
-                            <div id="id_masters" class="accordion-body collapse" aria-expanded="true" style="">
-                                <ul class="panel panel-default">
-                                    <li>Invented an automated DNA sequencing protocol for single-cells resulting in 3 new scientific collaborations and contributed to 3 national grant applications being funded</li>
-                                    <li>Automated quality control and analytical pipelines of over 2,000 single-cell datasets (100s of GBs) with bash and R scripts.</li>
-                                    <li>Presented over 40 times at lab and collaborator meetings and at 6 national and international conferences to a mixture of technical and non-technical audiences</li>
-                                </ul>
-                            </div>
-                            <br>
-                            <!-- details_BSc -->
-                            <div class="row">
-                                <div class="float_img"><img src="img/ubclogo.png" width="50"></div>
-                                <div class="float_text">
-                                    <span class="h4">BSc Hons, Microbiology and Immunology</span>
-                                    <br>
-                                    <span class="subtitle">University of British Columbia</span>
-                                    <br>
-                                    <span class="date">09/2010 - 04/2014 (4 years)</span>
-                                    <p>GPA: 85%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Awards -->
-                    <hr>
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-3 col-sm-12 h4 heading">Awards</div>
-                        <div class="col-xl-10 col-lg-9 col-sm-12">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Award</th>
-                                            <th>Organization</th>
-                                            <th>Value</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="awards_list">
-                                    </tbody>
-                                    <tbody>
-                                        <tr class="warning">
-                                            <th><b><u><h4>Total</h4></u></b></th>
-                                            <th><b><u><h4>$51,600</h4></u></b></th>
-                                            <th></th>
-                                            <th></th>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <div class="col-sm-9">
+                    <div class="c_container_border h-100">
+                        <canvas id="c_eFI_line"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container">
+        <!-- Forms -->
+        <div class="row mt-3">
+            <!-- Clinical -->
+            <div class="col-sm-6">
+                <h2>Relevant Clinical Data</h2>
+                <hr />
+                <button class="btn btn-outline-secondary" onclick="update_data('#i_clinical_data')">Sync with EMR data</button>
+                <hr />
+                <h4>Categories</h4>
+                <h6 class="dropdown-toggle" data-toggle="collapse" href="#i_clinical_data" role="button" aria-expanded="false" aria-controls="i_clinical_data">Neurology</h6>
+                <div class="collapse" id="i_clinical_data">
+                </div>
+                <h6 class="dropdown-toggle mt-3">Cardiology</h6>
+                <h6 class="dropdown-toggle mt-3">Respiratory</h6>
+                <h6 class="dropdown-toggle mt-3">Gastrointestinal</h6>
+            </div>
+            <!-- Patient -->
+            <div class="col-sm-6">
+                <h2>Relevant Patient Data</h2>
+                <hr />
+                <button class="btn btn-outline-secondary" onclick="update_data('#i_patient_data')">Sync with Patient App</button>
+                <hr />
+                <div id="i_patient_data">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Addons -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.88/jsrender.min.js"></script>
-<!-- Custom JS -->
-<script src="functions.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- Charts JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<!-- Templating -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.js"></script>
+<script type="text/javascript" src="clinician.js"></script>
 
 </html>
