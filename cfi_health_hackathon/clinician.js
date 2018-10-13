@@ -164,10 +164,10 @@ function add_entry(template, data, parent) {
     $(parent).append(html);
 }
 
-var clin_entries = "Changes in general mental functioning; Onset of cognitive symptoms; Short-term Memory Impairment; Long- term memory impairment; bradykinesia of the limbs; poor muscle tone in limbs; poor standing posture; irregular gait pattern; Clouding or delirium; poor limb coordination; poor coordination, trunk; impaired vibration; tremor at rest; postural tremor; intention tremor; seizures, partial complex; seizures, generalized"
+var clin_entries = "Changes in general mental functioning; Onset of cognitive symptoms; Short-term Memory Impairment; Long- term memory impairment; Bradykinesia of the limbs; Poor muscle tone in limbs; Poor standing posture; Irregular gait pattern; Clouding or delirium; Poor limb coordination; Poor coordination, trunk; Impaired vibration; Tremor at rest; Postural tremor; Intention tremor; Seizures, Partial complex; Seizures, Generalized"
 var clin_entires = clin_entries.split(';')
 
-var pat_entries = "Memory changes; Problems getting dressed; Problems with bathing; Problems carrying out personal grooming; urinary incontinence; toileting problems; bulk difficulties; Problems cooking; sucking problems; Problems going out alone; Falls"
+var pat_entries = "Memory changes;Problems getting dressed;Problems with bathing;Problems carrying out personal grooming;Urinary incontinence;Toileting problems;Bulk difficulties;Problems cooking;Sucking problems;Problems going out alone;Falls"
 var pat_entries = pat_entries.split(';')
 
 $(document).ready(function() {
@@ -180,13 +180,12 @@ $(document).ready(function() {
     }
     for (i = 0; i < pat_entries.length; i++) {
         add_entry(template_yes_no, {
-            question: clin_entires[i],
+            question: pat_entries[i],
             id: "pat_" + i
         }, parent = "#i_patient_data")
     }
     $("input.form-check-input").click(function () {
         num_yes = $(".clin_q_y:checked").length
-        console.log(num_yes)
         update_plot()
     })
 })
@@ -218,24 +217,26 @@ var num_yes = 0
 
 function update_plot() {
     if (num_yes < 3) {
-        var efi_val = 3
-        var ef_color = "green"
+        efi_val = 3
+        ef_color = "green"
     } else if (num_yes >= 4 && num_yes < 10) {
-        var efi_val = 4
-        var ef_color = "orange"
+        efi_val = 4
+        ef_color = "orange"
     } else if (num_yes >= 10 && num_yes < 15) {
-        var efi_val = 5
-        var ef_color = "orange"
+        efi_val = 5
+        ef_color = "orange"
     } else if (num_yes >= 15 && num_yes < 20) {
-        var efi_val = 5
-        var ef_color = "orange"
+        efi_val = 5
+        ef_color = "orange"
     } else if (num_yes >= 20 && num_yes < 25) {
-        var efi_val = 6
-        var ef_color = "red"
+        efi_val = 6
+        ef_color = "red"
     } else if (num_yes >= 25) {
-        var efi_val = 7
-        var ef_color = "red"
+        efi_val = 7
+        ef_color = "red"
     }
+    console.log("num_Yes" + num_yes)
+    console.log("efi" + efi_val)
     myLineChart.data.datasets[0].data[6] = efi_val
     myLineChart.data.datasets[0].pointBackgroundColor[6] = ef_color
     myLineChart.update()
