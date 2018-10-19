@@ -145,7 +145,7 @@ $(document).ready(function() {
         id: "id_pocketcare",
         image: "img/cbihealth.jpg",
         title: "PocketCare",
-        company: "<a href='https://vancouver.ca/streets-transportation/vanquish-collisions-hackathon.aspx' target = '_blank'>Vanquish Collisons Hackathon</a>",
+        company: "<a href='https://www.eventbrite.ca/e/hackathon-for-individuals-with-complex-health-needs-tickets-50417699697#' target = '_blank'>Complex Health Hackathon</a>",
         date: "09/2018",
         details: "A cross-platform electronic assessment tool which integrates clinical data and self-reported patient data to predict risk of adverse health outcomes.<br><br>Our team of 3 placed 3rd out of 13 teams, netting $500 in prize money."
     });
