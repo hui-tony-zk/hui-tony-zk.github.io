@@ -140,7 +140,15 @@ $(document).ready(function() {
         org: "UBC",
         value: "$2,500"
     });
-
+  
+    projects_entry({
+        id: "id_pocketcare",
+        image: "img/cbihealth.jpg",
+        title: "PocketCare",
+        company: "<a href='https://vancouver.ca/streets-transportation/vanquish-collisions-hackathon.aspx' target = '_blank'>Vanquish Collisons Hackathon</a>",
+        date: "09/2018",
+        details: "A cross-platform electronic assessment tool which integrates clinical data and self-reported patient data to predict risk of adverse health outcomes.<br><br>Our team of 3 placed 3rd out of 13 teams, netting $500 in prize money."
+    });
     projects_entry({
         id: "id_SafeWay",
         image: "img/vanquishcollisions-banner-en.jpg",
