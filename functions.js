@@ -191,11 +191,22 @@ $(document).ready(function() {
     });
   
     experience_entry({
+        id: "id_indeed",
+        image: "https://media.licdn.com/dms/image/C560BAQF14ZBBM7LT8g/company-logo_400_400/0?e=1565222400&v=beta&t=2BClE0NOEL2khzJ9e9kRtrSOw9RWZnTyMR02iHLKI1U",
+        title: "Technical Business Analyst",
+        company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
+        date: "03/2019 - Present",
+        details: "Full Time <br>\
+- Derived user personas using unsupervised learning applied to natural text (resumes)<br> \
+- Estimated market share by integrating publically available datasets<br> \
+- Built a guided form for users to easily create resumes, powered by suggestions derived from data
+    });
+    experience_entry({
         id: "id_EY",
         image: "https://www.seeklogo.net/wp-content/uploads/2014/06/ernst-young-vector-logo.png",
         title: "Consultant -> Senior Consultant",
         company: "<a href='https://www.ey.com/en_gl' target='_blank'>Ernst & Young</a>",
-        date: "02/2018 - Present (1 year)",
+        date: "02/2018 - 02/2019 (1 year)",
         details: "Full Time <br>\
 - Supported the transformation of business intelligence for a provincial insurer<br> \
 - Established a process automation Centre of Excellence for a provincial insurer<br> \
