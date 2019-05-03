@@ -199,7 +199,7 @@ $(document).ready(function() {
         details: "Full Time <br>\
 - Derived user personas using unsupervised learning applied to natural text (resumes)<br> \
 - Estimated market share by integrating publically available datasets<br> \
-- Built a guided form for users to easily create resumes, powered by suggestions derived from data
+- Built a guided form for users to easily create resumes, powered by suggestions derived from data"
     });
     experience_entry({
         id: "id_EY",
