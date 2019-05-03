@@ -196,7 +196,7 @@ $(document).ready(function() {
         title: "Technical Business Analyst",
         company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
         date: "03/2019 - Present",
-        details: "Full Time <br>\
+        details: "Full Time <br> \
 - Derived user personas using unsupervised learning applied to natural text (resumes)<br> \
 - Estimated market share by integrating publically available datasets<br> \
 - Built a guided form for users to easily create resumes, powered by suggestions derived from data"
