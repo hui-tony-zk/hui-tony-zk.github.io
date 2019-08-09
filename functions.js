@@ -199,8 +199,9 @@ $(document).ready(function() {
         details: "Full Time <br> \
 - Derived user personas using unsupervised learning applied to natural text (resumes) and estimated market share by persona <br>\
 - Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with with suggestions powered by Indeed data proved through AB testing, resulting in 50% increase in conversion rate (resume completion) <br>\
+- Designed and engineered new automated ETL pipelines in Hive for unmet reporting needs <br>\
 - Designed a new backend architecture in GraphQL, gRPC, and autoscaling microservices hosted in AWS cloud <br>\
-- Collaborated with Product Managers/Directors in Singapore, Tokyo, Austin and Vancouver to improve KPI tracking and enable better decisions"
+- Collaborated with Product Managers/Directors in Singapore, Tokyo, Austin and Vancouver to build a KPI tracking dashboard Tableau"
     });
     experience_entry({
         id: "id_EY",
