@@ -197,9 +197,10 @@ $(document).ready(function() {
         company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
         date: "03/2019 - Present",
         details: "Full Time <br> \
-- Derived user personas using unsupervised learning applied to natural text (resumes)<br> \
-- Estimated market share by integrating publically available datasets<br> \
-- Built a guided form for users to easily create resumes, powered by suggestions derived from data"
+- Derived user personas using unsupervised learning applied to natural text (resumes) and estimated market share by persona <br>\
+- Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with with suggestions powered by Indeed data proved through AB testing, resulting in 50% increase in conversion rate (resume completion) <br>\
+- Designed a new backend architecture in GraphQL, gRPC, and autoscaling microservices hosted in AWS cloud <br>\
+- Collaborated with Product Managers/Directors in Singapore, Tokyo, Austin and Vancouver to improve KPI tracking and enable better decisions"
     });
     experience_entry({
         id: "id_EY",
@@ -215,7 +216,6 @@ $(document).ready(function() {
 - Identified customer sentiments and topics of discussion from social media data for a international retailer<br> \
 - Identified cities ideal for brick&mortar expansion for a growing North American retailer<br> \
 - Reviewed key performance indicators for methodological rigor and data integrity at a Canadian tourism corporation<br> \
-- Supported project management modernization at a Pacific Northwest marine company.<br><br>\
 - In recognition of my excellent performance, I was promoted to Senior Consultant within 5 months of joining EY (typically requires a minimum of 1 year)."
     });
     experience_entry({
