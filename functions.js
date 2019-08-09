@@ -192,7 +192,7 @@ $(document).ready(function() {
   
     experience_entry({
         id: "id_indeed",
-        image: "https://media.licdn.com/dms/image/C560BAQF14ZBBM7LT8g/company-logo_400_400/0?e=1565222400&v=beta&t=2BClE0NOEL2khzJ9e9kRtrSOw9RWZnTyMR02iHLKI1U",
+        image: "img/indeed.jpeg",
         title: "Technical Business Analyst",
         company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
         date: "03/2019 - Present",
