@@ -301,25 +301,25 @@ $(document).ready(function() {
         details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science), <b>gensim</b> (for natural language processing), and <b>flask</b> (for web development and RESTful APIs)"
     });
     skills_entry({
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/150px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
-        title: "2 years experience",
-        details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
-    })
-    skills_entry({
         image: "img/aws.png",
         title: "2 years experience",
         details: "Cloud hosting and computing, including autoscaling, serverless functions, and CDNs"
     });
     skills_entry({
-        image: "img/aws.png",
+        image: "img/javascript.png",
         title: "2 years experience",
         details: "Modern full-stack development in NodeJS, RESTful APIs, GraphQL, and gRPC."
     });  
     skills_entry({
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/150px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
+        title: "2 years experience",
+        details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
+    });
+    skills_entry({
         image: "img/sql.png",
         title: "1 year experience",
         details: "SQL queries for Google BigQuery, Oracle Database, IBM DB2, and Big Data Query engines (HiveSQL, SparkSQL)"
-    })
+    });
     // Initial animations
     $('#left_side').removeClass('initial', 1000, function() {
         $('.image_dim').addClass('load', 3000)
