@@ -306,14 +306,19 @@ $(document).ready(function() {
         details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
     })
     skills_entry({
-        image: "img/javascript.png",
-        title: "2 year experience",
-        details: "API calls, JSON manipulation, and advanced website interactivity with jQuery."
-    })
+        image: "img/aws.png",
+        title: "2 years experience",
+        details: "Cloud hosting and computing, including autoscaling, serverless functions, and CDNs"
+    });
+    skills_entry({
+        image: "img/aws.png",
+        title: "2 years experience",
+        details: "Modern full-stack development in NodeJS, RESTful APIs, GraphQL, and gRPC."
+    });  
     skills_entry({
         image: "img/sql.png",
         title: "1 year experience",
-        details: "SQL queries for Google BigQuery, Oracle Database, and IBM DB2"
+        details: "SQL queries for Google BigQuery, Oracle Database, IBM DB2, and Big Data Query engines (HiveSQL, SparkSQL)"
     })
     // Initial animations
     $('#left_side').removeClass('initial', 1000, function() {
