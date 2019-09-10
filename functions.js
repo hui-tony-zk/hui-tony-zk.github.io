@@ -1,3 +1,29 @@
+// get dates
+
+function calc_duration(year, month, round = "month") {
+    var now = new Date()
+    var start = new Date(year, month)
+
+    var year_diff = now.getFullYear() - start.getFullYear()
+    var month_diff = now.getMonth()+1 - start.getMonth()
+    var days_diff = now.getDate() - start.getDate()
+    if (round === "month") {
+        if (days_diff > 1) {
+            month_diff += 1
+        }
+        var year_str = year_diff > 0 ?  year_diff + " yr " : ''
+        var month_str = month_diff > 0 ?  month_diff + " months" : ''
+        var diff_str = year_str + month_str
+        return diff_str
+    } else {
+        if (month_diff > 6) {
+            year_diff += 1
+        }
+        var year_str = year_diff > 0 ?  year_diff + " yr" : ''
+        return year_str
+    }
+}
+
 // Make experience_template
 var experience_template = $.templates('\
                             <div class="row">\
@@ -195,24 +221,23 @@ $(document).ready(function() {
         image: "img/indeed.jpeg",
         title: "Technical Business Analyst",
         company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
-        date: "03/2019 - Present",
-        details: "Full Time <br> \
-- Derived user personas using unsupervised learning applied to natural text (resumes) and estimated market share by persona <br>\
-- Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with with suggestions powered by Indeed data proved through AB testing, resulting in 50% increase in conversion rate (resume completion) <br>\
+        date: "03/2019 - Present (" + calc_duration(2019, 03) + ")",
+        details: "- Derived user personas using unsupervised learning applied to natural text (resumes) and estimated market share by persona <br>\
+- Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with suggestions powered by Indeed data and proved through AB testing, resulting in 10%-point increase in conversion rate (resume completion) <br>\
 - Designed and engineered new automated ETL pipelines in Hive for unmet reporting needs <br>\
+- Acting as the scrum master in the development of this architecture using JIRA <br> \
 - Designed a new backend architecture in GraphQL, gRPC, and autoscaling microservices hosted in AWS cloud <br>\
-- Collaborated with Product Managers/Directors in Singapore, Tokyo, Austin and Vancouver to build a KPI tracking dashboard Tableau"
+- Collaborated with Product Managers/Directors in Singapore, Tokyo, Austin and Vancouver to build a KPI tracking dashboard in Tableau"
     });
     experience_entry({
         id: "id_EY",
         image: "https://www.seeklogo.net/wp-content/uploads/2014/06/ernst-young-vector-logo.png",
         title: "Consultant -> Senior Consultant",
         company: "<a href='https://www.ey.com/en_gl' target='_blank'>Ernst & Young</a>",
-        date: "02/2018 - 02/2019 (1 year)",
-        details: "Full Time <br>\
-- Supported the transformation of business intelligence for a provincial insurer<br> \
+        date: "02/2018 - 03/2019 (1 yr 1 month)",
+        details: "- Gathered requirements from (Sr) Directors, provisioned privacy compliant databases for offshore development, wrote ETL scripts to 100% verifiable accuracy, and built Tableau dashboards for a provincial insurer \
 - Established a process automation Centre of Excellence for a provincial insurer<br> \
-- Developed a dashboard and exception report generator for monitoring project health and completion<br> \
+- Developed a dashboard and exception report generator using JIRA data to monitor project health and completion<br> \
 - Identified main reasons for calls from call center data in preparation for a ChatBot proof of concept for a Canadian insurer<br> \
 - Identified customer sentiments and topics of discussion from social media data for a international retailer<br> \
 - Identified cities ideal for brick&mortar expansion for a growing North American retailer<br> \
@@ -246,8 +271,8 @@ $(document).ready(function() {
         id: "id_tutor",
         image: "img/laptopicon.png",
         title: "Tutor",
-        date: "01/2016 - Present (3 years)",
-        details: "Tutored undergraduate students in intermediate genetics (2), introductory statistics (3), computational biology (2), and 2 PhD level students in data science"
+        date: "01/2016 - Present(" + calc_duration(2016, 01) + ")",
+        details: "Tutored undergraduate students in intermediate genetics (2), introductory statistics (3), computational biology (2), and 2 PhD level students in applying data science (one resulting in a Nature publication)"
     });
     experience_entry({
         id: "id_ctlt",
@@ -256,7 +281,7 @@ $(document).ready(function() {
         company: "UBC Centre for Teaching, Learning and Technology",
         date: "09/2016 - 03/2017 (7 months)",
         details: "(Part time on select afternoons and weekends. Reported to the Director of UBC’s research and evaluation of teaching and learning) <br>\
-- Wrote simple and complex SQL queries to extract event data of online UBC courses from EDX, all hosted on Google BigQuery<br>\
+- Used SQL to extract event data of online UBC courses from EDX hosted on Google BigQuery<br>\
 - Maintained interactive Jupyter notebooks used as \"dashboards\" for instructors<br>\
 - Scraped and cleaned event data to analyze what students do after coming back to the course from a month-long break<br>\
 - Performed unsupervised clustering of student activity to identify different \"classes\" of students<br>\
@@ -268,7 +293,7 @@ $(document).ready(function() {
         image: "img/datasense.png",
         title: "Founder and President",
         company: "<a href='http://makedatasense.ca' target='_blank'>DataSense</a>",
-        date: "09/2015 - 03/2017 (1 year 7 months)",
+        date: "09/2015 - 03/2017 (1 yr 7 months)",
         details: "Founder and President of DataSense, an organization dedicated to building a hub for Data Science in Vancouver. <br> - Organized data science seminars with local and global companies (including Google, IBM and Facebook) that attracted over 1000 RSVPs. <br> \
 - Hosted Data Science competitions with student teams and sponsor companies (including Mobify and the City of Vancouver). These competitions challenge students to analyze a given dataset and present their findings to a live audience. <br> \
 - Indirectly placed 5 students (and counting!) into data-related jobs from our events and our website."
@@ -287,39 +312,34 @@ $(document).ready(function() {
     // Skills
     skills_entry({
         image: "img/Rlogo.png",
-        title: "4 years experience",
-        details: "Modern R programming for data cleaning and visualization in <b>tidyverse</b>, including <b>dplyr and ggplot</b>"
+        title: calc_duration(2014, 09, round = "year") + " experience",
+        details: "Modern R programming for data cleaning and visualization in <b>tidyverse</b>. Supervised and unsupervised machine learning including <b>clustering</b>, <b>forecasting</b>, <b>regression</b>, and <b>classification</b>"
     });
     skills_entry({
-        image: "img/bash.png",
-        title: "3 years experience",
-        details: "Fluent in <b>bash</b> and <b>GNU tools</b> for data processing. Also used to connect to remote servers (cloud computing)."
-    })
-    skills_entry({
         image: "img/pythonlogo.png",
-        title: "2 years experience",
+        title: calc_duration(2016, 10, round = "year") + " experience",
         details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science), <b>gensim</b> (for natural language processing), and <b>flask</b> (for web development and RESTful APIs)"
     });
     skills_entry({
         image: "img/aws.png",
-        title: "2 years experience",
-        details: "Cloud hosting and computing, including autoscaling, serverless functions, and CDNs"
+        title: "1 yr experience",
+        details: "Cloud hosting and computing in AWS and Microsoft Azure."
     });
     skills_entry({
         image: "img/javascript.png",
-        title: "2 years experience",
-        details: "Modern full-stack development in NodeJS, RESTful APIs, GraphQL, and gRPC."
+        title: calc_duration(2016, 10, round = "year") + " experience",
+        details: "Modern full-stack web development in NodeJS, RESTful APIs, GraphQL, and gRPC."
     });  
     skills_entry({
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg/150px-CSS3_and_HTML5_logos_and_wordmarks.svg.png",
-        title: "2 years experience",
-        details: "Modern web development in HTML and CSS, focusing on mobile-first responsive design"
+        image: "img/sql.png",
+        title: calc_duration(2016, 09, round = "year") + " experience",
+        details: "SQL queries for Google BigQuery, Oracle Database, IBM DB2, and Big Data Query engines (HiveQL, SparkSQL, Presto)"
     });
     skills_entry({
-        image: "img/sql.png",
-        title: "1 year experience",
-        details: "SQL queries for Google BigQuery, Oracle Database, IBM DB2, and Big Data Query engines (HiveSQL, SparkSQL)"
-    });
+        image: "img/bash.png",
+        title: "3 yr experience",
+        details: "Fluent in <b>bash</b> and <b>GNU tools</b> for data processing."
+    })
     // Initial animations
     $('#left_side').removeClass('initial', 1000, function() {
         $('.image_dim').addClass('load', 3000)
