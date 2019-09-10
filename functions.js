@@ -225,8 +225,8 @@ $(document).ready(function() {
         details: "- Derived user personas using unsupervised learning applied to natural text (resumes) and estimated market share by persona <br>\
 - Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with suggestions powered by Indeed data and proved through AB testing, resulting in 10%-point increase in conversion rate (resume completion) <br>\
 - Designed and engineered new automated ETL pipelines in Hive for unmet reporting needs <br>\
-- Acting as the scrum master in the development of this architecture using JIRA <br> \
 - Designed a new backend architecture in GraphQL, gRPC, and autoscaling microservices hosted in AWS cloud <br>\
+- Acting as the scrum master in the development of this architecture using JIRA <br> \
 - Collaborated with Product Managers/Directors in Singapore, Tokyo, Austin and Vancouver to build a KPI tracking dashboard in Tableau"
     });
     experience_entry({
