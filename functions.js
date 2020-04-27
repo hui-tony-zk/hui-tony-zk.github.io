@@ -226,7 +226,8 @@ $(document).ready(function() {
 - Scrum master and software developer of a new backend architecture in GraphQL and gRPC, reducing response times by 70% <br> \
 - Collaborated with Product Managers/Directors around the world (Singapore, Tokyo, Austin and Vancouver) to build KPI tracking dashboards for senior leadership <br> \
 - Helped establish a local incubator program complete with pitching and funding processes leading to a funded product <br> \
-- Helped establish the Product Manager interviewing process for Vancouver and screened 10+ candidates 
+- Helped establish the Product Manager interviewing process for Vancouver and screened 10+ candidates <br> \
+- In recognition of my performance, I was promoted to Product Manager in the first 10 months of joining Indeed.
         " 
     });
     experience_entry({
@@ -242,7 +243,7 @@ $(document).ready(function() {
 - Identified customer sentiments and topics of discussion from social media data for a international retailer<br> \
 - Identified cities ideal for brick&mortar expansion for a growing North American retailer<br> \
 - Reviewed key performance indicators for methodological rigor and data integrity at a Canadian tourism corporation<br> \
-- In recognition of my excellent performance, I was promoted to Senior Consultant within 5 months of joining EY (typically requires a minimum of 1 year)."
+- In recognition of my performance, I was promoted to Senior Consultant within 5 months of joining EY (typically requires a minimum of 1 year)."
     });
     experience_entry({
         id: "id_recruitmate",
