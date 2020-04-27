@@ -222,7 +222,7 @@ $(document).ready(function() {
         title: "Product Manager, Data & Innovation",
         company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
         date: "03/2019 - Present (" + calc_duration(2019, 03) + ")",
-        details: "- Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with suggestions powered by Indeed data and proved through AB testing, resulting in 10%-point increase in conversion rate (resume completion) <br>\
+        details: "- Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with suggestions powered by Indeed data and proved through AB testing, resulting in 10%-point increase in conversion rate (resume completion) <br> \
 - Scrum master and software developer of a new backend architecture in GraphQL and gRPC, reducing response times by 70% <br> \
 - Collaborated with Product Managers/Directors around the world (Singapore, Tokyo, Austin and Vancouver) to build KPI tracking dashboards for senior leadership <br> \
 - Helped establish a local incubator program complete with pitching and funding processes leading to a funded product <br> \
