@@ -227,8 +227,7 @@ $(document).ready(function() {
 - Collaborated with Product Managers/Directors around the world (Singapore, Tokyo, Austin and Vancouver) to build KPI tracking dashboards for senior leadership <br> \
 - Helped establish a local incubator program complete with pitching and funding processes leading to a funded product <br> \
 - Helped establish the Product Manager interviewing process for Vancouver and screened 10+ candidates <br> \
-- In recognition of my performance, I was promoted to Product Manager in the first 10 months of joining Indeed.
-        " 
+- In recognition of my performance, I was promoted to Product Manager in the first 10 months of joining Indeed." 
     });
     experience_entry({
         id: "id_EY",
