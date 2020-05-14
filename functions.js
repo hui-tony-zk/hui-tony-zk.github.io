@@ -248,7 +248,7 @@ $(document).ready(function() {
         id: "id_recruitmate",
         image: "img/animatedlogo.gif",
         title: "Co-Founder and \"Tech Guy\"",
-        company: "<a href='http://getrecruitmate.com' target='_blank'>Recruitmate</a>",
+        company: "Recruitmate (now defunct)",
         date: "10/2016 - 10/2017 (1 year)",
         details: "(On weekends)<br> \
 - Designed and built a basic front-end interface in HTML/CSS. Added interactivity using javascript (JQuery). <br>\
@@ -264,15 +264,15 @@ $(document).ready(function() {
         details: "(Full time. Lead a group of 4) <br>\
 - Came up with the overall vision and assigned tasks taking into account each team member's strengths and weaknesses<br>\
 - Extracted, transformed, and loaded publically available datasets (e.g. National Household Surveys) into Google Sheets (as a makeshift database).<br>\
-- Built a visualization tool (<a href='http://visualsurrey.huitony.com/' target='_blank'>http://visualsurrey.huitony.com/</a>) in Javascript, HTML/CSS, and automatically updates the front-end visualizations whenever the main Google Sheets \"backend\" is updated via a RESTful API backend built in Flask (python). <br>\
+- Built a visualization tool in Javascript, HTML/CSS, and automatically updates the front-end visualizations whenever the main Google Sheets \"backend\" is updated via a RESTful API backend built in Flask (python). <br>\
 - Defined \"clusters\" of neighbourhoods with high degrees of similarity using hierarchical clustering while taking account redundant variables with principal components analysis."
     });
     experience_entry({
         id: "id_tutor",
         image: "img/laptopicon.png",
         title: "Tutor",
-        date: "01/2016 - Present(" + calc_duration(2016, 01) + ")",
-        details: "Tutored undergraduate students in intermediate genetics (2), introductory statistics (3), computational biology (2), and 2 PhD level students in applying data science (one resulting in a Nature publication)"
+        date: "01/2016 - 11/2019 (3 yrs 9 months)",
+        details: "Tutored undergraduate students in intermediate genetics (2), introductory statistics (3), computational biology (2), and 2 PhD level students in applied data science (one resulting in a Nature publication)"
     });
     experience_entry({
         id: "id_ctlt",
@@ -321,11 +321,6 @@ $(document).ready(function() {
         details: "Comprehensive python programming - <b>pandas, scikit-learn</b> (for data science), <b>gensim</b> (for natural language processing), and <b>flask</b> (for web development and RESTful APIs)"
     });
     skills_entry({
-        image: "img/aws.png",
-        title: "1 yr experience",
-        details: "Cloud hosting and computing in AWS and Microsoft Azure."
-    });
-    skills_entry({
         image: "img/javascript.png",
         title: calc_duration(2016, 10, round = "year") + " experience",
         details: "Modern full-stack web development in NodeJS, RESTful APIs, GraphQL, and gRPC."
@@ -336,10 +331,10 @@ $(document).ready(function() {
         details: "SQL queries for Google BigQuery, Oracle Database, IBM DB2, and Big Data Query engines (HiveQL, SparkSQL, Presto)"
     });
     skills_entry({
-        image: "img/bash.png",
-        title: "3 yr experience",
-        details: "Fluent in <b>bash</b> and <b>GNU tools</b> for data processing."
-    })
+        image: "img/aws.png",
+        title: "2 yrs experience",
+        details: "Cloud hosting and computing in AWS (and a tiny bit of Microsoft Azure)."
+    });
     // Initial animations
     $('#left_side').removeClass('initial', 1000, function() {
         $('.image_dim').addClass('load', 3000)
