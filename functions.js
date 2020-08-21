@@ -219,15 +219,14 @@ $(document).ready(function() {
     experience_entry({
         id: "id_indeed",
         image: "img/indeed.jpeg",
-        title: "Product Manager, Data & Innovation",
+        title: "Technical Product Manager",
         company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
         date: "03/2019 - Present (" + calc_duration(2019, 03) + ")",
-        details: "- Enhanced <a href='Resume.com' target='_blank'>Resume.com</a> with suggestions powered by Indeed data and proved through AB testing, resulting in 10%-point increase in conversion rate (resume completion) <br> \
-- Scrum master and software developer of a new backend architecture in GraphQL and gRPC, reducing response times by 70% <br> \
-- Collaborated with Product Managers/Directors around the world (Singapore, Tokyo, Austin and Vancouver) to build KPI tracking dashboards for senior leadership <br> \
-- Helped establish a local incubator program complete with pitching and funding processes leading to a funded product <br> \
-- Helped establish the Product Manager interviewing process for Vancouver and screened 10+ candidates <br> \
-- In recognition of my performance, I was promoted to Product Manager in the first 10 months of joining Indeed." 
+        details: "<p>At Indeed, I'm a do-it-all role that dabbles in full-stack web development, project and product management, business intelligence, and data science. I was promoted to Product Manager in the first 10 months in recognition of my excellent performance. A few highlights:</p> \
+- MITACs research project for improving GPT models (2 & 3) for long-form content\
+- Cross company collaboration to build source-of-truth dashboards for Sr. Directors \
+- Scrum master for Resume.com's rebuild from a monolith to microservices (on gRPC and GraphQL protocol), complete with end-to-end testing\
+- Some extra bonus point activities like improving Vancouver hiring process and Program Management for a local \"incubator\" program"
     });
     experience_entry({
         id: "id_EY",
@@ -235,14 +234,12 @@ $(document).ready(function() {
         title: "Consultant -> Senior Consultant",
         company: "<a href='https://www.ey.com/en_gl' target='_blank'>Ernst & Young</a>",
         date: "02/2018 - 03/2019 (1 yr 1 month)",
-        details: "- Gathered requirements from (Sr) Directors, provisioned privacy compliant databases for offshore development, wrote ETL scripts to 100% verifiable accuracy, and built Tableau dashboards for a provincial insurer \
+        details: "<p>At EY, I'm a do-it-all role that dabbles in full-stack web development, project and product management, business intelligence, and data science. I was promoted to Sr Consultant in the first 5 months (official after 7) in recognition of my excellent performance. A few highlights:</p> \
+- Gathered requirements from (Sr) Directors, provisioned privacy compliant databases for offshore development, wrote ETL scripts to 100% verifiable accuracy, and built Tableau dashboards for a provincial insurer \
 - Established a process automation Centre of Excellence for a provincial insurer<br> \
 - Developed a dashboard and exception report generator using JIRA data to monitor project health and completion<br> \
-- Identified main reasons for calls from call center data in preparation for a ChatBot proof of concept for a Canadian insurer<br> \
-- Identified customer sentiments and topics of discussion from social media data for a international retailer<br> \
-- Identified cities ideal for brick&mortar expansion for a growing North American retailer<br> \
-- Reviewed key performance indicators for methodological rigor and data integrity at a Canadian tourism corporation<br> \
-- In recognition of my performance, I was promoted to Senior Consultant within 5 months of joining EY (typically requires a minimum of 1 year)."
+- Identified cities ideal for brick&mortar expansion for a growing North American retailer integrating census and social media data<br> \
+- Reviewed key performance indicators for methodological rigor and data integrity at a Canadian tourism corporation<br> \."
     });
     experience_entry({
         id: "id_recruitmate",
@@ -250,7 +247,7 @@ $(document).ready(function() {
         title: "Co-Founder and \"Tech Guy\"",
         company: "Recruitmate (now defunct)",
         date: "10/2016 - 10/2017 (1 year)",
-        details: "(On weekends)<br> \
+        details: "<p>(On weekends)<br></p> \
 - Designed and built a basic front-end interface in HTML/CSS. Added interactivity using javascript (JQuery). <br>\
 - Built a backend application pipeline which parses web pages using selenium in python. Currently, this is hosted on an EC2 server (AWS). <br>\
 - Created an API service in Flask (python) to serve search results. Deployed using ElasticBeanstalk (AWS)"
@@ -261,7 +258,7 @@ $(document).ready(function() {
         title: "Fellow, Data Science for Social Good",
         company: "University of British Columbia",
         date: "05/2017 - 08/2017 (16 weeks)",
-        details: "(Full time. Lead a group of 4) <br>\
+        details: "<p>(Full time. Lead a group of 4) </p> <br>\
 - Came up with the overall vision and assigned tasks taking into account each team member's strengths and weaknesses<br>\
 - Extracted, transformed, and loaded publically available datasets (e.g. National Household Surveys) into Google Sheets (as a makeshift database).<br>\
 - Built a visualization tool in Javascript, HTML/CSS, and automatically updates the front-end visualizations whenever the main Google Sheets \"backend\" is updated via a RESTful API backend built in Flask (python). <br>\
@@ -272,7 +269,7 @@ $(document).ready(function() {
         image: "img/laptopicon.png",
         title: "Tutor",
         date: "01/2016 - 11/2019 (3 yrs 9 months)",
-        details: "Tutored undergraduate students in intermediate genetics (2), introductory statistics (3), computational biology (2), and 2 PhD level students in applied data science (one resulting in a Nature publication)"
+        details: "<p>Tutored undergraduate students in intermediate genetics (2), introductory statistics (3), computational biology (2), and 2 PhD level students in applied data science (one resulting in a Nature publication)</p>"
     });
     experience_entry({
         id: "id_ctlt",
@@ -280,7 +277,7 @@ $(document).ready(function() {
         title: "Data Scientist",
         company: "UBC Centre for Teaching, Learning and Technology",
         date: "09/2016 - 03/2017 (7 months)",
-        details: "(Part time on select afternoons and weekends. Reported to the Director of UBC’s research and evaluation of teaching and learning) <br>\
+        details: "<p>(Part time on select afternoons and weekends. Reported to the Director of UBC’s research and evaluation of teaching and learning)</p> <br>\
 - Used SQL to extract event data of online UBC courses from EDX hosted on Google BigQuery<br>\
 - Maintained interactive Jupyter notebooks used as \"dashboards\" for instructors<br>\
 - Scraped and cleaned event data to analyze what students do after coming back to the course from a month-long break<br>\
@@ -294,7 +291,7 @@ $(document).ready(function() {
         title: "Founder and President",
         company: "<a href='http://makedatasense.ca' target='_blank'>DataSense</a>",
         date: "09/2015 - 03/2017 (1 yr 7 months)",
-        details: "Founder and President of DataSense, an organization dedicated to building a hub for Data Science in Vancouver. <br> - Organized data science seminars with local and global companies (including Google, IBM and Facebook) that attracted over 1000 RSVPs. <br> \
+        details: "<p>Founder and President of DataSense, an organization dedicated to building a hub for Data Science in Vancouver.</p> <br> - Organized data science seminars with local and global companies (including Google, IBM and Facebook) that attracted over 1000 RSVPs.\
 - Hosted Data Science competitions with student teams and sponsor companies (including Mobify and the City of Vancouver). These competitions challenge students to analyze a given dataset and present their findings to a live audience. <br> \
 - Indirectly placed 5 students (and counting!) into data-related jobs from our events and our website."
     });
