@@ -1,1 +1,0 @@
-cmd = gene_set_foreground_upinold.txt mouse gene_set_foreground_upinold -bg gene_set_background.txt -start -2000 -end 500 -p 12 -len 6,8,10,12 -S 10 -noweight
