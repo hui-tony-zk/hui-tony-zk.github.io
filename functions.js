@@ -89,8 +89,20 @@ function awards_entry(data) {
 
 $(document).ready(function() {
     awards_entry({
+        date: "10/2020",
+        award: "Modernizing Behavioural Health Hackathon – 2nd place<br>(Team of 3)",
+        org: "AnthemAI",
+        value: "$7,000 USD"
+    });
+    awards_entry({
         date: "09/2018",
-        award: "Vanquish Collisions Hackathon – 1st place prize<br>(Team of 4)",
+        award: "Complex Health Hackathon – 2nd place<br>(Team of 3)",
+        org: "CBI Health",
+        value: "$500"
+    });
+    awards_entry({
+        date: "09/2018",
+        award: "Vanquish Collisions Hackathon – 1st place<br>(Team of 4)",
         org: "City of Vancouver",
         value: "$5,000"
     });
@@ -168,6 +180,14 @@ $(document).ready(function() {
     });
   
     projects_entry({
+        id: "id_moodoom",
+        image: "img/moodoom.png",
+        title: "moodoom",
+        company: "<a href='https://anthemai-behavioralhealthhack.bemyapp.com/' target = '_blank'>Modernizing Behavioral Health Hackathon</a>",
+        date: "09/2018",
+        details: "We built a ML model that predicts risk of future emergency admissions based on behavioural health insurance claims history.<br><br>Our team of 3 placed 2nd out of 15 teams around the world, netting $7,000 USD in prize money."
+    });
+    projects_entry({
         id: "id_pocketcare",
         image: "img/cbihealth.jpg",
         title: "PocketCare",
@@ -223,10 +243,10 @@ $(document).ready(function() {
         company: "<a href='https://indeed.jobs' target='_blank'>Indeed.com</a>",
         date: "03/2019 - Present (" + calc_duration(2019, 03) + ")",
         details: "<p>At Indeed, I'm a do-it-all role that dabbles in full-stack web development, project and product management, business intelligence, and data science. I was promoted to Product Manager in the first 10 months in recognition of my excellent performance. A few highlights:</p> \
-- MITACs research project for improving GPT models (2 & 3) for long-form content\
-- Cross company collaboration to build source-of-truth dashboards for Sr. Directors \
+- Company-wide lead on GPT-3 technology applied to long-form content generation and resume improvement\
+- Cross company collaboration to build source-of-truth dashboards for Sr. Directors for strategic quarterly and annual planning\
 - Scrum master for Resume.com's rebuild from a monolith to microservices (on gRPC and GraphQL protocol), complete with end-to-end testing\
-- Some extra bonus point activities like improving Vancouver hiring process and Program Management for a local \"incubator\" program"
+- Some bonus point activities like improving Vancouver hiring process and Program Management for a local \"incubator\" program"
     });
     experience_entry({
         id: "id_EY",
@@ -234,7 +254,7 @@ $(document).ready(function() {
         title: "Consultant -> Senior Consultant",
         company: "<a href='https://www.ey.com/en_gl' target='_blank'>Ernst & Young</a>",
         date: "02/2018 - 03/2019 (1 yr 1 month)",
-        details: "<p>At EY, I'm a do-it-all role that dabbles in full-stack web development, project and product management, business intelligence, and data science. I was promoted to Sr Consultant in the first 5 months (official after 7) in recognition of my excellent performance. A few highlights:</p> \
+        details: "<p>At EY, I was helping clients gain value from modernizing old tech systems and drawing insights from their data collections. I was promoted to Senior Consultant in the first 5 months (official after 7) in recognition of my excellent performance. A few highlights:</p> \
 - Gathered requirements from (Sr) Directors, provisioned privacy compliant databases for offshore development, wrote ETL scripts to 100% verifiable accuracy, and built Tableau dashboards for a provincial insurer \
 - Established a process automation Centre of Excellence for a provincial insurer<br> \
 - Developed a dashboard and exception report generator using JIRA data to monitor project health and completion<br> \
