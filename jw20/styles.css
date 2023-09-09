@@ -14,6 +14,14 @@ body, html {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: relative;
+}
+
+.section h2 {
+    position: sticky; /* Makes the header sticky within the section */
+    top: 0; /* Aligns the header to the top of the section */
+    background-color: inherit; /* Inherits the background color of the section to cover content beneath */
+    z-index: 1; /* Ensures the header stays on top of other elements in the section */
 }
 
 .right-align {
@@ -27,7 +35,8 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 2rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
     font-size: 2rem;
 }
 
