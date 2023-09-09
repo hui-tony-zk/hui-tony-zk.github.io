@@ -32,8 +32,9 @@ h2 {
 }
 
 img, video {
-    max-height: 100vh;  /* Set the max height to the height of the viewport */
-    width: auto;        /* Let the width adjust automatically to maintain aspect ratio */
+    max-width: 500px;
+    max-height: 80vh;
+    height: auto;        /* Let the width adjust automatically to maintain aspect ratio */
     margin: 1rem 0;
     display: block;
     margin-left: auto;
