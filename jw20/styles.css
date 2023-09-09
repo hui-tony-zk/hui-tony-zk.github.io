@@ -1,0 +1,41 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 1s, color 0.5s;
+    font-family: 'Georgia', serif;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.right-align {
+    display: block;
+    text-align: right;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+img, video {
+    max-height: 100vh;  /* Set the max height to the height of the viewport */
+    width: auto;        /* Let the width adjust automatically to maintain aspect ratio */
+    margin: 1rem 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
