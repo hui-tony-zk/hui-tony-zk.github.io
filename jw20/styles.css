@@ -14,14 +14,13 @@ body, html {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    position: relative;
 }
 
 .section h2 {
-    position: sticky; /* Makes the header sticky within the section */
-    top: 0; /* Aligns the header to the top of the section */
-    background-color: inherit; /* Inherits the background color of the section to cover content beneath */
-    z-index: 1; /* Ensures the header stays on top of other elements in the section */
+    z-index: 1;
+    width: 100%;
+    padding: 10px 0; /* Add some padding for better appearance */
+    text-align: center; /* Center the text */
 }
 
 .right-align {
@@ -35,9 +34,10 @@ h1 {
 }
 
 h2 {
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
     font-size: 2rem;
+    margin-top: 0;
 }
 
 img, video {
@@ -48,4 +48,38 @@ img, video {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#toc {
+    position: fixed;
+    right: 10px;
+    top: 40px;  /* Adjust this based on the button's size */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    max-height: 70vh;  /* You might want to limit the height and make it scrollable */
+    overflow-y: auto;
+}
+
+#toc.hidden {
+    display: none;
+}
+
+#toc a {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+#toc a:hover {
+    text-decoration: underline;
+}
+
+#tocToggle {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 1001;  /* Ensure it's above the TOC */
 }

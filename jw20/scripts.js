@@ -29,3 +29,48 @@ document.addEventListener('scroll', function() {
         }
     });
 });
+
+document.addEventListener('scroll', function() {
+    const headers = document.querySelectorAll('.section h2');
+    
+    headers.forEach(function(header) {
+        const section = header.parentElement;
+        const rect = section.getBoundingClientRect();
+        
+        // Set the background color of the header based on the section's data attribute
+        header.style.backgroundColor = section.dataset.bgColor;
+
+        if (rect.top <= 0 && rect.bottom >= header.offsetHeight) {
+            header.style.position = 'fixed';
+            header.style.top = '0';
+            header.style.left = '0'; /* Ensure it's aligned to the left */
+        } else if (rect.top > 0) {
+            header.style.position = 'static';
+        } else if (rect.bottom < header.offsetHeight) {
+            header.style.position = 'absolute';
+            header.style.left = '0'; /* Ensure it's aligned to the left */
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toc = document.getElementById('toc');
+    const tocToggle = document.getElementById('tocToggle');
+    const headers = document.querySelectorAll('.section h2');
+    
+    headers.forEach(function(header) {
+        const link = document.createElement('a');
+        link.href = `#${header.innerText}`;
+        link.innerText = header.innerText;
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            header.scrollIntoView({ behavior: 'smooth' });
+        });
+        toc.appendChild(link);
+    });
+
+    // Toggle the TOC visibility on button click
+    tocToggle.addEventListener('click', function() {
+        toc.classList.toggle('hidden');
+    });
+});
