@@ -517,11 +517,11 @@
         // Function to create emoji at tap location for mobile users
         function createEmojiAtTap(event) {
             const emoji = document.createElement('div');
-            emoji.innerHTML = ['🎉', '💖', '🌈', '🦄', '🍕', '🥂', '💍', '🏖️', '🌴', '🌮'][Math.floor(Math.random() * 10)];
+            emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳',][Math.floor(Math.random() * 7)];
             emoji.style.position = 'fixed';
             emoji.style.left = (event.touches ? event.touches[0].clientX : event.clientX) + 'px';
             emoji.style.top = (event.touches ? event.touches[0].clientY : event.clientY) + 'px';
-            emoji.style.fontSize = '24px';
+            emoji.style.fontSize = '48px';
             emoji.style.pointerEvents = 'none';
             emoji.style.animation = 'fade-out 1s forwards';
             document.body.appendChild(emoji);
