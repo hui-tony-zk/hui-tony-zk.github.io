@@ -534,16 +534,6 @@
         } else {
             document.addEventListener('mousemove', createEmojiTrail);
         }
-
-        // Add a fun message for mobile users
-        if ('ontouchstart' in window) {
-            const mobileMessage = document.createElement('p');
-            mobileMessage.textContent = "Tap anywhere for a surprise! 🎉";
-            mobileMessage.style.textAlign = 'center';
-            mobileMessage.style.color = '#ff00ff';
-            mobileMessage.style.fontWeight = 'bold';
-            document.body.insertBefore(mobileMessage, document.body.firstChild);
-        }
     </script>
 </body>
 </html>
