@@ -64,6 +64,20 @@
                 max-width: 800px;
             }
         }
+
+        @keyframes fade-out {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        .emoji {
+            position: fixed;
+            font-size: 48px; 
+            pointer-events: none;
+            user-select: none;
+            z-index: 9999;
+            animation: fade-out 1s forwards;
+        }
     </style>
 </head>
 <body>
@@ -78,15 +92,15 @@
         </div>
     </div>
     <script>
-        function createEmojiAtTap(event) {
+        let lastEmojiTime = 0;
+        const emojiDelay = 100; // Delay in milliseconds
+
+        function createEmoji(x, y) {
             const emoji = document.createElement('div');
+            emoji.className = 'emoji';
             emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳'][Math.floor(Math.random() * 7)];
-            emoji.style.position = 'fixed';
-            emoji.style.left = (event.touches ? event.touches[0].clientX : event.clientX) + 'px';
-            emoji.style.top = (event.touches ? event.touches[0].clientY : event.clientY) + 'px';
-            emoji.style.fontSize = '48px';
-            emoji.style.pointerEvents = 'none';
-            emoji.style.animation = 'fade-out 1s forwards';
+            emoji.style.left = x + 'px';
+            emoji.style.top = y + 'px';
             document.body.appendChild(emoji);
 
             setTimeout(() => {
@@ -94,25 +108,26 @@
             }, 1000);
         }
 
-        function createEmojiTrail(event) {
-            const emoji = document.createElement('div');
-            emoji.innerHTML = ['🎉', '💖', '🌈', '🦄', '🍕'][Math.floor(Math.random() * 5)];
-            emoji.style.position = 'fixed';
-            emoji.style.left = event.clientX + 'px';
-            emoji.style.top = event.clientY + 'px';
-            emoji.style.pointerEvents = 'none';
-            emoji.style.animation = 'fade-out 1s forwards';
-            document.body.appendChild(emoji);
+        function handleMobileInteraction(event) {
+            const x = event.touches[0].clientX;
+            const y = event.touches[0].clientY;
+            createEmoji(x, y);
+        }
 
-            setTimeout(() => {
-                document.body.removeChild(emoji);
-            }, 1000);
+        function handleDesktopInteraction(event) {
+            const currentTime = Date.now();
+            if (currentTime - lastEmojiTime > emojiDelay) {
+                const x = event.clientX;
+                const y = event.clientY;
+                createEmoji(x, y);
+                lastEmojiTime = currentTime;
+            }
         }
 
         if ('ontouchstart' in window) {
-            document.addEventListener('touchstart', createEmojiAtTap);
+            document.addEventListener('touchstart', handleMobileInteraction);
         } else {
-            document.addEventListener('mousemove', createEmojiTrail);
+            document.addEventListener('mousemove', handleDesktopInteraction);
         }
     </script>
 </body>

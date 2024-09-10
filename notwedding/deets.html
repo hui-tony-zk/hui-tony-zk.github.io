@@ -59,39 +59,42 @@
             background-color: var(--orange-red);
             color: var(--background-beige);
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 18px;
+            margin: 10px 5px;
             cursor: pointer;
-            border-radius: 3px;
+            border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .button:hover {
             background-color: var(--lion-brown);
-            color: var(--black);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            color: var(--background-beige);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.25);
         }
         #final-rsvp {
             background-color: var(--orange-red);
-            font-size: 18px;
+            font-size: 20px;
             padding: 15px 30px;
         }
         #final-rsvp:hover {
             background-color: var(--lion-brown);
         }
         .info-button {
-            background-color: var(--champagne);
-            color: var(--text-color);
+            background-color: var(--lion-brown);
+            color: var(--background-beige);
+            font-size: 16px;
+            padding: 10px 20px;
         }
         .info-button:hover {
             background-color: var(--orange-red);
-            color: var(--background-beige);
         }
         .modal {
             display: none;
@@ -270,7 +273,7 @@
 
         .button-container {
             text-align: center;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .value-proposition {
@@ -298,6 +301,20 @@
         .value-proposition p {
             font-style: italic;
             margin-top: 15px;
+        }
+
+        @keyframes fade-out {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        .emoji {
+            position: fixed;
+            font-size: 48px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 9999;
+            animation: fade-out 1s forwards;
         }
     </style>
 </head>
@@ -368,7 +385,7 @@
                     <li><strong>sunsets that'll break your instagram:</strong> warning: your followers might get jealous.</li>
                     <li><strong>group discount magic:</strong> we've negotiated rates that'll make your wallet hurt less. less than 4+ star hotels along the entire baja peninsula.</li>
                 </ul>
-                <p>look, we know it's not cheap. but neither is therapy, and this weekend might just be both. plus, can you really put a price on watching tony attempt to salsa? (spoiler: it's priceless)</p>
+                <p>look, we know it's not cheap. but neither is therapy, and this weekend might just be both. plus, can you really put a price on ~60 of us taking occupying 90%+ of the hotel at the same time? (spoiler: it's priceless)</p>
             </div>
         </div>
     </div>
@@ -406,6 +423,7 @@
         <strong>Sunday, June 8, 2025</strong>
         <ul>
             <li>6:00 PM - 9:00 PM: Welcome Buffet at Playa Bar Lawn (Open Bar)</li>
+            <li><em>Dress Code: All White (Dinner en Blanc)</em></li>
         </ul>
         <button class="button info-button" onclick="showInfoModal('welcome')">peep the welcome feast</button>
 
@@ -452,6 +470,8 @@
             <span class="close" onclick="closeModal('welcome-modal')">&times;</span>
             <h2>welcome to love island</h2>
             <img src="img/playabar.webp" alt="Welcome Buffet" style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
+            <p><strong>Dress Code:</strong> All White (Dinner en Blanc)</p>
+            <p>Join us for a stunning evening of white elegance against the backdrop of the beautiful Playa Bar Lawn. Don't forget to pack your favorite white outfit!</p>
         </div>
     </div>
 
@@ -505,32 +525,15 @@
             priceDetails.style.display = priceDetails.style.display === "none" ? "block" : "none";
         }
 
-        // Function to create emoji trail for desktop
-        function createEmojiTrail(event) {
-            const emoji = document.createElement('div');
-            emoji.innerHTML = ['🎉', '💖', '🌈', '🦄', '🍕'][Math.floor(Math.random() * 5)];
-            emoji.style.position = 'fixed';
-            emoji.style.left = event.clientX + 'px';
-            emoji.style.top = event.clientY + 'px';
-            emoji.style.pointerEvents = 'none';
-            emoji.style.animation = 'fade-out 1s forwards';
-            document.body.appendChild(emoji);
+        let lastEmojiTime = 0;
+        const emojiDelay = 100; // Delay in milliseconds
 
-            setTimeout(() => {
-                document.body.removeChild(emoji);
-            }, 1000);
-        }
-
-        // Function to create emoji at tap location for mobile users
-        function createEmojiAtTap(event) {
+        function createEmoji(x, y) {
             const emoji = document.createElement('div');
+            emoji.className = 'emoji';
             emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳'][Math.floor(Math.random() * 7)];
-            emoji.style.position = 'fixed';
-            emoji.style.left = event.touches[0].clientX + 'px';
-            emoji.style.top = event.touches[0].clientY + 'px';
-            emoji.style.fontSize = '48px';
-            emoji.style.pointerEvents = 'none';
-            emoji.style.animation = 'fade-out 1s forwards';
+            emoji.style.left = x + 'px';
+            emoji.style.top = y + 'px';
             document.body.appendChild(emoji);
 
             setTimeout(() => {
@@ -538,11 +541,26 @@
             }, 1000);
         }
 
-        // Use touchstart for mobile devices and mousemove for desktop
+        function handleMobileInteraction(event) {
+            const x = event.touches[0].clientX;
+            const y = event.touches[0].clientY;
+            createEmoji(x, y);
+        }
+
+        function handleDesktopInteraction(event) {
+            const currentTime = Date.now();
+            if (currentTime - lastEmojiTime > emojiDelay) {
+                const x = event.clientX;
+                const y = event.clientY;
+                createEmoji(x, y);
+                lastEmojiTime = currentTime;
+            }
+        }
+
         if ('ontouchstart' in window) {
-            document.addEventListener('touchstart', createEmojiAtTap);
+            document.addEventListener('touchstart', handleMobileInteraction);
         } else {
-            document.addEventListener('mousemove', createEmojiTrail);
+            document.addEventListener('mousemove', handleDesktopInteraction);
         }
     </script>
 </body>
