@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
             --lion-brown: #d6a76c;
             --text-color: #333333;
         }
+
         body {
             font-family: 'Poppins', sans-serif;
             font-weight: 400;
@@ -27,11 +29,15 @@
             padding: 20px;
             background: linear-gradient(to bottom, var(--background-beige), #e8e3d9);
         }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             color: var(--black);
             font-weight: 700;
             text-align: center;
         }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 30px;
@@ -39,22 +45,26 @@
             padding-bottom: 10px;
             letter-spacing: -0.02em;
         }
+
         .highlight {
             background-color: var(--champagne);
             padding: 20px;
             border-radius: 5px;
             margin-bottom: 20px;
             border: 1px solid var(--lion-brown);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-left: 4px solid var(--orange-red);
         }
-        .schedule, .rank {
+
+        .schedule,
+        .rank {
             background-color: var(--champagne);
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             line-height: 1.8;
         }
+
         .button {
             background-color: var(--orange-red);
             color: var(--background-beige);
@@ -69,33 +79,39 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .button:hover {
             background-color: var(--lion-brown);
             color: var(--background-beige);
             transform: translateY(-3px);
-            box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
         }
+
         #final-rsvp {
             background-color: var(--orange-red);
             font-size: 20px;
             padding: 15px 30px;
         }
+
         #final-rsvp:hover {
             background-color: var(--lion-brown);
         }
+
         .info-button {
             background-color: var(--lion-brown);
             color: var(--background-beige);
             font-size: 16px;
             padding: 10px 20px;
         }
+
         .info-button:hover {
             background-color: var(--orange-red);
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -105,8 +121,9 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.4);
         }
+
         .modal-content {
             background-color: var(--background-beige);
             margin: 5% auto;
@@ -118,8 +135,9 @@
             text-align: left;
             max-height: 80vh;
             overflow-y: auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
+
         .close {
             color: var(--orange-red);
             float: right;
@@ -130,18 +148,18 @@
             top: 10px;
             z-index: 2;
         }
-        
+
         body.modal-open {
             overflow: hidden;
         }
-        
+
         .hotel-images {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             margin-bottom: 20px;
         }
-        
+
         .hotel-images video,
         .hotel-images img {
             width: 100%;
@@ -152,6 +170,7 @@
         }
 
         @media (min-width: 850px) {
+
             .hotel-images video,
             .hotel-images img {
                 width: 48%;
@@ -178,13 +197,13 @@
             padding: 15px;
             width: 200px;
             flex-shrink: 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
         .price-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .price-card h4 {
@@ -208,18 +227,38 @@
         }
 
         .toggle-button {
-            background-color: var(--orange-red);
-            color: var(--background-beige);
-            border: none;
-            padding: 5px 10px;
-            text-align: center;
+            background-color: var(--champagne);
+            color: var(--text-color);
+            border: 1px solid var(--lion-brown);
+            padding: 10px 20px;
+            text-align: left;
             text-decoration: none;
             display: inline-block;
-            font-size: 14px;
-            margin-left: 10px;
+            font-size: 16px;
+            margin: 10px 0;
             cursor: pointer;
-            border-radius: 3px;
+            border-radius: 5px;
             font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+        }
+
+        .toggle-button:hover {
+            background-color: var(--lion-brown);
+            color: var(--background-beige);
+        }
+
+        .toggle-button::before {
+            content: '\25B6';
+            /* Unicode for right-pointing triangle */
+            position: absolute;
+            left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-button.active::before {
+            transform: rotate(90deg);
         }
 
         @keyframes fade-out {
@@ -236,11 +275,13 @@
             opacity: 0.1;
             pointer-events: none;
         }
+
         .decor-1 {
             top: 50px;
             left: 20px;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="%239ab0a6"/></svg>');
         }
+
         .decor-2 {
             bottom: 50px;
             right: 20px;
@@ -254,18 +295,26 @@
             opacity: 0.7;
             animation: float 3s ease-in-out infinite;
             color: var(--orange-red);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @media screen and (max-width: 600px) {
             body {
                 font-size: 16px;
             }
+
             h1 {
                 font-size: 2em;
             }
@@ -282,7 +331,7 @@
             border-radius: 5px;
             padding: 20px;
             margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .value-proposition h4 {
@@ -304,8 +353,15 @@
         }
 
         @keyframes fade-out {
-            0% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-20px); }
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
         }
 
         .emoji {
@@ -318,86 +374,106 @@
         }
     </style>
 </head>
+
 <body>
     <div class="decor decor-1"></div>
     <div class="decor decor-2"></div>
     <h1>jenny + tony + 5 years + (-pandemic) = 🥂</h1>
-    
+
     <div class="highlight">
-        <strong>tl;dr:</strong> we're celebrating our 5-year anniversary on june 8-10, 2025, at Nobu Hotel Los Cabos. it's going to be a romance-a-thon of epic proportions where we all learn from each other. rsvp asap. no, seriously, like right now.
+        <strong>tl;dr:</strong> we're celebrating our 5-year anniversary on june 8-10, 2025, at Nobu Hotel Los Cabos.
+        it's going to be a romance-a-thon of epic proportions where we all learn from each other. rsvp asap. no,
+        seriously, like right now.
     </div>
 
     <h2>dear friends, family, and fellow love connoisseurs,</h2>
 
-    <p>in 2020, our wedding plans went viral - and not in the good way. but love, like a fine wine, only gets better with time. we're thrilled to invite you to our 5-year anniversary extravaganza, where we'll not only celebrate our love (for real this time) but also tap into the collective wisdom of our relationship-savvy guests. collectively, we have >100 years of relationship experience, so we're turning this event into a love-learning symposium, and you're all the keynote speakers.</p>
+    <p>in 2020, our wedding plans went viral - and not in the good way. but love, like a fine wine, only gets better
+        with time. we're thrilled to invite you to our 5-year anniversary extravaganza, where we'll not only celebrate
+        our love (for real this time) but also tap into the collective wisdom of our relationship-savvy guests.
+        collectively, we have >100 years of relationship experience, so we're turning this event into a love-learning
+        symposium, and you're all the keynote speakers.</p>
 
-    <div class="visual-break">🍣</div>
 
     <div class="button-container">
-        <button class="button" onclick="showModal('hold up dont you wanna know what youre getting into')">rsvp now</button>
+        <button class="button" onclick="showModal('hold up dont you wanna know what youre getting into')">rsvp
+            now</button>
     </div>
+    <div class="visual-break">🍣</div>
 
     <h2>the deets</h2>
     <ul>
-        <li><strong>what:</strong> jenny and tony's 5-year anniversary (aka the love learning symposium: beach edition)</li>
+        <li><strong>what:</strong> jenny and tony's 5-year anniversary (aka the love learning symposium: beach edition)
+        </li>
         <li><strong>when:</strong> june 8-10, 2025 (a whole weekend to soak up sun, sushi, and relationship savvy)</li>
         <li><strong>where:</strong> Nobu Hotel Los Cabos, Mexico (because wisdom tastes better with ocean views)</li>
     </ul>
-    
+
+
+    <h2>The Nobu</h2>
     <div class="hotel-images">
-        <img src="img/nobu_all.webp" alt="Nobu Hotel Los Cabos" style="width: 100%; max-width: 400px; margin-bottom: 10px;">
+        <img src="img/nobu_all.webp" alt="Nobu Hotel Los Cabos"
+            style="width: 100%; max-width: 400px; margin-bottom: 10px;">
         <video autoplay loop muted playsinline style="width: 100%; max-width: 400px; margin-bottom: 10px;">
             <source src="img/nobu_vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
-
-    <div class="pricing-info">
-        <h3>Room Prices <button class="toggle-button" onclick="togglePricing()">Show/Hide</button></h3>
-        <div id="price-details" style="display: none;">
-            <p>Per Night (Sun to Tue, June 8-10)</p>
-            <div class="price-cards">
-                <div class="price-card">
-                    <h4>Deluxe King</h4>
-                    <p>Price without taxes: $314 USD/night</p>
-                    <p>Price with taxes and fees: $426.14 USD/night</p>
-                </div>
-                <div class="price-card">
-                    <h4>Deluxe King Ocean View</h4>
-                    <p>Price without taxes: $329 USD/night</p>
-                    <p>Price with taxes and fees: $446.39 USD/night</p>
-                </div>
-                <div class="price-card">
-                    <h4>Deluxe King Swim-Up</h4>
-                    <p>Price without taxes: $356 USD/night</p>
-                    <p>Price with taxes and fees: $482.84 USD/night</p>
-                </div>
-            </div>
-            <p>These are just a few of the available room options. For more details on room types and amenities, check out the <a href="https://loscabos.nobuhotels.com/rooms-suites/" target="_blank">Nobu Hotel Los Cabos rooms and suites page</a>.</p>
-            <p>If you're interested in other room options or have any questions about accommodations, please contact Tony for more details.</p>
-            <div class="value-proposition">
-                <h4>why nobu is worth skipping a few avocado toasts</h4>
-                <ul>
-                    <li><strong>fancy japandi rooms:</strong> imagine if marie kondo and frida kahlo designed a beach house together. that's nobu.</li>
-                    <li><strong>amazing food:</strong> nobu's sushi is so good, you might consider becoming a fish just to live there.</li>
-                    <li><strong>poolside nirvana:</strong> infinity pools that make you question if you're looking at the ocean or just really clean water.</li>
-                    <li><strong>celeb-level pampering:</strong> celebries come here. seriously</li>
-                    <li><strong>sunsets that'll break your instagram:</strong> warning: your followers might get jealous.</li>
-                    <li><strong>group discount magic:</strong> we've negotiated rates that'll make your wallet hurt less. less than 4+ star hotels along the entire baja peninsula.</li>
-                </ul>
-                <p>look, we know it's not cheap. but neither is therapy, and this weekend might just be both. plus, can you really put a price on ~60 of us taking occupying 90%+ of the hotel at the same time? (spoiler: it's priceless)</p>
-            </div>
+    <p>Price per Night (Sun to Tue, June 8-10)</p>
+    <div class="price-cards">
+        <div class="price-card">
+            <h4>Deluxe King</h4>
+            <p>Price without taxes: $314 USD/night</p>
+            <p>Price with taxes and fees: $426.14 USD/night</p>
         </div>
+        <div class="price-card">
+            <h4>Deluxe King Ocean View</h4>
+            <p>Price without taxes: $329 USD/night</p>
+            <p>Price with taxes and fees: $446.39 USD/night</p>
+        </div>
+        <div class="price-card">
+            <h4>Deluxe King Swim-Up</h4>
+            <p>Price without taxes: $356 USD/night</p>
+            <p>Price with taxes and fees: $482.84 USD/night</p>
+        </div>
+    </div>
+    <p>These are just a few of the available room options. For more details on room types and amenities, check out the
+        <a href="https://loscabos.nobuhotels.com/rooms-suites/" target="_blank">Nobu Hotel Los Cabos rooms and suites
+            page</a>.</p>
+    <p>If you're interested in other room options or have any questions about accommodations, please contact Tony for
+        more details.</p>
+
+    <button class="toggle-button" onclick="toggleValueProposition()">
+        <span style="margin-left: 20px;">why nobu is worth skipping a few avocado toasts</span>
+    </button>
+    <div id="value-proposition" class="value-proposition" style="display: none;">
+        <ul>
+            <li><strong>fancy japandi rooms:</strong> imagine if marie kondo and frida kahlo designed a beach house
+                together. that's nobu.</li>
+            <li><strong>amazing food:</strong> nobu's sushi is so good, you might consider becoming a fish just to live
+                there.</li>
+            <li><strong>poolside nirvana:</strong> infinity pools that make you question if you're looking at the ocean
+                or just really clean water.</li>
+            <li><strong>celeb-level pampering:</strong> celebries come here. seriously</li>
+            <li><strong>sunsets that'll break your instagram:</strong> warning: your followers might get jealous.</li>
+            <li><strong>group discount magic:</strong> we've negotiated rates that'll make your wallet hurt less than 4+ star hotels along the entire baja peninsula.</li>
+        </ul>
+        <p>look, we know it's not cheap. but neither is therapy, and this weekend might just be both. plus, can you
+            really put a price on ~60 of us taking occupying 90%+ of the hotel at the same time? (spoiler: it's
+            priceless)</p>
     </div>
 
     <div class="button-container">
-        <button class="button" onclick="showModal('wait a sec dont you want to know what makes this event unique')">rsvp now</button>
+        <button class="button" onclick="showModal('wait a sec dont you want to know what makes this event unique')">rsvp
+            now</button>
     </div>
 
     <div class="visual-break">🌴</div>
 
     <h2>not your average anniversary</h2>
-    <p>most of our guests have years of experience with relationships, and we want to tap into that collective wisdom. think of this as part celebration, part learning experience, and part love-themed TED talk (but with better food and drinks).</p>
+    <p>most of our guests have years of experience with relationships, and we want to tap into that collective wisdom.
+        think of this as part celebration, part learning experience, and part love-themed TED talk (but with better food
+        and drinks).</p>
 
     <div class="visual-break">🏖️</div>
 
@@ -433,12 +509,16 @@
     <h2>what we need from you</h2>
     <ol>
         <li>RSVP ASAP</li>
-        <li>Prepare your best relationship advice or love story to share. remember, everyone has fresh perspectives we can all learn from!</li>
-        <li>Come with an open mind and heart. we're all here to celebrate, learn, and maybe pick up a few new tricks for keeping the spark alive.</li>
+        <li>Prepare your best relationship advice or love story to share. remember, everyone has fresh perspectives we
+            can all learn from!</li>
+        <li>Come with an open mind and heart. we're all here to celebrate, learn, and maybe pick up a few new tricks for
+            keeping the spark alive.</li>
     </ol>
 
     <div class="button-container">
-        <button id="final-rsvp" class="button" onclick="window.open('https://docs.google.com/forms/d/1MmLanLdYOA_Ll4MbU9Mbv9hELw7IQzTFftejbztLeWw/edit', '_blank')">for real this time hit that rsvp button</button>
+        <button id="final-rsvp" class="button"
+            onclick="window.open('https://docs.google.com/forms/d/1MmLanLdYOA_Ll4MbU9Mbv9hELw7IQzTFftejbztLeWw/edit', '_blank')">for
+            real this time hit that rsvp button</button>
     </div>
 
     <div id="rsvp-modal" class="modal">
@@ -452,9 +532,11 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('welcome-modal')">&times;</span>
             <h2>welcome to love island</h2>
-            <img src="img/playabar.webp" alt="Welcome Buffet" style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
+            <img src="img/playabar.webp" alt="Welcome Buffet"
+                style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
             <p><strong>Dress Code:</strong> All White (Dinner en Blanc)</p>
-            <p>Join us for a stunning evening of white elegance against the backdrop of the beautiful Playa Bar Lawn. Don't forget to pack your favorite white outfit!</p>
+            <p>Join us for a stunning evening of white elegance against the backdrop of the beautiful Playa Bar Lawn.
+                Don't forget to pack your favorite white outfit!</p>
         </div>
     </div>
 
@@ -462,7 +544,8 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('anniversary-modal')">&times;</span>
             <h2>the main event aka love actually</h2>
-            <img src="img/umi.jpeg" alt="Anniversary Ceremony" style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
+            <img src="img/umi.jpeg" alt="Anniversary Ceremony"
+                style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
         </div>
     </div>
 
@@ -470,7 +553,8 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('farewell-modal')">&times;</span>
             <h2>the grand finale aka brunch club</h2>
-            <img src="img/tsuki.jpeg" alt="Farewell Brunch" style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
+            <img src="img/tsuki.jpeg" alt="Farewell Brunch"
+                style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
         </div>
     </div>
 
@@ -496,17 +580,12 @@
         }
 
         // Use event delegation for closing modals
-        document.body.addEventListener('click', function(event) {
+        document.body.addEventListener('click', function (event) {
             if (event.target.classList.contains("modal") || event.target.classList.contains("close")) {
                 const modalId = event.target.closest('.modal').id;
                 closeModal(modalId);
             }
         });
-
-        function togglePricing() {
-            var priceDetails = document.getElementById("price-details");
-            priceDetails.style.display = priceDetails.style.display === "none" ? "block" : "none";
-        }
 
         let lastEmojiTime = 0;
         const emojiDelay = 100; // Delay in milliseconds
@@ -545,6 +624,21 @@
         } else {
             document.addEventListener('mousemove', handleDesktopInteraction);
         }
+
+        function toggleValueProposition() {
+            const valueProposition = document.getElementById('value-proposition');
+            const toggleButton = document.querySelector('.toggle-button');
+            if (valueProposition.style.display === 'none') {
+                valueProposition.style.display = 'block';
+                toggleButton.textContent = 'hide reasons';
+                toggleButton.classList.add('active');
+            } else {
+                valueProposition.style.display = 'none';
+                toggleButton.innerHTML = '<span style="margin-left: 20px;">why nobu is worth skipping a few avocado toasts</span>';
+                toggleButton.classList.remove('active');
+            }
+        }
     </script>
 </body>
+
 </html>
