@@ -3,395 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Jenny + Tony + 5 Years + (-Pandemic) = 🥂</title>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Chalkboard SE', 'Comic Neue', 'Marker Felt', 'Bradley Hand', sans-serif;
-            line-height: 1.6;
-            color: #4a0e4e;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffd1dc; /* Changed to a pastel pink */
-        }
-        h1, h2, h3 {
-            color: #4a0e4e; /* Changed to a darker purple for more contrast */
-            text-shadow: 2px 2px 0 #ffd700;
-        }
-        .highlight {
-            background-color: #00ff00;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            border: 3px dashed #ff00ff;
-        }
-        .schedule {
-            background-color: #e6e6fa;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .rank {
-            margin-bottom: 10px;
-        }
-        .rank ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        .rank li {
-            margin-bottom: 10px;
-        }
-        .rank p {
-            font-style: italic;
-            color: #666;
-        }
-        .button {
-            background-color: #ff00ff;
-            color: #ffff00;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-            text-transform: lowercase;
-            font-weight: bold;
-            transform: rotate(-3deg);
-            transition: transform 0.3s;
-        }
-        .button:hover {
-            transform: rotate(3deg) scale(1.1);
-        }
-        #final-rsvp {
-            background-color: #00ff00;
-            color: #ff00ff;
-            font-size: 20px;
-            padding: 15px 30px;
-            animation: pulse 1s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        .info-button {
-            background-color: #4169e1;
-            transform: rotate(3deg);
-            transition: transform 0.3s;
-        }
-        .info-button:hover {
-            transform: rotate(-3deg) scale(1.1);
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
+        body, html {
+            margin: 0;
+            padding: 0;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f3e9;
         }
-        .modal-content {
-            background-color: #ffff00;
-            margin: 5% auto;
-            padding: 20px;
-            border: 5px solid #00ffff;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 5px;
-            text-align: left;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: sticky;
-            top: 10px;
-            z-index: 2;
-        }
-        
-        body.modal-open {
-            overflow: hidden;
-        }
-        
-        .hotel-images {
+        .container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-bottom: 20px;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 100%;
+            margin: 0 auto;
+            align-items: center; /* Center the content horizontally */
         }
-        
-        .hotel-images video,
-        .hotel-images img {
+        .header-image-container {
             width: 100%;
-            max-width: 400px;
-            height: 300px;
-            margin-bottom: 10px;
-            object-fit: cover;
-        }
-
-        @media (min-width: 850px) {
-            .hotel-images video,
-            .hotel-images img {
-                width: 48%;
-            }
-        }
-
-        .pricing-info {
-            margin-bottom: 20px;
-        }
-
-        .price-cards {
+            max-width: 100%;
             display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 20px;
-            padding-bottom: 15px;
-            -webkit-overflow-scrolling: touch;
+            justify-content: center;
         }
-
-        .price-card {
-            background-color: #ff69b4;
-            border: 2px solid #4a0e4e;
-            border-radius: 5px;
-            padding: 15px;
-            width: 200px;
-            flex-shrink: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .header-image {
+            max-width: 100%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
         }
-
-        .price-card h4 {
-            margin-top: 0;
-            color: #ffff00;
-        }
-
-        @media screen and (max-width: 768px) {
-            .price-cards {
-                justify-content: flex-start;
-            }
-        }
-
-        .pricing-info a {
-            color: #4169e1;
-            text-decoration: none;
-        }
-
-        .pricing-info a:hover {
-            text-decoration: underline;
-        }
-
-        .toggle-button {
-            background-color: #4169e1;
-            color: white;
-            border: none;
-            padding: 5px 10px;
+        .info {
+            padding: 2rem;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin-left: 10px;
-            cursor: pointer;
-            border-radius: 3px;
+            background-color: #f9f3e9;
         }
-
-        @keyframes fade-out {
-            to {
-                opacity: 0;
-                transform: translateY(-20px);
+        .info p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #e85d3f;
+            margin: 0.5rem 0;
+        }
+        .cta {
+            display: inline-block;
+            background-color: #e85d3f;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+        .cta:hover {
+            background-color: #d04d2f;
+        }
+        @media (min-width: 768px) {
+            .container {
+                max-width: 800px;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Jenny + Tony + 5 Years + (-Pandemic) = 🥂</h1>
-    
-    <div class="highlight">
-        <strong>TL;DR:</strong> We're celebrating our 5-year anniversary on June 8-10, 2025, at Nobu Hotel Los Cabos. It's going to be a romance-a-thon of epic proportions where we all learn from each other. RSVP ASAP. No, seriously, like right now.
-    </div>
-
-    <h2>Dear friends, family, and fellow love connoisseurs,</h2>
-
-    <p>In 2020, our wedding plans went viral - and not in the good way. But love, like a fine wine, only gets better with time. We're thrilled to invite you to our 5-year anniversary extravaganza, where we'll not only celebrate our love (for real this time) but also tap into the collective wisdom of our relationship-savvy guests. Collectively, we have >100 years of relationship experience, so we're turning this event into a love-learning symposium, and you're all the keynote speakers.</p>
-
-    <button class="button" onclick="showModal('hold up dont you wanna know what youre getting into')">rsvp now</button>
-
-    <h2>The Deets</h2>
-    <ul>
-        <li><strong>What:</strong> Jenny and Tony's 5-Year Anniversary (aka The Love Learning Symposium: Beach Edition)</li>
-        <li><strong>When:</strong> June 8-10, 2025 (A whole weekend to soak up sun, sushi, and relationship savvy)</li>
-        <li><strong>Where:</strong> Nobu Hotel Los Cabos, Mexico (Because wisdom tastes better with ocean views)</li>
-    </ul>
-    
-    <div class="hotel-images">
-        <img src="img/nobu_all.webp" alt="Nobu Hotel Los Cabos" style="width: 100%; max-width: 400px; margin-bottom: 10px;">
-        <video autoplay loop muted playsinline style="width: 100%; max-width: 400px; margin-bottom: 10px;">
-            <source src="img/nobu_vid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <div class="pricing-info">
-        <h3>Room Prices <button class="toggle-button" onclick="togglePricing()">Show/Hide</button></h3>
-        <div id="price-details" style="display: none;">
-            <p>Per Night (Sun to Tue, June 8-10)</p>
-            <div class="price-cards">
-                <div class="price-card">
-                    <h4>Deluxe King</h4>
-                    <p>Price without taxes: $314 USD/night</p>
-                    <p>Price with taxes and fees: $426.14 USD/night</p>
-                </div>
-                <div class="price-card">
-                    <h4>Deluxe King Ocean View</h4>
-                    <p>Price without taxes: $329 USD/night</p>
-                    <p>Price with taxes and fees: $446.39 USD/night</p>
-                </div>
-                <div class="price-card">
-                    <h4>Deluxe King Swim-Up</h4>
-                    <p>Price without taxes: $356 USD/night</p>
-                    <p>Price with taxes and fees: $482.84 USD/night</p>
-                </div>
-            </div>
-            <p>These are just a few of the available room options. For more details on room types and amenities, check out the <a href="https://loscabos.nobuhotels.com/rooms-suites/" target="_blank">Nobu Hotel Los Cabos rooms and suites page</a>.</p>
-            <p>If you're interested in other room options or have any questions about accommodations, please contact Tony for more details.</p>
+    <div class="container">
+        <div class="header-image-container">
+            <img src="img/graphic.jpeg" alt="Jenny and Tony's 5-Year Anniversary" class="header-image">
+        </div>
+        <div class="info">
+            <p>Date: June 8-10, 2025</p>
+            <p>Location: Nobu Hotel Los Cabos, Mexico</p>
+            <a href="deets.html" class="cta">More Details</a>
         </div>
     </div>
-
-    <button class="button" onclick="showModal('wait a sec dont you want your fancy new job title')">rsvp now</button>
-
-    <h2>Not Your Average Anniversary</h2>
-    <p>Most of our guests have years of experience with relationships, and we want to tap into that collective wisdom. Think of this as part celebration, part learning experience, and part love-themed TED Talk (but with better food and drinks).</p>
-
-    <h2>Introducing: The Relationship Ladder</h2>
-    <p>Based on your relationship experience, you'll be assigned a rank. Ranks will be determined by percentiles, so your final rank will be a surprise.</p>
-    <div class="rank">
-        <ul>
-            <li><strong>Love Intern (Single):</strong> "I'm excited to learn about all the different positions available."</li>
-            <li><strong>Relationship Associate:</strong> "I've developed a long term plan for optimal growth and development."</li>
-            <li><strong>Commitment Manager:</strong> "I've successfully implemented a 24/7 support system with 99.9% uptime."</li>
-            <li><strong>Love Director:</strong> "I've mastered the art of delegating tasks and negotiating budget."</li>
-            <li><strong>Chief Love Officer:</strong> ???</li>
-        </ul>
-        <p><em>Note: The Chief Love Officer title will be awarded to the most senior couple in attendance.</em></p>
-    </div>
-
-    <button class="button" onclick="showModal('cmon i poured my heart out here keep reading')">rsvp now</button>
-
-    <h2>The Love-and-Learn Schedule</h2>
-    <div class="schedule">
-        <strong>Sunday, June 8, 2025</strong>
-        <ul>
-            <li>6:00 PM - 9:00 PM: Welcome Buffet at Playa Bar Lawn (Open Bar)</li>
-        </ul>
-        <button class="button info-button" onclick="showInfoModal('welcome')">peep the welcome feast</button>
-
-        <br><br>
-        <strong>Monday, June 9, 2025</strong>
-        <ul>
-            <li>6:00 PM - 9:00 PM: Anniversary Ceremony and Plated Dinner at UMI (Open Bar)</li>
-        </ul>
-        <button class="button info-button" onclick="showInfoModal('anniversary')">check out the main event</button>
-
-        <br><br>
-        <strong>Tuesday, June 10, 2025</strong>
-        <ul>
-            <li>10:00 AM - 12:00 PM: Farewell Japanese Buffet at Tsuki Pre-Function</li>
-        </ul>
-        <button class="button info-button" onclick="showInfoModal('farewell')">see the grand finale</button>
-
-        <br><br>
-        <p><strong>all other times: free time to explore, relax, or recover (your choice)</strong></p>
-    </div>
-
-    <button class="button" onclick="showModal('bro i worked so hard arent you gonna finish my masterpiece')">rsvp now</button>
-
-    <h2>What We Need From You</h2>
-    <ol>
-        <li>RSVP ASAP with your years of relationship experience for your official "Love Rank" assignment.</li>
-        <li>Prepare your best relationship advice or love story to share. Remember, even the Interns have fresh perspectives we can all learn from!</li>
-        <li>Come with an open mind and heart. We're all here to celebrate, learn, and maybe pick up a few new tricks for keeping the spark alive.</li>
-    </ol>
-
-    <button id="final-rsvp" class="button" onclick="window.open('https://docs.google.com/forms/d/1MmLanLdYOA_Ll4MbU9Mbv9hELw7IQzTFftejbztLeWw/edit', '_blank')">for real this time hit that rsvp button</button>
-
-    <div id="rsvp-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('rsvp-modal')">&times;</span>
-            <p id="rsvp-modal-text"></p>
-        </div>
-    </div>
-
-    <div id="welcome-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('welcome-modal')">&times;</span>
-            <h2>welcome to love island</h2>
-            <img src="img/playabar.webp" alt="Welcome Buffet" style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
-        </div>
-    </div>
-
-    <div id="anniversary-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('anniversary-modal')">&times;</span>
-            <h2>the main event aka love actually</h2>
-            <img src="img/umi.jpeg" alt="Anniversary Ceremony" style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
-        </div>
-    </div>
-
-    <div id="farewell-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('farewell-modal')">&times;</span>
-            <h2>the grand finale aka brunch club</h2>
-            <img src="img/tsuki.jpeg" alt="Farewell Brunch" style="width:100%; max-width:400px; height:auto; margin-bottom:20px;">
-        </div>
-    </div>
-
     <script>
-        function showModal(message) {
-            document.getElementById("rsvp-modal-text").textContent = message;
-            document.getElementById("rsvp-modal").style.display = "block";
-            document.body.classList.add('modal-open');
+        function createEmojiAtTap(event) {
+            const emoji = document.createElement('div');
+            emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳'][Math.floor(Math.random() * 7)];
+            emoji.style.position = 'fixed';
+            emoji.style.left = (event.touches ? event.touches[0].clientX : event.clientX) + 'px';
+            emoji.style.top = (event.touches ? event.touches[0].clientY : event.clientY) + 'px';
+            emoji.style.fontSize = '48px';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.animation = 'fade-out 1s forwards';
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+                document.body.removeChild(emoji);
+            }, 1000);
         }
 
-        function showInfoModal(type) {
-            document.getElementById(type + "-modal").style.display = "block";
-            document.body.classList.add('modal-open');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-            document.body.classList.remove('modal-open');
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains("modal")) {
-                event.target.style.display = "none";
-                document.body.classList.remove('modal-open');
-            }
-        }
-
-        function togglePricing() {
-            var priceDetails = document.getElementById("price-details");
-            if (priceDetails.style.display === "none") {
-                priceDetails.style.display = "block";
-            } else {
-                priceDetails.style.display = "none";
-            }
-        }
-
-        // Add this function to create a trail of emojis following the cursor
-        function createEmojiTrail() {
+        function createEmojiTrail(event) {
             const emoji = document.createElement('div');
             emoji.innerHTML = ['🎉', '💖', '🌈', '🦄', '🍕'][Math.floor(Math.random() * 5)];
             emoji.style.position = 'fixed';
@@ -406,24 +109,6 @@
             }, 1000);
         }
 
-        // Function to create emoji at tap location for mobile users
-        function createEmojiAtTap(event) {
-            const emoji = document.createElement('div');
-            emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳',][Math.floor(Math.random() * 7)];
-            emoji.style.position = 'fixed';
-            emoji.style.left = (event.touches ? event.touches[0].clientX : event.clientX) + 'px';
-            emoji.style.top = (event.touches ? event.touches[0].clientY : event.clientY) + 'px';
-            emoji.style.fontSize = '48px';
-            emoji.style.pointerEvents = 'none';
-            emoji.style.animation = 'fade-out 1s forwards';
-            document.body.appendChild(emoji);
-
-            setTimeout(() => {
-                document.body.removeChild(emoji);
-            }, 1000);
-        }
-
-        // Use touchstart for mobile devices and mousemove for desktop
         if ('ontouchstart' in window) {
             document.addEventListener('touchstart', createEmojiAtTap);
         } else {
