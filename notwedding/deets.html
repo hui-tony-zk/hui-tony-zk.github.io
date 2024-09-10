@@ -25,7 +25,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: var(--background-beige);
+            background: linear-gradient(to bottom, var(--background-beige), #e8e3d9);
         }
         h1, h2, h3 {
             color: var(--black);
@@ -46,12 +46,14 @@
             margin-bottom: 20px;
             border: 1px solid var(--lion-brown);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--orange-red);
         }
         .schedule, .rank {
             background-color: var(--champagne);
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            line-height: 1.8;
         }
         .button {
             background-color: var(--orange-red);
@@ -65,12 +67,15 @@
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 3px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
             font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .button:hover {
             background-color: var(--lion-brown);
             color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         #final-rsvp {
             background-color: var(--orange-red);
@@ -106,10 +111,11 @@
             border: 1px solid var(--lion-brown);
             width: 90%;
             max-width: 600px;
-            border-radius: 5px;
+            border-radius: 10px;
             text-align: left;
             max-height: 80vh;
             overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
         .close {
             color: var(--orange-red);
@@ -170,6 +176,12 @@
             width: 200px;
             flex-shrink: 0;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         .price-card h4 {
@@ -239,11 +251,53 @@
             opacity: 0.7;
             animation: float 3s ease-in-out infinite;
             color: var(--orange-red);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .value-proposition {
+            background-color: var(--champagne);
+            border: 1px solid var(--lion-brown);
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .value-proposition h4 {
+            color: var(--orange-red);
+            margin-top: 0;
+        }
+
+        .value-proposition ul {
+            padding-left: 20px;
+        }
+
+        .value-proposition li {
+            margin-bottom: 10px;
+        }
+
+        .value-proposition p {
+            font-style: italic;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -262,7 +316,9 @@
 
     <div class="visual-break">🍣</div>
 
-    <button class="button" onclick="showModal('hold up dont you wanna know what youre getting into')">rsvp now</button>
+    <div class="button-container">
+        <button class="button" onclick="showModal('hold up dont you wanna know what youre getting into')">rsvp now</button>
+    </div>
 
     <h2>the deets</h2>
     <ul>
@@ -278,8 +334,6 @@
             Your browser does not support the video tag.
         </video>
     </div>
-
-    <div class="visual-break">🌴</div>
 
     <div class="pricing-info">
         <h3>Room Prices <button class="toggle-button" onclick="togglePricing()">Show/Hide</button></h3>
@@ -304,10 +358,26 @@
             </div>
             <p>These are just a few of the available room options. For more details on room types and amenities, check out the <a href="https://loscabos.nobuhotels.com/rooms-suites/" target="_blank">Nobu Hotel Los Cabos rooms and suites page</a>.</p>
             <p>If you're interested in other room options or have any questions about accommodations, please contact Tony for more details.</p>
+            <div class="value-proposition">
+                <h4>why nobu is worth skipping a few avocado toasts</h4>
+                <ul>
+                    <li><strong>fancy japandi rooms:</strong> imagine if marie kondo and frida kahlo designed a beach house together. that's nobu.</li>
+                    <li><strong>amazing food:</strong> nobu's sushi is so good, you might consider becoming a fish just to live there.</li>
+                    <li><strong>poolside nirvana:</strong> infinity pools that make you question if you're looking at the ocean or just really clean water.</li>
+                    <li><strong>celeb-level pampering:</strong> celebries come here. seriously</li>
+                    <li><strong>sunsets that'll break your instagram:</strong> warning: your followers might get jealous.</li>
+                    <li><strong>group discount magic:</strong> we've negotiated rates that'll make your wallet hurt less. less than 4+ star hotels along the entire baja peninsula.</li>
+                </ul>
+                <p>look, we know it's not cheap. but neither is therapy, and this weekend might just be both. plus, can you really put a price on watching tony attempt to salsa? (spoiler: it's priceless)</p>
+            </div>
         </div>
     </div>
 
-    <button class="button" onclick="showModal('wait a sec dont you want your fancy new job title')">rsvp now</button>
+    <div class="button-container">
+        <button class="button" onclick="showModal('wait a sec dont you want your fancy new job title')">rsvp now</button>
+    </div>
+
+    <div class="visual-break">🌴</div>
 
     <h2>not your average anniversary</h2>
     <p>most of our guests have years of experience with relationships, and we want to tap into that collective wisdom. think of this as part celebration, part learning experience, and part love-themed TED talk (but with better food and drinks).</p>
@@ -327,7 +397,9 @@
         <p><em>note: the chief love officer title will be awarded to the most senior couple in attendance.</em></p>
     </div>
 
-    <button class="button" onclick="showModal('cmon i poured my heart out here keep reading')">rsvp now</button>
+    <div class="button-container">
+        <button class="button" onclick="showModal('cmon i poured my heart out here keep reading')">rsvp now</button>
+    </div>
 
     <h2>the love-and-learn schedule</h2>
     <div class="schedule">
@@ -364,7 +436,9 @@
         <li>Come with an open mind and heart. we're all here to celebrate, learn, and maybe pick up a few new tricks for keeping the spark alive.</li>
     </ol>
 
-    <button id="final-rsvp" class="button" onclick="window.open('https://docs.google.com/forms/d/1MmLanLdYOA_Ll4MbU9Mbv9hELw7IQzTFftejbztLeWw/edit', '_blank')">for real this time hit that rsvp button</button>
+    <div class="button-container">
+        <button id="final-rsvp" class="button" onclick="window.open('https://docs.google.com/forms/d/1MmLanLdYOA_Ll4MbU9Mbv9hELw7IQzTFftejbztLeWw/edit', '_blank')">for real this time hit that rsvp button</button>
+    </div>
 
     <div id="rsvp-modal" class="modal">
         <div class="modal-content">
@@ -398,40 +472,41 @@
     </div>
 
     <script>
+        // Combine modal functions for better maintainability
+        function toggleModal(modalId, show = true) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = show ? "block" : "none";
+            document.body.classList.toggle('modal-open', show);
+        }
+
         function showModal(message) {
             document.getElementById("rsvp-modal-text").textContent = message;
-            document.getElementById("rsvp-modal").style.display = "block";
-            document.body.classList.add('modal-open');
+            toggleModal("rsvp-modal");
         }
 
         function showInfoModal(type) {
-            document.getElementById(type + "-modal").style.display = "block";
-            document.body.classList.add('modal-open');
+            toggleModal(type + "-modal");
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-            document.body.classList.remove('modal-open');
+            toggleModal(modalId, false);
         }
 
-        window.onclick = function(event) {
-            if (event.target.classList.contains("modal")) {
-                event.target.style.display = "none";
-                document.body.classList.remove('modal-open');
+        // Use event delegation for closing modals
+        document.body.addEventListener('click', function(event) {
+            if (event.target.classList.contains("modal") || event.target.classList.contains("close")) {
+                const modalId = event.target.closest('.modal').id;
+                closeModal(modalId);
             }
-        }
+        });
 
         function togglePricing() {
             var priceDetails = document.getElementById("price-details");
-            if (priceDetails.style.display === "none") {
-                priceDetails.style.display = "block";
-            } else {
-                priceDetails.style.display = "none";
-            }
+            priceDetails.style.display = priceDetails.style.display === "none" ? "block" : "none";
         }
 
-        // Add this function to create a trail of emojis following the cursor
-        function createEmojiTrail() {
+        // Function to create emoji trail for desktop
+        function createEmojiTrail(event) {
             const emoji = document.createElement('div');
             emoji.innerHTML = ['🎉', '💖', '🌈', '🦄', '🍕'][Math.floor(Math.random() * 5)];
             emoji.style.position = 'fixed';
@@ -449,10 +524,10 @@
         // Function to create emoji at tap location for mobile users
         function createEmojiAtTap(event) {
             const emoji = document.createElement('div');
-            emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳',][Math.floor(Math.random() * 7)];
+            emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳'][Math.floor(Math.random() * 7)];
             emoji.style.position = 'fixed';
-            emoji.style.left = (event.touches ? event.touches[0].clientX : event.clientX) + 'px';
-            emoji.style.top = (event.touches ? event.touches[0].clientY : event.clientY) + 'px';
+            emoji.style.left = event.touches[0].clientX + 'px';
+            emoji.style.top = event.touches[0].clientY + 'px';
             emoji.style.fontSize = '48px';
             emoji.style.pointerEvents = 'none';
             emoji.style.animation = 'fade-out 1s forwards';
