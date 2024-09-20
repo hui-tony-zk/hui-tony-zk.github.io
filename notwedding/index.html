@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jenny + Tony + 5 Years + (-Pandemic) = 🥂</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <style>
-        body, html {
+        @keyframes sunset-gradient {
+            0% { background-color: #FFA07A; }  /* Light Salmon */
+            25% { background-color: #FF7F50; } /* Coral */
+            50% { background-color: #FF6347; } /* Tomato */
+            75% { background-color: #FF8C00; } /* Dark Orange */
+            100% { background-color: #FFA07A; } /* Light Salmon */
+        }
+
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: 'Roboto', sans-serif;
-            background-color: #f9f3e9;
+            background-color: #FFA07A;
+            animation: sunset-gradient 20s ease infinite;
         }
+
         .container {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             max-width: 100%;
             margin: 0 auto;
-            align-items: center; /* Center the content horizontally */
+            align-items: center;
+            /* Center the content horizontally */
         }
+
         .header-image-container {
             width: 100%;
             max-width: 100%;
             display: flex;
             justify-content: center;
         }
+
         .header-image {
             max-width: 100%;
             max-height: 90vh;
@@ -34,17 +51,20 @@
             height: auto;
             object-fit: contain;
         }
+
         .info {
             padding: 2rem;
             text-align: center;
             background-color: #f9f3e9;
         }
+
         .info p {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
             color: #e85d3f;
             margin: 0.5rem 0;
         }
+
         .cta {
             display: inline-block;
             background-color: #e85d3f;
@@ -56,9 +76,11 @@
             transition: background-color 0.3s;
             margin-top: 1rem;
         }
+
         .cta:hover {
             background-color: #d04d2f;
         }
+
         @media (min-width: 768px) {
             .container {
                 max-width: 800px;
@@ -66,21 +88,68 @@
         }
 
         @keyframes fade-out {
-            0% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-20px); }
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
         }
 
         .emoji {
             position: fixed;
-            font-size: 48px; 
+            font-size: 48px;
             pointer-events: none;
             user-select: none;
             z-index: 9999;
             animation: fade-out 1s forwards;
         }
+
+        .qr-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .qr-image {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        @media (min-width: 768px) {
+            .qr-container {
+                display: flex;
+            }
+
+            .container {
+                display: none;
+            }
+        }
+
+        @keyframes sunset-gradient {
+            0% { background-color: #FFA07A; }  /* Light Salmon */
+            25% { background-color: #FF7F50; } /* Coral */
+            50% { background-color: #FF6347; } /* Tomato */
+            75% { background-color: #FF8C00; } /* Dark Orange */
+            100% { background-color: #FFA07A; } /* Light Salmon */
+        }
     </style>
 </head>
+
 <body>
+    <div class="qr-container">
+        <img src="/img/qr2.png" alt="QR Code" class="qr-image">
+    </div>
     <div class="container">
         <div class="header-image-container">
             <img src="img/graphic.jpeg" alt="Jenny and Tony's 5-Year Anniversary" class="header-image">
@@ -131,4 +200,5 @@
         }
     </script>
 </body>
+
 </html>
