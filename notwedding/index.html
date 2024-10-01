@@ -151,6 +151,42 @@
                 height: 56.25vw;
             }
         }
+
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .overlay-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .overlay-content p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -161,6 +197,13 @@
         </div>
         <a href="deets.html" class="details-button">RSVP</a>
         <div class="video-container" id="player"></div>
+    </div>
+
+    <div class="page-overlay" id="pageOverlay">
+        <div class="overlay-content">
+            <h2>enter the jungle...</h2>
+            <p>sound on! 🔊🐒🌴</p>
+        </div>
     </div>
 
     <script>
@@ -185,25 +228,29 @@
                     'rel': 0,
                     'playsinline': 1
                 },
+                events: {
+                    'onReady': onPlayerReady
+                }
             });
         }
 
-        // Add a new function to handle scroll events
-        function handleScroll() {
-            var videoContainer = document.querySelector('.video-container');
-            var rect = videoContainer.getBoundingClientRect();
-            var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        function onPlayerReady(event) {
+            const pageOverlay = document.getElementById('pageOverlay');
+            pageOverlay.addEventListener('click', handleOverlayClick);
+        }
 
-            if (rect.top < viewportHeight && rect.bottom > 0) {
-                if (player && typeof player.playVideo === 'function') {
-                    player.playVideo();
-                    player.unMute();
-                }
+        function handleOverlayClick() {
+            const pageOverlay = document.getElementById('pageOverlay');
+            if (player && typeof player.playVideo === 'function') {
+                player.playVideo();
+                player.unMute();
+                pageOverlay.classList.add('hidden');
+                // Remove the click event listener after the first click
+                pageOverlay.removeEventListener('click', handleOverlayClick);
             }
         }
 
-        // Add scroll event listener
-        window.addEventListener('scroll', handleScroll);
+        // Remove handleScroll function and scroll event listener
 
         // Mouse and tap interactions
         let lastEmojiTime = 0;
