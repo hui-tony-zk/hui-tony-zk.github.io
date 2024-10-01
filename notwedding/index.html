@@ -250,7 +250,7 @@
         <div class="header-image-container">
             <img src="img/graphic.png" alt="5 Years of Love" class="header-image">
         </div>
-        <a href="https://forms.gle/Hr8uCvTyF2tFwV6XA" class="details-button">RSVP</a>
+        <a href="https://forms.gle/Hr8uCvTyF2tFwV6XA" class="details-button">RSVP BY Dec 2, 2024</a>
         <div class="video-container" id="player"></div>
     </div>
 
@@ -323,9 +323,22 @@
         function showScrollHint() {
             const scrollHint = document.getElementById('scrollHint');
             scrollHint.classList.add('visible');
-            setTimeout(() => {
-                scrollHint.classList.remove('visible');
-            }, 2000); // Hide the scroll hint after 2 seconds
+            
+            // Create an Intersection Observer to watch the video container
+            const videoContainer = document.getElementById('player');
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    hideScrollHint();
+                    observer.disconnect(); // Stop observing once the video is in view
+                }
+            }, { threshold: 0.1 }); // Trigger when 10% of the video is visible
+
+            observer.observe(videoContainer);
+        }
+
+        function hideScrollHint() {
+            const scrollHint = document.getElementById('scrollHint');
+            scrollHint.classList.remove('visible');
         }
 
         function disableScroll() {
