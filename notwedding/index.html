@@ -165,27 +165,82 @@
             z-index: 9999;
             cursor: pointer;
             transition: opacity 0.5s ease;
+            overflow: hidden;
         }
 
         .overlay-content {
             text-align: center;
             color: #FFFFFF;
+            position: relative;
+            z-index: 2;
         }
 
         .overlay-content h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .overlay-content p {
             font-family: 'Roboto', sans-serif;
             font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .jungle-element {
+            position: absolute;
+            font-size: 5rem;
+            opacity: 0.5;
+            z-index: 1;
         }
 
         .hidden {
             opacity: 0;
             pointer-events: none;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        .scroll-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 9998;
+        }
+
+        .scroll-hint.visible {
+            opacity: 1;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .scroll-hint.visible {
+            opacity: 1;
+            animation: bounce 2s infinite;
         }
     </style>
 </head>
@@ -204,6 +259,18 @@
             <h2>enter the jungle...</h2>
             <p>sound on! 🔊🐒🌴</p>
         </div>
+        <div class="jungle-element" style="top: 10%; left: 5%;">🌴</div>
+        <div class="jungle-element" style="top: 30%; right: 10%;">🍃</div>
+        <div class="jungle-element" style="bottom: 15%; left: 15%;">🌿</div>
+        <div class="jungle-element" style="top: 50%; right: 20%;">🦜</div>
+        <div class="jungle-element" style="bottom: 30%; right: 5%;">🐒</div>
+        <div class="jungle-element" style="top: 70%; left: 25%;">🌺</div>
+        <div class="jungle-element" style="top: 20%; left: 40%;">🦋</div>
+        <div class="jungle-element" style="bottom: 10%; right: 30%;">🐍</div>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint">
+        Scroll down for more 👇
     </div>
 
     <script>
@@ -237,6 +304,7 @@
         function onPlayerReady(event) {
             const pageOverlay = document.getElementById('pageOverlay');
             pageOverlay.addEventListener('click', handleOverlayClick);
+            disableScroll(); // Disable scroll when the page loads
         }
 
         function handleOverlayClick() {
@@ -245,9 +313,27 @@
                 player.playVideo();
                 player.unMute();
                 pageOverlay.classList.add('hidden');
+                enableScroll();
+                showScrollHint();
                 // Remove the click event listener after the first click
                 pageOverlay.removeEventListener('click', handleOverlayClick);
             }
+        }
+
+        function showScrollHint() {
+            const scrollHint = document.getElementById('scrollHint');
+            scrollHint.classList.add('visible');
+            setTimeout(() => {
+                scrollHint.classList.remove('visible');
+            }, 2000); // Hide the scroll hint after 2 seconds
+        }
+
+        function disableScroll() {
+            document.body.classList.add('no-scroll');
+        }
+
+        function enableScroll() {
+            document.body.classList.remove('no-scroll');
         }
 
         // Remove handleScroll function and scroll event listener
