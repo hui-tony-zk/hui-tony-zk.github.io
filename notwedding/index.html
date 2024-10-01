@@ -4,27 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jenny + Tony + 5 Years + (-Pandemic) = 🥂</title>
+    <title>5 Years of Love - Wedding Anniversary</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
     <style>
-        @keyframes sunset-gradient {
-            0% { background-color: #FFA07A; }  /* Light Salmon */
-            25% { background-color: #FF7F50; } /* Coral */
-            50% { background-color: #FF6347; } /* Tomato */
-            75% { background-color: #FF8C00; } /* Dark Orange */
-            100% { background-color: #FFA07A; } /* Light Salmon */
-        }
-
         body,
         html {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: 'Roboto', sans-serif;
-            background-color: #FFA07A;
-            animation: sunset-gradient 20s ease infinite;
+            background-color: #000000; /* Matte Black */
         }
 
         .container {
@@ -34,34 +25,41 @@
             max-width: 100%;
             margin: 0 auto;
             align-items: center;
+            justify-content: center; /* Center content vertically */
             /* Center the content horizontally */
+            padding-bottom: 2rem; /* Add padding to the bottom of the container */
         }
 
         .header-image-container {
             width: 100%;
-            max-width: 100%;
+            height: 90vh; /* 90% of viewport height */
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         .header-image {
             max-width: 100%;
-            max-height: 90vh;
-            width: auto;
-            height: auto;
+            max-height: 100%;
             object-fit: contain;
         }
 
         .info {
-            padding: 2rem;
             text-align: center;
-            background-color: #f9f3e9;
+            color: #FFFFFF; /* White text color */
+            background-color: transparent;
+            padding: 2rem;
+        }
+
+        .info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .info p {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 1.2rem;
-            color: #e85d3f;
             margin: 0.5rem 0;
         }
 
@@ -83,6 +81,7 @@
 
         @media (min-width: 768px) {
             .container {
+                display: flex; /* Changed from 'none' to 'flex' */
                 max-width: 800px;
             }
         }
@@ -110,15 +109,6 @@
 
         .qr-container {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
         }
 
         .qr-image {
@@ -136,69 +126,89 @@
             }
         }
 
-        @keyframes sunset-gradient {
-            0% { background-color: #FFA07A; }  /* Light Salmon */
-            25% { background-color: #FF7F50; } /* Coral */
-            50% { background-color: #FF6347; } /* Tomato */
-            75% { background-color: #FF8C00; } /* Dark Orange */
-            100% { background-color: #FFA07A; } /* Light Salmon */
+        .details-button {
+            display: inline-block;
+            background-color: #4B1D1D; /* Deep Maroon to match the theme */
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 2rem;
+            margin-bottom: 2rem; /* Add margin to the bottom of the button */
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .details-button:hover {
+            background-color: #6B2D2D; /* Lighter shade of Deep Maroon */
+            transform: scale(1.05);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 560px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .video-container iframe {
+                height: 56.25vw; /* 16:9 aspect ratio for smaller screens */
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="qr-container">
-        <img src="/img/qr2.png" alt="QR Code" class="qr-image">
-    </div>
     <div class="container">
         <div class="header-image-container">
-            <img src="img/graphic.jpeg" alt="Jenny and Tony's 5-Year Anniversary" class="header-image">
+            <img src="img/graphic.png" alt="5 Years of Love" class="header-image">
         </div>
-        <div class="info">
-            <p>Date: June 8-10, 2025</p>
-            <p>Location: Nobu Hotel Los Cabos, Mexico</p>
-            <a href="deets.html" class="cta">More Details</a>
-        </div>
+        <a href="deets.html" class="details-button">RSVP</a>
+        <div class="video-container" id="player"></div>
     </div>
+
     <script>
-        let lastEmojiTime = 0;
-        const emojiDelay = 100; // Delay in milliseconds
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        function createEmoji(x, y) {
-            const emoji = document.createElement('div');
-            emoji.className = 'emoji';
-            emoji.innerHTML = ['🎉', '💖', '🥂', '🏖️', '🌴', '🌮', '🥳'][Math.floor(Math.random() * 7)];
-            emoji.style.left = x + 'px';
-            emoji.style.top = y + 'px';
-            document.body.appendChild(emoji);
-
-            setTimeout(() => {
-                document.body.removeChild(emoji);
-            }, 1000);
+        // Create an <iframe> (and YouTube player) after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                videoId: 'DrFuaT6F7cY',
+                playerVars: {
+                    'autoplay': 1,
+                    'mute': 1
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
         }
 
-        function handleMobileInteraction(event) {
-            const x = event.touches[0].clientX;
-            const y = event.touches[0].clientY;
-            createEmoji(x, y);
-        }
-
-        function handleDesktopInteraction(event) {
-            const currentTime = Date.now();
-            if (currentTime - lastEmojiTime > emojiDelay) {
-                const x = event.clientX;
-                const y = event.clientY;
-                createEmoji(x, y);
-                lastEmojiTime = currentTime;
-            }
-        }
-
-        if ('ontouchstart' in window) {
-            document.addEventListener('touchstart', handleMobileInteraction);
-        } else {
-            document.addEventListener('mousemove', handleDesktopInteraction);
+        // The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            event.target.unMute(); // Unmute the video
+            event.target.playVideo(); // Ensure the video starts playing
         }
     </script>
+
+    <!-- Your existing emoji script here -->
 </body>
 
 </html>
