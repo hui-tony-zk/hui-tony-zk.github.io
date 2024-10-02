@@ -242,6 +242,146 @@
             opacity: 1;
             animation: bounce 2s infinite;
         }
+
+        /* Updated FAQ Section styles */
+        .faq-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem 1rem; /* Increased padding */
+            background-color: rgba(0, 0, 0, 0.3); /* Added background color */
+            border-radius: 12px; /* Added border radius */
+        }
+
+        .faq-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .accordion {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-button {
+            background-color: transparent;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 1.2rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.3s;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .accordion-button:after {
+            content: '\002B';
+            color: #FFFFFF;
+            font-weight: bold;
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button.active:after {
+            content: "\2212";
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 1.2rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .accordion-content.active {
+            padding: 1.2rem;
+        }
+
+        .accordion-content p {
+            color: #FFFFFF;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 1.5rem 0.8rem; /* Adjusted padding for smaller screens */
+            }
+
+            .faq-section h2 {
+                font-size: 2rem;
+            }
+
+            .accordion-button {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .accordion-content {
+                padding: 0 1rem;
+            }
+
+            .accordion-content.active {
+                padding: 1rem;
+            }
+
+            .accordion-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-section {
+                padding: 1rem 0.8rem; /* Further adjusted padding for mobile screens */
+            }
+
+            .faq-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .accordion-button {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+
+            .accordion-content {
+                padding: 0 0.8rem;
+            }
+
+            .accordion-content.active {
+                padding: 0.8rem;
+            }
+
+            .accordion-content p {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 
@@ -252,6 +392,37 @@
         </div>
         <a href="https://forms.gle/Hr8uCvTyF2tFwV6XA" class="details-button">RSVP BY Dec 2, 2024</a>
         <div class="video-container" id="player"></div>
+
+        <!-- New FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">What should I wear?</button>
+                    <div class="accordion-content">
+                        <p>The dress code is jungle chic. Think comfortable yet stylish attire suitable for a tropical setting.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Where is the event located?</button>
+                    <div class="accordion-content">
+                        <p>The exact location will be provided after RSVP. It will be in a beautiful jungle-themed venue.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Can I bring a plus one?</button>
+                    <div class="accordion-content">
+                        <p>Yes, you may bring a plus one. Please indicate this in your RSVP.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Are children welcome?</button>
+                    <div class="accordion-content">
+                        <p>While we love your little ones, this event is adults-only to ensure a relaxed atmosphere for all guests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="page-overlay" id="pageOverlay">
@@ -390,6 +561,25 @@
         } else {
             document.addEventListener('mousemove', handleDesktopInteraction);
         }
+
+        // Updated FAQ Section JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            var acc = document.getElementsByClassName("accordion-button");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    panel.classList.toggle("active");
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        });
     </script>
 
     <!-- Your existing emoji script here -->
