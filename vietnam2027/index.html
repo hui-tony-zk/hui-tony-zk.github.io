@@ -802,7 +802,7 @@
       .train-gallery {
         grid-column: 1/-1;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         margin-top: 4px;
       }
@@ -846,6 +846,12 @@
         }
         .outing-copy .plan {
           font-size: 13px;
+        }
+        .train-gallery {
+          grid-template-columns: 1fr 1fr;
+        }
+        .train-gallery figure:first-child {
+          grid-column: 1/-1;
         }
       }
       @media (max-width: 520px) {
@@ -1738,7 +1744,7 @@
       const transfer = document.createElement("section");
       transfer.className = "transfer";
       transfer.setAttribute("aria-label", "Train from Đà Nẵng to Huế");
-      transfer.innerHTML = `<div class="transfer-mark" aria-hidden="true">→</div><div><div class="eyebrow">Sun · Apr 11 · Transfer</div><h2>Coast train to Huế</h2><p>Leave Đà Nẵng after breakfast. Train time is still TBD; choose left-side seats for the Hải Vân Pass and coast, then taxi from Huế station to Grand Royal.</p></div><div class="train-gallery"><figure><a href="https://commons.wikimedia.org/wiki/File:Hai_Van_Pass,_Vietnam,_North-South_Railway.jpg" target="_blank" rel="noopener"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Hai_Van_Pass%2C_Vietnam%2C_North-South_Railway.jpg/1280px-Hai_Van_Pass%2C_Vietnam%2C_North-South_Railway.jpg" alt="North–South railway curving along the green Hải Vân Pass" width="1280" height="853" loading="lazy"></a><figcaption>Railway through Hải Vân Pass ↗</figcaption></figure><figure><a href="https://commons.wikimedia.org/wiki/File:Meeting_a_Hanoi_bound_on_Hai_Van_Pass_(12164539774).jpg" target="_blank" rel="noopener"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Meeting_a_Hanoi_bound_on_Hai_Van_Pass_%2812164539774%29.jpg/1280px-Meeting_a_Hanoi_bound_on_Hai_Van_Pass_%2812164539774%29.jpg" alt="Passenger train rounding the railway on Hải Vân Pass" width="1280" height="720" loading="lazy"></a><figcaption>Northbound on the pass ↗</figcaption></figure></div>`;
+      transfer.innerHTML = `<div class="transfer-mark" aria-hidden="true">→</div><div><div class="eyebrow">Sun · Apr 11 · Transfer</div><h2>Coast train to Huế</h2><p>Leave Đà Nẵng on the morning heritage train once the 2027 timetable opens. Book the 32-seat VIP carriage if offered; choose right-side seats for the Hải Vân Pass and coast, then taxi from Huế station to Grand Royal.</p></div><div class="train-gallery"><figure><a href="https://khamphahue.com.vn/Du-lich/Ban-can-biet/Chi-tiet/tid/Doan-tau-du-lich-Hue-Da-Nang-Hanh-trinh-ket-noi-di-san-mien-Trung.html/pid/16851/cid/328" target="_blank" rel="noopener"><img src="https://khamphahue.com.vn/Portals/0/Medias/Nam2024/T4/Khamphahue_Mua-ve-tau-Hue-Da-Nang-online_Hanh-Trinh-Di-San-Mien-Trung-02.jpg" alt="Heritage train crossing a stone viaduct above the blue Hải Vân coast" width="1920" height="1280" loading="lazy"></a><figcaption>Hải Vân coast · Huế Tourism ↗</figcaption></figure><figure><a href="https://thanhnien.vn/chuyen-tau-di-san-mien-trung-co-gi-sau-khi-duoc-thay-ao-moi-185260326102116089.htm" target="_blank" rel="noopener"><img src="https://images2.thanhnien.vn/528068263637045248/2026/3/26/2589692145341541544-17744943256951088028632.jpg" alt="The refurbished purple-and-silver heritage train crossing Hải Vân Pass in 2026" width="1920" height="1080" loading="lazy"></a><figcaption>Refurbished heritage train · 2026 ↗</figcaption></figure><figure><a href="https://thanhnien.vn/chuyen-tau-di-san-mien-trung-co-gi-sau-khi-duoc-thay-ao-moi-185260326102116089.htm" target="_blank" rel="noopener"><img src="https://images2.thanhnien.vn/528068263637045248/2026/3/26/img2234-1774494326842393911459.jpg" alt="The 32-seat VIP carriage with leather armchairs, tables and panoramic windows" width="1920" height="1280" loading="lazy"></a><figcaption>New 32-seat VIP carriage · 2026 ↗</figcaption></figure></div>`;
       danangStay.after(transfer);
       hueStay.append(
         makePlan(
