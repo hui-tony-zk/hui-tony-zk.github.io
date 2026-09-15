@@ -716,18 +716,11 @@
         border-radius: 4px;
         background: #dfe5da;
       }
-      .outing-media img,
-      .outing-media video {
+      .outing-media img {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
-      }
-      .outing-media.video-media {
-        background: #050909;
-      }
-      .outing-media.video-media video {
-        object-fit: contain;
       }
       .outing-media figcaption {
         position: absolute;
@@ -737,6 +730,19 @@
         padding: 4px 7px;
         border-radius: 2px;
         font-size: 10px;
+      }
+      .outing-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        height: 180px;
+      }
+      .outing-gallery .outing-media {
+        height: 100%;
+      }
+      .outing-gallery a {
+        display: block;
+        height: 100%;
       }
       .day-steps {
         display: flex;
@@ -833,7 +839,8 @@
         .outing {
           grid-template-columns: 110px 1fr;
         }
-        .outing-media {
+        .outing-media,
+        .outing-gallery {
           grid-column: 1/-1;
           height: 220px;
         }
@@ -873,7 +880,8 @@
         .outing-time span {
           margin: 0;
         }
-        .outing-media {
+        .outing-media,
+        .outing-gallery {
           grid-column: auto;
           height: 210px;
         }
@@ -1426,27 +1434,43 @@
                 rel="noopener"
                 >Map ↗</a
               ><a
-                href="https://commons.wikimedia.org/wiki/File:Dragon_Bridge_breathing_fire.ogv"
+                href="https://commons.wikimedia.org/wiki/Category:Dragon_Bridge_at_night_(Danang)"
                 target="_blank"
                 rel="noopener"
-                >Video source ↗</a
+                >Photo sources ↗</a
               >
             </div>
           </div>
-          <figure class="outing-media video-media">
-            <video
-              controls
-              playsinline
-              preload="metadata"
-              poster="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Dragon_Bridge_breathing_fire.ogv/1280px--Dragon_Bridge_breathing_fire.ogv.jpg"
-              aria-label="Dragon Bridge breathing fire"
-            >
-              <source
-                src="https://upload.wikimedia.org/wikipedia/commons/3/37/Dragon_Bridge_breathing_fire.ogv"
-                type="video/ogg"
-              />
-            </video>
-          </figure>
+          <div class="outing-gallery" aria-label="Dragon Bridge photos">
+            <figure class="outing-media">
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Head_of_the_Dragon_bridge_shining_yellow_at_night_in_2015.jpg"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Head_of_the_Dragon_bridge_shining_yellow_at_night_in_2015.jpg/1280px-Head_of_the_Dragon_bridge_shining_yellow_at_night_in_2015.jpg"
+                  alt="Illuminated dragon head at the east end of Dragon Bridge"
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+              /></a>
+              <figcaption>Dragon head at night ↗</figcaption>
+            </figure>
+            <figure class="outing-media">
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Dragon_Bridge_at_night_(Danang)_-_DSC02093.JPG"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Dragon_Bridge_at_night_%28Danang%29_-_DSC02093.JPG/1280px-Dragon_Bridge_at_night_%28Danang%29_-_DSC02093.JPG"
+                  alt="Dragon Bridge illuminated over the Han River at night"
+                  width="1280"
+                  height="672"
+                  loading="lazy"
+              /></a>
+              <figcaption>Bridge at night ↗</figcaption>
+            </figure>
+          </div>
         </article>
         <article class="outing" data-city="danang">
           <div class="outing-time">
