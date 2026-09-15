@@ -723,6 +723,12 @@
         height: 100%;
         object-fit: cover;
       }
+      .outing-media.video-media {
+        background: #050909;
+      }
+      .outing-media.video-media video {
+        object-fit: contain;
+      }
       .outing-media figcaption {
         position: absolute;
         left: 8px;
@@ -787,6 +793,36 @@
         color: var(--muted);
         font-size: 13px;
       }
+      .train-gallery {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 4px;
+      }
+      .train-gallery figure {
+        position: relative;
+        height: 220px;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 4px;
+        background: #dfe5da;
+      }
+      .train-gallery img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .train-gallery figcaption {
+        position: absolute;
+        left: 9px;
+        bottom: 9px;
+        padding: 4px 8px;
+        border-radius: 2px;
+        background: rgba(255, 253, 247, 0.93);
+        font-size: 10px;
+      }
       @media (max-width: 800px) {
         .explore-head {
           display: block;
@@ -817,6 +853,12 @@
         }
         .transfer h2 {
           font-size: 25px;
+        }
+        .train-gallery {
+          grid-template-columns: 1fr;
+        }
+        .train-gallery figure {
+          height: 210px;
         }
         .outing {
           grid-template-columns: 1fr;
@@ -1383,10 +1425,15 @@
                 target="_blank"
                 rel="noopener"
                 >Map ↗</a
+              ><a
+                href="https://commons.wikimedia.org/wiki/File:Dragon_Bridge_breathing_fire.ogv"
+                target="_blank"
+                rel="noopener"
+                >Video source ↗</a
               >
             </div>
           </div>
-          <figure class="outing-media">
+          <figure class="outing-media video-media">
             <video
               controls
               playsinline
@@ -1399,14 +1446,6 @@
                 type="video/ogg"
               />
             </video>
-            <figcaption>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Dragon_Bridge_breathing_fire.ogv"
-                target="_blank"
-                rel="noopener"
-                >Press play · video source ↗</a
-              >
-            </figcaption>
           </figure>
         </article>
         <article class="outing" data-city="danang">
@@ -1675,7 +1714,7 @@
       const transfer = document.createElement("section");
       transfer.className = "transfer";
       transfer.setAttribute("aria-label", "Train from Đà Nẵng to Huế");
-      transfer.innerHTML = `<div class="transfer-mark" aria-hidden="true">→</div><div><div class="eyebrow">Sun · Apr 11 · Transfer</div><h2>Coast train to Huế</h2><p>Leave Đà Nẵng after breakfast. Train time is still TBD; choose left-side seats for the Hải Vân Pass and coast, then taxi from Huế station to Grand Royal.</p></div>`;
+      transfer.innerHTML = `<div class="transfer-mark" aria-hidden="true">→</div><div><div class="eyebrow">Sun · Apr 11 · Transfer</div><h2>Coast train to Huế</h2><p>Leave Đà Nẵng after breakfast. Train time is still TBD; choose left-side seats for the Hải Vân Pass and coast, then taxi from Huế station to Grand Royal.</p></div><div class="train-gallery"><figure><a href="https://commons.wikimedia.org/wiki/File:Hai_Van_Pass,_Vietnam,_North-South_Railway.jpg" target="_blank" rel="noopener"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Hai_Van_Pass%2C_Vietnam%2C_North-South_Railway.jpg/1280px-Hai_Van_Pass%2C_Vietnam%2C_North-South_Railway.jpg" alt="North–South railway curving along the green Hải Vân Pass" width="1280" height="853" loading="lazy"></a><figcaption>Railway through Hải Vân Pass ↗</figcaption></figure><figure><a href="https://commons.wikimedia.org/wiki/File:Meeting_a_Hanoi_bound_on_Hai_Van_Pass_(12164539774).jpg" target="_blank" rel="noopener"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Meeting_a_Hanoi_bound_on_Hai_Van_Pass_%2812164539774%29.jpg/1280px-Meeting_a_Hanoi_bound_on_Hai_Van_Pass_%2812164539774%29.jpg" alt="Passenger train rounding the railway on Hải Vân Pass" width="1280" height="720" loading="lazy"></a><figcaption>Northbound on the pass ↗</figcaption></figure></div>`;
       danangStay.after(transfer);
       hueStay.append(
         makePlan(
