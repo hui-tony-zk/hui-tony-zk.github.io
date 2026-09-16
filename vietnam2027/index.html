@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta
       name="description"
-      content="April 7–12, 2027. Two stays on Vietnam’s central coast: Meliá Da Nang and Grand Royal Riverside Hue."
+      content="April 7–12, 2027. Two stays on Vietnam’s central coast: TMS or Meliá in Da Nang, then Grand Royal Riverside Hue."
     />
     <title>Vietnam · April 2027</title>
     <link
@@ -899,6 +899,17 @@
           font-size: 29px;
         }
       }
+
+      .hotel-choice { margin-top: 36px; min-width: 0; }
+      .choice-intro { padding: 24px 0; }
+      .choice-intro p { line-height: 1.7; }
+      .hotel-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+      .hotel-options .stay { min-width: 0; margin: 0; padding: 24px; }
+      .hotel-options .stay-head, .hotel-options .room-line { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+      .hotel-options .slide { flex-basis: 100%; }
+      .hotel-options .date { text-align: left; }
+      .total strong { font-size: clamp(25px,3vw,40px); }
+      @media (max-width: 850px) { .hotel-options { grid-template-columns: 1fr; } .hotel-options .stay { padding: 20px; } }
     </style>
   </head>
   <body>
@@ -912,11 +923,11 @@
         <div>
           <div class="eyebrow">07–12 April 2027 · Two adults</div>
           <h1>Coast <em>to</em> capital.</h1>
-          <p>Đà Nẵng for the river views. Huế for one more bowl.</p>
+          <p>Đà Nẵng by the sea or river. Huế for one more bowl.</p>
         </div>
         <div class="total">
-          <div class="eyebrow">Quoted hotel total</div>
-          <strong>C$1,487</strong><small>5 nights · taxes included</small>
+          <div class="eyebrow">Hotel total · choose one</div>
+          <strong>C$970 / C$1,487</strong><small>TMS + Huế / Meliá + Huế<br />5 nights · taxes included · price snapshots</small>
         </div>
       </header>
       <div class="route" aria-label="Trip dates">
@@ -928,9 +939,10 @@
       </div>
       <div class="map-shell">
         <div class="map-head">
-          <span>Two hotels. One stretch of coast.</span>
+          <span>Two Da Nang options. One stay in Huế.</span>
           <div class="map-controls" aria-label="Map view">
             <button data-view="all" aria-pressed="true">Full trip</button
+            ><button data-view="tms" aria-pressed="false">TMS area</button
             ><button data-view="melia" aria-pressed="false">Meliá area</button
             ><button data-view="grand" aria-pressed="false">
               Grand Royal area
@@ -940,7 +952,7 @@
         <div
           id="map"
           role="region"
-          aria-label="Map of Meliá Da Nang and Grand Royal Riverside Hue"
+          aria-label="Map of TMS and Meliá options in Da Nang, and Grand Royal Riverside Hue"
         >
           <div class="fallback">
             Hotel locations: Đà Nẵng on the Han River · Huế by Trường Tiền
@@ -950,14 +962,14 @@
         </div>
         <div class="map-foot">
           <span
-            >1 · Meliá, Han River &nbsp; / &nbsp; 2 · Grand Royal, central
+            >A · TMS, Mỹ Khê / B · Meliá, Han River &nbsp; / &nbsp; 2 · Grand Royal, central
             Huế</span
           ><span
             ><a
               href="https://www.google.com/maps/search/?api=1&amp;query=16.07104%2C108.22946"
               >Meliá in Maps ↗</a
             >
-            ·
+            · <a href="https://www.google.com/maps/search/?api=1&amp;query=16.05136%2C108.24779">TMS in Maps ↗</a> ·
             <a
               href="https://www.google.com/maps/search/?api=1&amp;query=16.46647%2C107.59105"
               >Grand Royal in Maps ↗</a
@@ -966,10 +978,214 @@
         </div>
       </div>
       <main id="stays">
-        <article class="stay" id="danang-stay">
+        <section id="danang-stay" class="hotel-choice" aria-labelledby="choice-heading">
+          <div class="choice-intro"><div class="eyebrow">01 / Đà Nẵng · Decision pending</div><h2 id="choice-heading">Two hotels. Choose one.</h2>
+          <p>Apr 7–11 · Four nights · Two adults. These are alternatives for the same stay.</p>
+          <p><strong>TMS:</strong> ocean-view balcony and walkable dining. <strong>Meliá:</strong> curved panoramic river views and a separate lounge.</p>
+          <p><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Melia+Vinpearl+Danang+Riverfront&amp;destination=TMS+Hotel+Da+Nang+Beach&amp;travelmode=walking" target="_blank" rel="noopener">Between the hotels: 3.6 km / 50 min walking ↗</a> · Driving: 3.8–4.3 km / 8–9 min when checked September 16, 2026; traffic varies.</p></div>
+          <div class="hotel-options">
+        <article class="stay" id="tms-option">
           <div class="stay-head">
             <div>
-              <div class="eyebrow">01 / Đà Nẵng · Five star</div>
+              <div class="eyebrow">Option A · Five star</div>
+              <h2>TMS Hotel Da Nang Beach</h2>
+              <p>Mỹ Khê beach · 292 Võ Nguyên Giáp</p>
+            </div>
+            <div class="date">
+              <strong>Apr 7 → 11</strong><small>Wed–Sun · 4 nights</small>
+            </div>
+          </div>
+          <section class="carousel" aria-label="Hotel photos and guest reviews">
+            <div class="carousel-track" tabindex="0">
+              <div class="slide" role="group" aria-label="1 of 7">
+                <figure class="exterior">
+                  <a
+                    href="https://www.expedia.ca/Da-Nang-Hotels-TMS-Hotel-Da-Nang-Beach.h29282295.Hotel-Information?chkin=2027-04-07&amp;chkout=2027-04-11&amp;rm1=a2"
+                    ><img
+                      src="https://images.trvl-media.com/lodging/30000000/29290000/29282300/29282295/14d2eb65.jpg?impolicy=resizecrop&amp;rw=1200&amp;ra=fit"
+                      alt="Exterior of TMS Hotel Da Nang Beach"
+                      width="1200"
+                      height="800"
+                  /></a>
+                  <figcaption>The hotel</figcaption>
+                </figure>
+              </div>
+              <div class="slide" role="group" aria-label="2 of 7">
+                <figure>
+                  <a
+                    href="https://www.expedia.ca/Da-Nang-Hotels-TMS-Hotel-Da-Nang-Beach.h29282295.Hotel-Information?chkin=2027-04-07&amp;chkout=2027-04-11&amp;rm1=a2"
+                    ><img
+                      src="https://images.trvl-media.com/lodging/30000000/29290000/29282300/29282295/8d9fc468.jpg?impolicy=fcrop&amp;w=1200&amp;h=800"
+                      alt="TMS Premier Suite with king bed, balcony and ocean view"
+                      width="1200"
+                      height="800"
+                  /></a>
+                  <figcaption>Premier Suite · Ocean View King</figcaption>
+                </figure>
+              </div>
+              <div class="slide" role="group" aria-label="3 of 7">
+                <figure>
+                  <a
+                    class="photo-link"
+                    href="https://tmshotel.vn/wp-content/uploads/2026/04/infinity-pool.jpg"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open full photo: Rooftop infinity pool"
+                    ><img
+                      src="https://tmshotel.vn/wp-content/uploads/2026/04/infinity-pool.jpg"
+                      alt="TMS rooftop infinity pool overlooking the sea at sunset"
+                      width="1024"
+                      height="683"
+                      loading="lazy"
+                      decoding="async"
+                  /></a>
+                  <figcaption>
+                    <strong>Rooftop infinity pool</strong
+                    ><span>25th floor · 6am–8pm</span
+                    ><a
+                      href="https://tmshotel.vn/recreation/"
+                      target="_blank"
+                      rel="noopener"
+                      >Hotel photo ↗</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="slide" role="group" aria-label="4 of 7">
+                <figure>
+                  <a
+                    class="photo-link"
+                    href="https://tmshotel.vn/wp-content/uploads/2023/05/1_g1.webp"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open full photo: Fitness centre"
+                    ><img
+                      src="https://tmshotel.vn/wp-content/uploads/2023/05/1_g1.webp"
+                      alt="Cardio equipment in the TMS fitness centre"
+                      width="1024"
+                      height="683"
+                      loading="lazy"
+                      decoding="async"
+                  /></a>
+                  <figcaption>
+                    <strong>Fitness centre</strong><span>6am–9pm</span
+                    ><a
+                      href="https://tmshotel.vn/recreation/"
+                      target="_blank"
+                      rel="noopener"
+                      >Hotel photo ↗</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="slide" role="group" aria-label="5 of 7">
+                <figure>
+                  <a
+                    class="photo-link"
+                    href="https://tmshotel.vn/wp-content/uploads/2026/04/recreation-bg.webp"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Open full photo: The ocean outlook"
+                    ><img
+                      src="https://tmshotel.vn/wp-content/uploads/2026/04/recreation-bg.webp"
+                      alt="Open ocean view from the edge of the TMS rooftop pool"
+                      width="1024"
+                      height="683"
+                      loading="lazy"
+                      decoding="async"
+                  /></a>
+                  <figcaption>
+                    <strong>The ocean outlook</strong
+                    ><span>View from the pool terrace</span
+                    ><a
+                      href="https://tmshotel.vn/recreation/"
+                      target="_blank"
+                      rel="noopener"
+                      >Hotel photo ↗</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="slide" role="group" aria-label="6 of 7">
+                <figure class="review">
+                  <div class="eyebrow">Rooms & views</div>
+                  <blockquote>
+                    “The ocean view rooms were very spacious, clean and
+                    comfortable.”
+                  </blockquote>
+                  <figcaption>
+                    <a
+                      href="https://www.tripadvisor.com.au/ShowUserReviews-g298085-d15153595-r1075311567-TMS_Hotel_Da_Nang_Beach-Da_Nang.html"
+                      target="_blank"
+                      rel="noopener"
+                      >jnacino · Tripadvisor · Aug 2026 ↗</a
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="slide" role="group" aria-label="7 of 7">
+                <figure class="review">
+                  <div class="eyebrow">For light sleepers</div>
+                  <blockquote>
+                    “The outside noise can be a bother for light sleepers”
+                  </blockquote>
+                  <figcaption>
+                    <a
+                      href="https://www.tripadvisor.com.au/ShowUserReviews-g298085-d15153595-r1075311567-TMS_Hotel_Da_Nang_Beach-Da_Nang.html"
+                      target="_blank"
+                      rel="noopener"
+                      >jnacino · Tripadvisor · Aug 2026 ↗</a
+                    >
+                  </figcaption>
+                  <p>
+                    The same guest said drawing the curtains made it fairly
+                    quiet.
+                  </p>
+                </figure>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <span>Photos & guest reviews · Swipe or use arrows</span>
+              <div>
+                <button
+                  type="button"
+                  class="previous"
+                  aria-label="Previous slide"
+                >
+                  ←</button
+                ><button type="button" class="next" aria-label="Next slide">
+                  →
+                </button>
+              </div>
+            </div>
+          </section>
+          <div class="room-line">
+            <div>
+              <h3>Premier Suite · Ocean View King</h3>
+              <p>45 m² · Private balcony · Breakfast included</p>
+              <p>Refundable before February 6, 2027</p>
+            </div>
+            <div class="cost">
+              <strong>C$209.25</strong><span> / night</span
+              ><small>C$837 total · 4 nights</small>
+            </div>
+          </div>
+          <div class="actions">
+            <a
+              class="btn"
+              href="https://www.expedia.ca/Da-Nang-Hotels-TMS-Hotel-Da-Nang-Beach.h29282295.Hotel-Information?chkin=2027-04-07&amp;chkout=2027-04-11&amp;rm1=a2"
+              >Expedia ↗</a
+            ><a
+              class="btn secondary"
+              href="https://www.book-secure.com/?HotelName=ASIAVNHTLTmsHotelDan&amp;hname=ASIAVNHTLTmsHotelDan&amp;arrival=2027-04-07&amp;nbstay=4&amp;adults1=2&amp;campaignId=14078&amp;accessCode=CAMP-DIR&amp;redir=BIZ-so5523q0o4&amp;rt=1789506897&amp;property=vnhoc31430&amp;code=CAMP-DIR&amp;s=results"
+              >Book direct ↗</a
+            ><small>Apr 7–11 · 2 adults prefilled</small>
+          </div>
+        </article>
+        <article class="stay" id="melia-option">
+          <div class="stay-head">
+            <div>
+              <div class="eyebrow">Option B · Five star</div>
               <h2>Meliá Vinpearl Danang Riverfront</h2>
               <p>Han River · 341 Trần Hưng Đạo</p>
             </div>
@@ -1064,6 +1280,8 @@
             ><small>Expedia: Apr 7–11 · 2 adults prefilled</small>
           </div>
         </article>
+          </div>
+        </section>
         <article class="stay" id="hue-stay">
           <div class="stay-head">
             <div>
@@ -1284,7 +1502,7 @@
               early for cooler air; allow about two hours on site.
             </p>
             <p class="plan">
-              <b>Plan:</b> Grab south from Meliá → climb Thủy Sơn → coffee or
+              <b>Plan:</b> Grab south from your chosen hotel → climb Thủy Sơn → coffee or
               beach lunch on the way back.
             </p>
             <div class="outing-links">
@@ -1396,7 +1614,7 @@
               ><span>7pm · river + night market</span>
             </div>
             <p class="plan">
-              <b>Plan:</b> Pre-book a return car from Meliá; expect roughly 45–60
+              <b>Plan:</b> Pre-book a return car from your chosen hotel; expect roughly 45–60
               minutes each way. Skip the basket boats on this compact trip.
             </p>
             <div class="outing-links">
@@ -1534,7 +1752,7 @@
       <footer>
         <p>
           Planned stays, not booked. Expedia price snapshots for two adults: Meliá checked September 16,
-          2026; Grand Royal checked September 15, 2026; CAD totals include taxes and fees.
+          2026; TMS and Grand Royal checked September 15, 2026; CAD totals include taxes and fees.
           Direct-booking rates and inclusions may differ. Expedia dates are prefilled;
           select the named room and rate before booking. Grand Royal may also
           require a refundable damage deposit.
@@ -1565,6 +1783,7 @@
         }).addTo(map);
         const points = {
           melia: [16.07104, 108.22946],
+          tms: [16.05136, 108.24779],
           grand: [16.46647, 107.59105],
         };
         const make = (n) =>
@@ -1575,15 +1794,16 @@
             iconAnchor: [15, 15],
           });
         const t = L.marker(points.melia, {
-          icon: make(1),
+          icon: make("B"),
           alt: "Meliá Vinpearl Danang Riverfront",
         })
           .addTo(map)
-          .bindTooltip("1 · Meliá Đà Nẵng", {
+          .bindTooltip("B · Meliá Đà Nẵng", {
             permanent: true,
             direction: "left",
             offset: [-12, 0],
           });
+        L.marker(points.tms, {icon: make("A"), alt: "TMS Hotel Da Nang Beach"}).addTo(map).bindTooltip("A · TMS Đà Nẵng", {permanent: true, direction: "right", offset: [12,0]});
         const g = L.marker(points.grand, {
           icon: make(2),
           alt: "Grand Royal Riverside Hue",
@@ -1596,7 +1816,7 @@
           });
         function view(key) {
           if (key === "all")
-            map.fitBounds([points.melia, points.grand], { padding: [65, 55] });
+            map.fitBounds([points.melia, points.tms, points.grand], { padding: [65, 55] });
           else map.setView(points[key], 15);
           document
             .querySelectorAll("[data-view]")
